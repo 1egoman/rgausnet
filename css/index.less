@@ -1,0 +1,354 @@
+// out: index.css
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import "../bootstrap/less/bootstrap.less";
+@logo-green: #71C837;
+
+body {
+  height: 100%;
+}
+
+// 1st page
+div.one {
+  height: 100%;
+
+  // image row
+  .row.hero .logo img {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .row.subtitle {
+    div.inner {
+
+      // sm: 3 6 3
+      .make-sm-column(6);
+      .make-sm-column-offset(3);
+
+      // md: 2 5 2
+      .make-md-column(6);
+      .make-md-column-offset(3);
+
+      margin-top: 20px;
+
+      div.social {
+        // margin-left: 50%; float: left;
+        ul {
+          list-style-type: none;
+          padding: 20px;
+          // margin-left: -50%; float: left;
+          li {
+            display: inline;
+            img {
+              width: 36px;
+            }
+            @media (min-width: @screen-md) {
+              img {
+                width: 64px;
+              }
+            }
+          }
+        }
+      }
+
+      h1 {
+        font-size: @font-size-base * 2.5;
+        letter-spacing: 0.05em;
+        font-weight: normal;
+        text-align: center;
+
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        margin-top: -12px;
+        font-size: @font-size-base * 1.2;
+        color: @gray-light;
+
+        line-height: @line-height-base * 0.95;
+        text-align: center;
+      }
+
+      @media (min-width: @screen-md) {
+        h1 {
+          font-size: @font-size-base * 4.8;
+        }
+        h2 {
+          font-size: @font-size-base * 2.8;
+        }
+      }
+
+
+    }
+  }
+
+
+}
+
+// a container
+div.container-fluid.section {
+  margin-top: 7.5%;
+  padding: 0px;
+
+  // pane header
+  div.header {
+    height: @font-size-h1 * 1.8;
+    padding: 12px 0px;
+
+    // for the ribbon
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      text-align: center;
+      color: #FFF;
+      margin-top: -36px;
+    }
+
+  }
+}
+
+// projects
+div.section.projects {
+
+  // projects body
+  div.body {
+    background: @body-bg;
+    padding-top: 50px;
+
+    .logo img {
+      width: 100%;
+      margin: 36px 0px;
+    }
+
+    .hero img {
+      width: 100%;
+      margin-top: 24px;
+    }
+
+    h1 {
+      color: @gray-light;
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: @font-size-base * 1.8;
+      small a {
+        font-size: @font-size-base * 1.2;
+        text-align: center;
+      }
+    }
+
+    h2 {
+      color: @gray-light;
+      text-align: center;
+      margin-top: -12px;
+      font-size: @font-size-base * 1.2;
+      small a {
+        font-size: @font-size-base * 1.2;
+        text-align: center;
+      }
+    }
+
+
+    @media (min-width: @screen-md) {
+      h1 {
+        font-size: @font-size-base * 3.6;
+      }
+      h2 {
+        font-size: @font-size-base * 2.8;
+      }
+      h2 small a  {
+        font-size: @font-size-base * 1.8;
+      }
+    }
+
+
+  }
+
+  div.body.que {
+    padding-top: 0px;
+  }
+
+  // nancy sews
+  div.body.nancysews {
+    background: lighten(#4ebbe4, 10%);
+
+    img {
+      margin-bottom: 100px;
+      border: 2px solid @gray-lighter;
+    }
+
+    h1, h2 {
+      color: #FFF;
+    }
+  }
+
+  // girl scouts
+  div.body.gs {
+    // background: desaturate(#7cca32, 30%);
+
+    img {
+      margin-bottom: 100px;
+      border: 2px solid @gray-lighter;
+    }
+
+  }
+
+}
+
+// skills on resume
+div.skills {
+
+  .logo {
+    margin-top: 64px;
+  }
+
+  .logo:first-child {
+    margin-top: 16px;
+  }
+
+  .skill-list {
+    ul {
+      padding-left: 0px;
+      margin-top: 20px;
+
+      li {
+        list-style-type: none;
+        padding: 12px 0px;
+
+        .name {
+          font-size: @font-size-base * 2;
+          padding-bottom: 10px;
+          text-align: center;
+        }
+
+        .progress {
+          .pull-right;
+          padding: 0px;
+          height: 32px;
+
+          .progress-bar {
+            background-color: darken(@logo-green, 6%);
+            box-shadow: none;
+          }
+        }
+
+        @media (min-width: @screen-md) {
+          .name { text-align: left; }
+          .progress { margin-top: @font-size-base * -3; }
+        }
+      }
+    }
+
+  }
+}
+
+.edu-list {
+  font-size: @font-size-base * 2;
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+
+    ul {
+      text-align: left;
+      font-size: @font-size-base * 1.5;
+    }
+  }
+}
+
+.work-list {
+  ul {
+    padding-left: 0px;
+    margin-top: 20px;
+
+    li {
+      list-style-type: none;
+      padding: 12px 0px;
+
+      .name {
+        font-size: @font-size-base * 2;
+        padding-bottom: 10px;
+        text-align: center;
+        .date {
+          float: right;
+          font-size: @font-size-base * 1.5;
+          margin-top: 6px;
+        }
+      }
+
+      .desc {
+        font-size: @font-size-base * 1.2;
+      }
+
+      @media (min-width: @screen-md) {
+        .name { text-align: left; }
+      }
+    }
+  }
+}
+
+
+// nullify ribbon on phones
+.ribbon {
+  font-size: 24px !important;
+
+  width: 100%;
+  margin: 0px auto;
+
+  background: @logo-green;
+  padding: 1em 2em; /* Adjust to suit */
+}
+
+// ribbon
+@media (min-width: @screen-md) {
+  .ribbon {
+    font-size: 24px !important;
+
+    width: 800px;
+    margin: 0px auto;
+
+    position: relative;
+    background: @logo-green;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em; /* Adjust to suit */
+    margin: 2em auto 3em;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -1em;
+      border: 1.5em solid darken(@logo-green, 6%);
+      z-index: -1;
+    }
+
+    &:before {
+     left: -2em;
+     border-right-width: 1.5em;
+     border-left-color: transparent;
+    }
+
+    &:after {
+      right: -2em;
+      border-left-width: 1.5em;
+      border-right-color: transparent;
+    }
+  }
+  .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: darken(@logo-green, 10%) transparent transparent transparent;
+    bottom: -1em;
+  }
+  .ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+  }
+  .ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+  }
+}
