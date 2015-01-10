@@ -6302,17 +6302,27 @@ div.section.projects div.body h2 small a {
 }
 div.section.projects div.body.que {
   padding-top: 0px;
+  padding-bottom: 32px;
+  margin-top: 64px;
+  background: #6ab4e6;
 }
-div.section.projects div.body.nancysews {
-  background: #7acceb;
+div.section.projects div.body.que .logo img {
+  width: 96px;
+  display: block;
+  margin: 36px auto;
+}
+@media (min-width: 992px) {
+  div.section.projects div.body.que .logo img {
+    width: 128px;
+  }
+}
+div.section.projects div.body.que h2 {
+  color: #FFF;
+  line-height: 1.4em;
 }
 div.section.projects div.body.nancysews img {
   margin-bottom: 100px;
   border: 2px solid #eeeeee;
-}
-div.section.projects div.body.nancysews h1,
-div.section.projects div.body.nancysews h2 {
-  color: #FFF;
 }
 div.section.projects div.body.gs img {
   margin-bottom: 100px;

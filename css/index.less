@@ -167,11 +167,26 @@ div.section.projects {
 
   div.body.que {
     padding-top: 0px;
+    padding-bottom: 32px;
+    margin-top: 64px;
+    background: lighten(#59ABE3, 4%);
+
+    .logo img {
+      width: 96px;
+      display: block;
+      margin: 36px auto;
+      @media (min-width: @screen-md) { width: 128px; }
+    }
+
+    h2 {
+      color: #FFF;
+      line-height: 1.4em;
+    }
   }
 
   // nancy sews
   div.body.nancysews {
-    background: lighten(#4ebbe4, 10%);
+    // background: lighten(#4ebbe4, 10%);
 
     img {
       margin-bottom: 100px;
@@ -179,7 +194,7 @@ div.section.projects {
     }
 
     h1, h2 {
-      color: #FFF;
+      // color: #FFF;
     }
   }
 
