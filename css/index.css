@@ -6289,6 +6289,9 @@ div.section.projects div.body h2 small a {
   font-size: 16.8px;
   text-align: center;
 }
+div.section.projects div.body small a {
+  color: #FFF;
+}
 @media (min-width: 992px) {
   div.section.projects div.body h1 {
     font-size: 50.4px;
@@ -6300,10 +6303,19 @@ div.section.projects div.body h2 small a {
     font-size: 25.2px;
   }
 }
+div.section.projects div.body.cena {
+  padding-top: 50px;
+  padding-bottom: 32px;
+  margin-top: 64px;
+  background: #8DC54D;
+}
+div.section.projects div.body.cena h2 {
+  color: #FFF;
+  line-height: 1.4em;
+}
 div.section.projects div.body.que {
   padding-top: 0px;
   padding-bottom: 32px;
-  margin-top: 64px;
   background: #6ab4e6;
 }
 div.section.projects div.body.que .logo img {
