@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/rgausnet
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://rgaus.net
+  * I am rgausnet (https://keybase.io/rgausnet) on keybase.
+  * I have a public key with fingerprint 9BCA 974E 112B 4CC7 43C1  578A A255 C2D6 FA67 4A6F
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "9bca974e112b4cc743c1578aa255c2d6fa674a6f",
+            "host": "keybase.io",
+            "key_id": "a255c2d6fa674a6f",
+            "kid": "01011a508d50fed2afb4ba643901e74d75533f26aa202dffdf58c9a7382024a905320a",
+            "uid": "91a0af098e78ea7ba290d7e085847519",
+            "username": "rgausnet"
+        },
+        "service": {
+            "hostname": "rgaus.net",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1439209690,
+    "expire_in": 157680000,
+    "prev": "316156493e5f95ab9138b1fd0d6560cc5f4e05d18f4a5a1c605e88be34197293",
+    "seqno": 7,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.36
+Comment: https://keybase.io/crypto
+
+yMIYAnicbZJrSBRRFMdnK3uIklFB28PoRgi21L0zc2fmblgpvT5EgWJLoi13Zu7s
+DtbMurtOb0ILsih6UBARFdUHIzQCe4CRD+xpVEQhWASiQg/7kmSSZd2Rgj50v1zO
+//7O/9xzOB3Z44XMwOOCBhbZVTYt0NlWUC2UPjrTvRvorrkThHeDSjZ2WbYTY8lE
+0nbSIAyIblCiygwhUZcNQ5UlA2FVo1TE2BBNxaKKKlPFAiEQd1N+BrfRaYotsV2u
+8SBqm1z9D1859gARRIhiqJkYWswUqaXLOlVkiUDEVNlUMZYkS1R4RSialmVaWDMI
+VSWNxzIlEEsipNyuesyOIAqpBYnGVI1RVacigabKoIY1WcWI+GCKJR26jXE6GaPV
+KYelwd4Q4KpnG8wfgd/Jv8QSHwmBRNJNu4a7lcvxdDoR9rPSOxM+tp3p0T8GUd12
+TD5DnuCxZMp2HRBGnDTStu+IeGciJAqBIcB2JOwki9o+gVVFg/z4ZZjHLSWkIKzI
+RGLYIpjqBEmajiwTmgpWoGFgS2YQm0izZIopMhSImabpTJIRUUUiAb+lKscFYZV/
+k8a4ZcqOOTRdnWRgb3tr+QQhkClMzBjnb4GQOSXn7270aZOFB2UHujPub8puXEak
+t4WrXnVs7ojQ2pV968UZl7rftHbm0dtzLtYVJwbzv847XjT8TK6YmVtzvfxZfGq9
+OD3Ycmd4wQa7TVuQCMS71w0sv1Z62h3dHxx/a3H8yIlE3qTvv24ePbVmNZz7aO7l
+D+HHPUGvSDszvOFbffOVmbrdVTt0MnetfOPCwnyvYt9gSw22YotAzbEVL89JywYO
+lXSONDSWZ7546Oat834KB4PqrH1Zrz25ppneK1l/t+NCzsfiqv53sGuosPGLOSKO
+WO2fIleLcvqaxvU3Hf3x1Dt0HvSMfs6eH3tZuXHpltnFdU96TxZkne19L+x5Xv88
+UieUHn76G1FfJbk=
+=Fj+J
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rgausnet
+
+==================================================================
