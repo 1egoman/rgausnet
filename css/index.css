@@ -6338,7 +6338,7 @@ div.section.projects div.body.que h2 {
   line-height: 1.4em;
 }
 div.section.projects div.body.nancysews {
-  background: #7acceb;
+  background: #6CD0BB;
 }
 div.section.projects div.body.nancysews img {
   margin-bottom: 100px;
@@ -6348,9 +6348,16 @@ div.section.projects div.body.nancysews h1,
 div.section.projects div.body.nancysews h2 {
   color: #FFF;
 }
+div.section.projects div.body.gs {
+  background: #C7863D;
+}
 div.section.projects div.body.gs img {
   margin-bottom: 100px;
   border: 2px solid #eeeeee;
+}
+div.section.projects div.body.gs h1,
+div.section.projects div.body.gs h2 {
+  color: #FFF;
 }
 div.skills .logo {
   margin-top: 64px;
