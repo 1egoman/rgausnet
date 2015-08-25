@@ -13,8 +13,11 @@
    height="320"
    id="svg3327"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="que-hero.svg">
+   inkscape:version="0.91 r"
+   sodipodi:docname="que-hero.svg"
+   inkscape:export-filename="/home/ryan/w/1egoman/rgausnet/img/que-hero.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs3329" />
   <sodipodi:namedview
@@ -24,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="1341.4576"
-     inkscape:cy="39.403775"
+     inkscape:zoom="1.4"
+     inkscape:cx="347.87061"
+     inkscape:cy="148.69351"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -35,7 +38,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1000"
+     inkscape:window-height="1004"
      inkscape:window-x="1920"
      inkscape:window-y="25"
      inkscape:window-maximized="1" />
@@ -57,84 +60,76 @@
      id="layer1"
      transform="translate(-79.970924,-493.31891)">
     <rect
-       style="fill:none;stroke:#ececec;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3234"
-       width="797.92267"
-       height="448"
-       x="80.975853"
-       y="563.57147" />
+       y="-831.46021"
+       x="80.046127"
+       height="291.8114"
+       width="799.85321"
+       id="rect4152"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       transform="scale(1,-1)" />
     <rect
        style="fill:#333333;fill-opacity:1;stroke:none"
        id="rect3236"
        width="799.85321"
        height="26.760021"
        x="80.046127"
-       y="537.88879" />
+       y="512.88879" />
     <rect
-       ry="7.0710678"
-       rx="7.0710678"
-       style="fill:#ececec;fill-opacity:1;stroke:none"
+       style="fill:none;stroke:#ececec;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3234"
+       width="797.92267"
+       height="448"
+       x="80.975853"
+       y="498.57147" />
+    <rect
+       ry="0"
+       rx="0"
+       style="fill:#bebebe;fill-opacity:1;stroke:none"
        id="rect3238"
        width="799.94189"
-       height="44.431732"
+       height="19.967445"
        x="80.029022"
        y="493.45871" />
-    <rect
-       y="518.1991"
-       x="79.970924"
-       height="19.691338"
-       width="799.94189"
-       id="rect3240"
-       style="fill:#ececec;fill-opacity:1;stroke:none" />
-    <path
-       transform="matrix(0.83327283,0,0,0.83305253,-104.93802,162.63465)"
-       d="m 253.21428,423.79074 a 8.5714283,8.5714283 0 1 1 -17.14286,0 8.5714283,8.5714283 0 1 1 17.14286,0 z"
-       sodipodi:ry="8.5714283"
-       sodipodi:rx="8.5714283"
-       sodipodi:cy="423.79074"
-       sodipodi:cx="244.64285"
+    <ellipse
        id="path3242"
        style="fill:#e23747;fill-opacity:1;stroke:none"
-       sodipodi:type="arc" />
-    <path
-       sodipodi:type="arc"
+       cx="92.572128"
+       cy="504.46796"
+       rx="4.237916"
+       ry="4.2367954" />
+    <ellipse
        style="fill:#ffbd00;fill-opacity:1;stroke:none"
        id="path3244"
-       sodipodi:cx="244.64285"
-       sodipodi:cy="423.79074"
-       sodipodi:rx="8.5714283"
-       sodipodi:ry="8.5714283"
-       d="m 253.21428,423.79074 a 8.5714283,8.5714283 0 1 1 -17.14286,0 8.5714283,8.5714283 0 1 1 17.14286,0 z"
-       transform="matrix(0.83327283,0,0,0.83305253,-84.939477,162.63465)" />
-    <path
-       transform="matrix(0.83327283,0,0,0.83305253,-64.583855,162.63465)"
-       d="m 253.21428,423.79074 a 8.5714283,8.5714283 0 1 1 -17.14286,0 8.5714283,8.5714283 0 1 1 17.14286,0 z"
-       sodipodi:ry="8.5714283"
-       sodipodi:rx="8.5714283"
-       sodipodi:cy="423.79074"
-       sodipodi:cx="244.64285"
+       cx="102.97422"
+       cy="504.34167"
+       rx="3.859376"
+       ry="3.8583555" />
+    <ellipse
        id="path3246"
        style="fill:#7cd31e;fill-opacity:1;stroke:none"
-       sodipodi:type="arc" />
+       cx="113.85967"
+       cy="504.34167"
+       rx="4.3649864"
+       ry="4.3638325" />
     <g
-       transform="matrix(0.99992737,0,0,0.999663,-63.297249,296.34056)"
+       transform="matrix(0.99992737,0,0,0.999663,-63.297249,271.34056)"
        id="g3248">
       <g
          transform="matrix(1.1373873,0,0,0.87920797,-16.399876,-77.209893)"
-         style="font-size:147.9329071px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none;font-family:Futura;-inkscape-font-specification:Futura Medium"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:147.9329071px;line-height:125%;font-family:Futura;-inkscape-font-specification:'Futura Medium';letter-spacing:0px;word-spacing:0px;fill:#ff5555;fill-opacity:1;stroke:none"
          id="g3250" />
       <text
          sodipodi:linespacing="125%"
          id="text3252"
          y="412.48965"
          x="470.03647"
-         style="font-size:111.48277283px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#41aacd;fill-opacity:1;stroke:none;font-family:Futura;-inkscape-font-specification:Futura Medium"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:111.48277283px;line-height:125%;font-family:Futura;-inkscape-font-specification:'Futura Medium';letter-spacing:0px;word-spacing:0px;fill:#41aacd;fill-opacity:1;stroke:none"
          xml:space="preserve"><tspan
            y="412.48965"
            x="470.03647"
            id="tspan3254"
            sodipodi:role="line"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#41aacd;fill-opacity:1;font-family:Arvo;-inkscape-font-specification:Arvo">O</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arvo;-inkscape-font-specification:Arvo;fill:#41aacd;fill-opacity:1">O</tspan></text>
       <rect
          style="opacity:0.6;fill:#ff0032;fill-opacity:1;stroke:none"
          id="rect3256"
@@ -146,7 +141,7 @@
          rx="0"
          transform="matrix(1,0,0.5,0.8660254,0,0)" />
       <g
-         style="font-size:65.04891968px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;font-family:Futura;-inkscape-font-specification:Futura Medium"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:65.04891968px;line-height:125%;font-family:Futura;-inkscape-font-specification:'Futura Medium';letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none"
          id="g3258"
          transform="matrix(0.85713918,0,0,0.85713918,59.130912,-9.076679)">
         <path
@@ -160,10 +155,10 @@
       </g>
     </g>
     <g
-       transform="matrix(0.99992737,0,0,0.999663,-33.745995,379.8838)"
+       transform="matrix(0.99992737,0,0,0.999663,-33.745995,354.8838)"
        id="g3264">
       <rect
-         style="fill:#ffffff;fill-opacity:1;stroke:#ececec;stroke-width:2.00040984;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ececec;stroke-width:2.00040984;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect3266"
          width="402.36606"
          height="28.815166"
@@ -182,7 +177,7 @@
          style="fill:#ececec;fill-opacity:1;stroke:none" />
       <g
          id="text3270"
-         style="font-size:21.68901062px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none;font-family:Asap;-inkscape-font-specification:Asap"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.68901062px;line-height:125%;font-family:Asap;-inkscape-font-specification:Asap;letter-spacing:0px;word-spacing:0px;fill:#4d4d4d;fill-opacity:1;stroke:none"
          transform="matrix(0.75726006,0,0,1.3205503,0,2.084142)">
         <path
            inkscape:connector-curvature="0"
