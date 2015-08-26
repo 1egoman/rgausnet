@@ -425,7 +425,7 @@ div.skills {
 // We'll scale back the page to be just textual.
 $print-font-base: 14px;
 @media print {
-  img { display: none;  }
+  img { display: none !important;  }
   a[href]:after { content: none; }
 
   // get rid of execc spacing in the start of each section
@@ -502,7 +502,6 @@ $print-font-base: 14px;
     padding: 0px !important;
     padding-bottom: 30px !important;
     margin: 0px !important;
-    .logo { display: none; }
   }
 
 }

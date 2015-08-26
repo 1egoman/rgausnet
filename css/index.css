@@ -6155,7 +6155,7 @@ div.skills .skill-list ul {
 
 @media print {
   img {
-    display: none; }
+    display: none !important; }
   a[href]:after {
     content: none; }
   div.section {
@@ -6203,6 +6203,4 @@ div.skills .skill-list ul {
   div.section.projects div.body {
     padding: 0px !important;
     padding-bottom: 30px !important;
-    margin: 0px !important; }
-    div.section.projects div.body .logo {
-      display: none; } }
+    margin: 0px !important; } }
