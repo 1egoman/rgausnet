@@ -6073,12 +6073,16 @@ div.skills .skill-list ul {
 
 .edu-list {
   font-size: 28px; }
-  .edu-list ul {
+  .edu-list > ul {
     list-style-type: none;
     padding-left: 0px; }
-    .edu-list ul ul {
+    .edu-list > ul > li {
+      padding-bottom: 10px; }
+    .edu-list > ul ul {
+      list-style-type: none;
+      padding-left: 0px;
       text-align: left;
-      font-size: 21px; }
+      font-size: 16.8px; }
 
 .work-list ul {
   padding-left: 0px;

@@ -307,13 +307,17 @@ div.skills {
 // noteworthy classes, programs, and the such...
 .edu-list {
   font-size: $font-size-base * 2;
-  ul {
+  & > ul {
     list-style-type: none;
     padding-left: 0px;
 
+    & > li { padding-bottom: 10px; }
+
     ul {
+      list-style-type: none;
+      padding-left: 0px;
       text-align: left;
-      font-size: $font-size-base * 1.5;
+      font-size: $font-size-base * 1.2;
     }
   }
 }
