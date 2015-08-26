@@ -5894,7 +5894,9 @@ div.one {
   height: 100%; }
   div.one .row.hero .logo img {
     width: 100%;
-    margin-top: 40px; }
+    max-width: 350px;
+    margin: 40px auto 0px auto;
+    display: block; }
   div.one .row.subtitle div.inner {
     position: relative;
     min-height: 1px;

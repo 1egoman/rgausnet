@@ -34,7 +34,10 @@ div.one {
   // image row
   .row.hero .logo img {
     width: 100%;
-    margin-top: 40px;
+    max-width: 350px;
+    
+    margin: 40px auto 0px auto;
+    display: block;
   }
 
   .row.subtitle {
