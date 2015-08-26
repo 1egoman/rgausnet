@@ -72,6 +72,7 @@ div.one {
           }
         }
       }
+      div.social-print ul { display: none; }
 
       // "My Name is Ryan Gaus"
       h1 {
@@ -443,6 +444,16 @@ $print-font-base: 14px;
 
   // get rid of social media div
   div.social ul { display: none;  }
+  div.social-print ul {
+    display: block !important;
+    list-style-type: none;
+    margin-top: 10px;
+
+    li {
+      display: inline;
+      padding: 10px;
+    }
+  }
 
   // "Languages I use" - align left and apply margin (and hide progressbars)
   div.skills .skill-list ul {

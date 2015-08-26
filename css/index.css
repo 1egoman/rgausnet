@@ -5931,6 +5931,8 @@ div.one {
         @media (min-width: 992px) {
           div.one .row.subtitle div.inner div.social ul li img {
             width: 64px; } }
+    div.one .row.subtitle div.inner div.social-print ul {
+      display: none; }
     div.one .row.subtitle div.inner h1 {
       font-size: 35px;
       letter-spacing: 0.05em;
@@ -6167,6 +6169,13 @@ div.skills .skill-list ul {
     font-size: 19.6px; }
   div.social ul {
     display: none; }
+  div.social-print ul {
+    display: block !important;
+    list-style-type: none;
+    margin-top: 10px; }
+    div.social-print ul li {
+      display: inline;
+      padding: 10px; }
   div.skills .skill-list ul {
     margin-top: 0px; }
     div.skills .skill-list ul li {
