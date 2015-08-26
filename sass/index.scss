@@ -13,8 +13,11 @@
 // Colors
 $logo-green: #71C837;
 
-// 1st page
+// About page
+// this is the section with my big "My Name is Ryan Gaus" text and social media
+// stuff. Also, my nice picture is in here!
 div.one {
+  @extend .container-fluid;
   height: 100%;
 
   // image row
@@ -36,12 +39,12 @@ div.one {
 
       margin-top: 20px;
 
+      // My social media icons.
+      // These are under the description.
       div.social {
-        // margin-left: 50%; float: left;
         ul {
           list-style-type: none;
           padding: 20px;
-          // margin-left: -50%; float: left;
           li {
             display: inline;
             img {
@@ -56,24 +59,25 @@ div.one {
         }
       }
 
+      // "My Name is Ryan Gaus"
       h1 {
         font-size: $font-size-base * 2.5;
         letter-spacing: 0.05em;
         font-weight: normal;
         text-align: center;
-
         margin-bottom: 40px;
       }
 
+      // The about me description blurb
       h2 {
         margin-top: -12px;
         font-size: $font-size-base * 1.2;
         color: $gray-light;
-
         line-height: $line-height-base * 0.95;
         text-align: center;
       }
 
+      // responsive crap to make everything look good on every layout.
       @media (min-width: $screen-md) {
         h1 {
           font-size: $font-size-base * 4.8;
@@ -83,15 +87,13 @@ div.one {
         }
       }
 
-
     }
   }
-
-
 }
 
 // a container
-div.container-fluid.section {
+div.section {
+  @extend .container-fluid;
   margin-top: 7.5%;
   padding: 0px;
 
@@ -113,7 +115,8 @@ div.container-fluid.section {
   }
 }
 
-// projects
+// My Projects
+// All of the projects I'm proud of. At least the recent ones that I've made public.
 div.section.projects {
 
   // projects body
@@ -172,6 +175,7 @@ div.section.projects {
 
   }
 
+  // Cena: The grocery list app v1
   div.body.cena {
     padding-top: 50px;
     padding-bottom: 32px;
@@ -190,6 +194,7 @@ div.section.projects {
     }
   }
 
+  // Que: My internet-of-things controller that I haven't worked on in a while.
   div.body.que {
     padding-top: 0px;
     padding-bottom: 32px;
@@ -208,7 +213,7 @@ div.section.projects {
     }
   }
 
-  // nancy sews
+  // Nancy Sews: My mommy's website!
   div.body.nancysews {
     background: #6CD0BB;
 
@@ -222,7 +227,7 @@ div.section.projects {
     }
   }
 
-  // girl scouts
+  // Girl Scouts: The girl scout service unit's website.
   div.body.gs {
     background: #C7863D;
 
@@ -240,7 +245,7 @@ div.section.projects {
 
 }
 
-// skills on resume
+// Skills on my resume
 div.skills {
 
   .logo {
@@ -287,6 +292,8 @@ div.skills {
   }
 }
 
+// all my education-y stuff
+// noteworthy classes, programs, and the such...
 .edu-list {
   font-size: $font-size-base * 2;
   ul {
@@ -300,6 +307,8 @@ div.skills {
   }
 }
 
+// My Work experience
+// Lono, Freelancer, Minecraft Open Network
 .work-list {
   ul {
     padding-left: 0px;
@@ -332,7 +341,7 @@ div.skills {
 }
 
 
-// nullify ribbon on phones
+// On phones/other small things, flatten the ribbon's "curls" on the end.
 .ribbon {
   font-size: 24px !important;
 
@@ -343,7 +352,7 @@ div.skills {
   padding: 1em 2em; /* Adjust to suit */
 }
 
-// ribbon
+// The ribbon, for reals this time
 @media (min-width: $screen-md) {
   .ribbon {
     font-size: 24px !important;
