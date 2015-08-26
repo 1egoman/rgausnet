@@ -13,6 +13,17 @@
 // Colors
 $logo-green: #71C837;
 
+// Header sections for each group. Only apply these if we are of @media screen
+// though.
+@media screen {
+  .logo {
+    @extend .col-md-4;
+    @extend .col-md-offset-4;
+    @extend .col-xs-10;
+    @extend .col-xs-offset-1;
+  }
+}
+
 // About page
 // this is the section with my big "My Name is Ryan Gaus" text and social media
 // stuff. Also, my nice picture is in here!
@@ -404,4 +415,90 @@ div.skills {
     right: 0;
     border-width: 1em 1em 0 0;
   }
+}
+
+// Printing Styles
+// We'll scale back the page to be just textual.
+$print-font-base: 14px;
+@media print {
+  img { display: none;  }
+  a[href]:after { content: none; }
+
+  // get rid of execc spacing in the start of each section
+  div.section { margin-top: 0px;  }
+
+  // align headers left
+  div.section.projects div.body, div.section div.header {
+    h1, h2, h3 {
+      text-align: left;
+      margin-left: 30px;
+      margin-bottom: 6px;
+      font-size: $print-font-base * 1.4;
+    }
+  }
+
+  // get rid of social media div
+  div.social ul { display: none;  }
+
+  // "Languages I use" - align left and apply margin (and hide progressbars)
+  div.skills .skill-list ul {
+    margin-top: 0px;
+    li {
+      display: inline-block;
+      .name {
+        font-size: $print-font-base;
+        margin-left: 30px;
+        text-align: left;
+      }
+      .progress { display: none;  }
+    }
+  }
+
+  // fix ribbon padding whch would keep them from matching other headers
+  .ribbon { padding: 0px; }
+  div.header.hide-me { display: none;  } // hide "My Resume" header
+
+  // Spread out "My Name is Ryan Gaus"
+  div.one .row.subtitle div.inner {
+    margin-left: 0px;
+    width: auto;
+  }
+
+  // Education List - decrease font size
+  .edu-list, .edu-list ul ul {
+    font-size: $print-font-base;
+    margin-left: 30px;
+    margin-bottom: 14px;
+  }
+
+  // For each item in my "work list", scale it down and make it more
+  // printer-friendly.
+  .work-list ul {
+    margin-top: 0px;
+    padding-bottom: 30px;
+    li {
+      .name {
+        font-size: $print-font-base*1.25;
+        text-align: left;
+        margin-left: 30px;
+
+        .date {
+          font-size: $print-font-base;
+        }
+      }
+      .desc {
+        margin-left: 30px;
+        font-size: $print-font-base;
+      }
+    }
+  }
+
+  // For each project I have listed
+  div.section.projects div.body {
+    padding: 0px !important;
+    padding-bottom: 30px !important;
+    margin: 0px !important;
+    .logo { display: none; }
+  }
+
 }

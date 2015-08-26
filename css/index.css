@@ -6125,3 +6125,57 @@ div.skills .skill-list ul {
   .ribbon .ribbon-content:after {
     right: 0;
     border-width: 1em 1em 0 0; } }
+
+@media print {
+  img {
+    display: none; }
+  a[href]:after {
+    content: none; }
+  div.section {
+    margin-top: 0px; }
+  div.section.projects div.body h1, div.section.projects div.body h2, div.section.projects div.body h3, div.section div.header h1, div.section div.header h2, div.section div.header h3 {
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 6px;
+    font-size: 19.6px; }
+  div.social ul {
+    display: none; }
+  div.skills .skill-list ul {
+    margin-top: 0px; }
+    div.skills .skill-list ul li {
+      display: inline-block; }
+      div.skills .skill-list ul li .name {
+        font-size: 14px;
+        margin-left: 30px;
+        text-align: left; }
+      div.skills .skill-list ul li .progress {
+        display: none; }
+  .ribbon {
+    padding: 0px; }
+  div.header.hide-me {
+    display: none; }
+  div.one .row.subtitle div.inner {
+    margin-left: 0px;
+    width: auto; }
+  .edu-list, .edu-list ul ul {
+    font-size: 14px;
+    margin-left: 30px;
+    margin-bottom: 14px; }
+  .work-list ul {
+    margin-top: 0px;
+    padding-bottom: 30px; }
+    .work-list ul li .name {
+      font-size: 17.5px;
+      text-align: left;
+      margin-left: 30px; }
+      .work-list ul li .name .date {
+        font-size: 14px; }
+    .work-list ul li .desc {
+      margin-left: 30px;
+      font-size: 14px; }
+  div.section.projects div.body {
+    padding: 0px !important;
+    padding-bottom: 30px !important;
+    margin: 0px !important; }
+    div.section.projects div.body .logo {
+      display: none; } }
