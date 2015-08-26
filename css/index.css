@@ -5923,7 +5923,7 @@ div.one {
         margin-left: 25%; } }
     div.one .row.subtitle div.inner div.social ul {
       list-style-type: none;
-      padding: 20px; }
+      padding: 40px 20px 0px 20px; }
       div.one .row.subtitle div.inner div.social ul li {
         display: inline; }
         div.one .row.subtitle div.inner div.social ul li img {
