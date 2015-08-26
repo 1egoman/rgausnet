@@ -5869,6 +5869,27 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+@media screen {
+  .logo {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    float: left;
+    width: 83.3333333333%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 8.3333333333%; } }
+  @media screen and (min-width: 992px) {
+    .logo {
+      float: left;
+      width: 33.3333333333%; } }
+  @media screen and (min-width: 992px) {
+    .logo {
+      margin-left: 33.3333333333%; } }
+
 div.one {
   height: 100%; }
   div.one .row.hero .logo img {
@@ -6004,21 +6025,21 @@ div.section.projects div.body.que {
     color: #FFF;
     line-height: 1.4em; }
 
+div.section.projects div.body.gs, div.section.projects div.body.nancysews {
+  background: #C7863D; }
+  div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
+    margin-bottom: 100px;
+    border: 2px solid #eeeeee; }
+  div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
+    color: #FFF; }
+    div.section.projects div.body.gs h2 span, div.section.projects div.body.nancysews h2 span {
+      padding-top: 4px;
+      display: block;
+      font-size: 85%;
+      line-height: 1.4em; }
+
 div.section.projects div.body.nancysews {
   background: #6CD0BB; }
-  div.section.projects div.body.nancysews img {
-    margin-bottom: 100px;
-    border: 2px solid #eeeeee; }
-  div.section.projects div.body.nancysews h1, div.section.projects div.body.nancysews h2 {
-    color: #FFF; }
-
-div.section.projects div.body.gs {
-  background: #C7863D; }
-  div.section.projects div.body.gs img {
-    margin-bottom: 100px;
-    border: 2px solid #eeeeee; }
-  div.section.projects div.body.gs h1, div.section.projects div.body.gs h2 {
-    color: #FFF; }
 
 div.skills .logo {
   margin-top: 64px; }

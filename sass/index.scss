@@ -14,13 +14,13 @@
 $logo-green: #71C837;
 
 // Header sections for each group. Only apply these if we are of @media screen
-// though.
+// though. Basically, these correctly place the title in the page flow.
 @media screen {
   .logo {
-    @extend .col-md-4;
-    @extend .col-md-offset-4;
-    @extend .col-xs-10;
-    @extend .col-xs-offset-1;
+    @include make-md-column(4);
+    @include make-md-column-offset(4);
+    @include make-xs-column(10);
+    @include make-xs-column-offset(1);
   }
 }
 
@@ -224,22 +224,8 @@ div.section.projects {
     }
   }
 
-  // Nancy Sews: My mommy's website!
-  div.body.nancysews {
-    background: #6CD0BB;
-
-    img {
-      margin-bottom: 100px;
-      border: 2px solid $gray-lighter;
-    }
-
-    h1, h2 {
-      color: #FFF;
-    }
-  }
-
   // Girl Scouts: The girl scout service unit's website.
-  div.body.gs {
+  div.body.gs, div.body.nancysews {
     background: #C7863D;
 
     img {
@@ -248,10 +234,21 @@ div.section.projects {
     }
 
 
-    h1, h2 {
+    h2 {
       color: #FFF;
+      span {
+        padding-top: 4px;
+        display: block;
+        font-size: 85%;
+        line-height: 1.4em;
+      }
     }
 
+  }
+
+  // Nancy Sews: My mommy's website!
+  div.body.nancysews {
+    background: #6CD0BB;
   }
 
 }
