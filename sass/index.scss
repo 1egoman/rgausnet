@@ -190,11 +190,24 @@ div.section.projects {
 
   }
 
+
+  // I'm an eagle scout!
+  div.body.eagle {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    margin-top: 64px;
+    background: #DD636B;
+
+    h2, small {
+      color: #FFF;
+      line-height: 1.4em;
+    }
+  }
+
   // Cena: The grocery list app v1
   div.body.cena {
     padding-top: 50px;
     padding-bottom: 32px;
-    margin-top: 64px;
     background: #8DC54D;
 
     .logo img {

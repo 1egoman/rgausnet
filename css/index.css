@@ -6001,10 +6001,18 @@ div.section.projects div.body {
     div.section.projects div.body h2 small a {
       font-size: 25.2px; } }
 
-div.section.projects div.body.cena {
+div.section.projects div.body.eagle {
   padding-top: 50px;
   padding-bottom: 32px;
   margin-top: 64px;
+  background: #DD636B; }
+  div.section.projects div.body.eagle h2, div.section.projects div.body.eagle small {
+    color: #FFF;
+    line-height: 1.4em; }
+
+div.section.projects div.body.cena {
+  padding-top: 50px;
+  padding-bottom: 32px;
   background: #8DC54D; }
   div.section.projects div.body.cena .logo img {
     width: 64px;
