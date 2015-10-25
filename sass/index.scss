@@ -134,10 +134,48 @@ div.section {
 // All of the projects I'm proud of. At least the recent ones that I've made public.
 div.section.projects {
 
+  // align projects and achevements to left or right
+  @media (min-width: $screen-md-min) {
+    &.timeline div.body {
+      width: 45%;
+      float: left;
+
+      margin-top: 64px;
+
+      &.right {
+        float: right;
+      }
+    }
+    &.timeline {
+
+      // make the "line" down the center of the timeline
+      &::before {
+        content: ".";
+        color: transparent;
+
+        display: block;
+        width: 10px;
+        height: 180%;
+        background: $logo-green;
+
+        position: absolute;
+        left: 50%;
+        margin-left: -5px;
+      }
+    }
+  }
+
   // projects body
   div.body {
     background: $body-bg;
     padding-top: 50px;
+
+    // the inner container of each of the projects on the timeline
+    .timeline-card {
+      @include make-md-column(10);
+      @include make-md-column-offset(1);
+      @include make-xs-column(12);
+    }
 
     .logo img {
       width: 96px;
@@ -166,7 +204,7 @@ div.section.projects {
       color: $gray-light;
       text-align: center;
       margin-top: -12px;
-      font-size: $font-size-base * 1.2;
+      font-size: $font-size-base * 1.8;
       small a {
         font-size: $font-size-base * 1.2;
         text-align: center;
@@ -200,7 +238,6 @@ div.section.projects {
 
     h2, small {
       color: #FFF;
-      line-height: 1.4em;
     }
   }
 
@@ -256,7 +293,7 @@ div.section.projects {
       span {
         padding-top: 4px;
         display: block;
-        font-size: 85%;
+        font-size: 65%;
         line-height: 1.4em;
       }
     }
