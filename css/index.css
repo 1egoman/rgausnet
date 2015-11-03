@@ -5745,8 +5745,9 @@ div.section {
     width: 45%;
     float: left;
     margin-top: 64px; }
-    div.section.projects.timeline div.body.right {
-      float: right; }
+    div.section.projects.timeline div.body:nth-child(even) {
+      float: right;
+      min-height: 300px; }
   div.section.projects.timeline::before {
     content: ".";
     color: transparent;
@@ -5803,7 +5804,7 @@ div.section.projects div.body {
     div.section.projects div.body h2 small a {
       font-size: 16.8px;
       text-align: center; }
-  div.section.projects div.body small a {
+  div.section.projects div.body a {
     color: #FFF; }
   @media (min-width: 992px) {
     div.section.projects div.body h1 {
@@ -5812,6 +5813,16 @@ div.section.projects div.body {
       font-size: 39.2px; }
     div.section.projects div.body h2 small a {
       font-size: 25.2px; } }
+
+div.section.projects div.body.candycrowd {
+  padding-top: 50px;
+  padding-bottom: 32px;
+  margin-top: 64px;
+  background: #2ab573; }
+  div.section.projects div.body.candycrowd h2, div.section.projects div.body.candycrowd p {
+    color: #FFF; }
+  div.section.projects div.body.candycrowd p {
+    font-size: 19.6px; }
 
 div.section.projects div.body.eagle {
   padding-top: 50px;
