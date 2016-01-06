@@ -5717,15 +5717,19 @@ div.one {
       margin-bottom: 40px; }
     div.one .row.subtitle div.inner h2 {
       margin-top: -12px;
-      font-size: 16.8px;
+      font-size: 14px;
       color: #777777;
       line-height: 1.3571428575;
       text-align: center; }
+      div.one .row.subtitle div.inner h2 img.emoji {
+        height: 14px; }
     @media (min-width: 992px) {
       div.one .row.subtitle div.inner h1 {
         font-size: 67.2px; }
       div.one .row.subtitle div.inner h2 {
-        font-size: 39.2px; } }
+        font-size: 30.8px; }
+        div.one .row.subtitle div.inner h2 img.emoji {
+          height: 30.8px; } }
 
 div.section {
   margin-top: 7.5%;

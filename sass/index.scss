@@ -86,10 +86,13 @@ div.one {
       // The about me description blurb
       h2 {
         margin-top: -12px;
-        font-size: $font-size-base * 1.2;
+        font-size: $font-size-base * 1;
         color: $gray-light;
         line-height: $line-height-base * 0.95;
         text-align: center;
+
+        // emoji images
+        img.emoji { height: $font-size-base * 1; }
       }
 
       // responsive crap to make everything look good on every layout.
@@ -98,8 +101,11 @@ div.one {
           font-size: $font-size-base * 4.8;
         }
         h2 {
-          font-size: $font-size-base * 2.8;
-        }
+          font-size: $font-size-base * 2.2;
+
+          // emoji images
+          img.emoji { height: $font-size-base * 2.2; }
+          }
       }
 
     }
