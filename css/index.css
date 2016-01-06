@@ -5635,10 +5635,10 @@ button.close {
     .visible-print-inline {
       display: inline !important; } }
 
-.visible-print-inline-block {
+.visible-print-inline-block, div.one .row.subtitle div.inner h2 img.emoji {
   display: none !important; }
   @media print {
-    .visible-print-inline-block {
+    .visible-print-inline-block, div.one .row.subtitle div.inner h2 img.emoji {
       display: inline-block !important; } }
 
 @media print {
@@ -5722,7 +5722,8 @@ div.one {
       line-height: 1.3571428575;
       text-align: center; }
       div.one .row.subtitle div.inner h2 img.emoji {
-        height: 14px; }
+        height: 14px;
+        display: inline-block !important; }
     @media (min-width: 992px) {
       div.one .row.subtitle div.inner h1 {
         font-size: 67.2px; }

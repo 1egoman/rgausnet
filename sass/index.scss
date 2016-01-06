@@ -92,7 +92,11 @@ div.one {
         text-align: center;
 
         // emoji images
-        img.emoji { height: $font-size-base * 1; }
+        img.emoji {
+          height: $font-size-base * 1;
+          @extend .visible-print-inline-block;
+          display: inline-block !important;
+        }
       }
 
       // responsive crap to make everything look good on every layout.
