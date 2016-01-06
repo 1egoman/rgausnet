@@ -250,6 +250,12 @@ div.section.projects {
 
     h2, p { color: #FFF; }
     p { font-size: $font-size-base * 1.4; }
+
+    @media print {
+      p {
+        font-size: $font-size-base;
+      }
+    }
   }
 
   // I'm an eagle scout!

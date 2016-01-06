@@ -5828,6 +5828,9 @@ div.section.projects div.body.candycrowd {
     color: #FFF; }
   div.section.projects div.body.candycrowd p {
     font-size: 19.6px; }
+  @media print {
+    div.section.projects div.body.candycrowd p {
+      font-size: 14px; } }
 
 div.section.projects div.body.eagle {
   padding-top: 50px;
