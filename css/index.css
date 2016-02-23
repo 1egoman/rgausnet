@@ -5745,143 +5745,197 @@ div.section {
       color: #FFF;
       margin-top: -36px; }
 
-@media (min-width: 992px) {
-  div.section.projects.timeline div.body {
-    width: 45%;
-    float: left;
-    margin-top: 64px; }
-    div.section.projects.timeline div.body:nth-child(even) {
-      float: right;
-      min-height: 300px; }
-  div.section.projects.timeline::before {
-    content: ".";
-    color: transparent;
-    display: block;
-    width: 10px;
-    height: 180%;
-    background: #71C837;
-    position: absolute;
-    left: 50%;
-    margin-left: -5px; } }
-
-div.section.projects div.body {
-  background: #fff;
-  padding-top: 50px; }
-  div.section.projects div.body .timeline-card {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects div.body .timeline-card {
-        float: left;
-        width: 83.3333333333%; } }
-    @media (min-width: 992px) {
-      div.section.projects div.body .timeline-card {
-        margin-left: 8.3333333333%; } }
-  div.section.projects div.body .logo img {
-    width: 96px;
-    margin: 36px 0px; }
-  div.section.projects div.body .hero img {
-    width: 100%;
-    margin-top: 24px; }
-  div.section.projects div.body h1 {
-    color: #777777;
-    text-align: center;
-    margin-top: -12px;
-    margin-bottom: 24px;
-    font-weight: bold;
-    font-size: 25.2px; }
-    div.section.projects div.body h1 small a {
-      font-size: 16.8px;
-      text-align: center; }
-  div.section.projects div.body h2 {
-    color: #777777;
-    text-align: center;
-    margin-top: -12px;
-    font-size: 25.2px; }
-    div.section.projects div.body h2 small a {
-      font-size: 16.8px;
-      text-align: center; }
-  div.section.projects div.body a {
-    color: #FFF; }
+div.section.projects {
+  position: relative; }
+  div.section.projects .timeline-bulb {
+    display: none; }
   @media (min-width: 992px) {
-    div.section.projects div.body h1 {
-      font-size: 50.4px; }
-    div.section.projects div.body h2 {
-      font-size: 39.2px; }
-    div.section.projects div.body h2 small a {
-      font-size: 25.2px; } }
-
-div.section.projects div.body.candycrowd {
-  padding-top: 50px;
-  padding-bottom: 32px;
-  margin-top: 64px;
-  background: #2ab573; }
-  div.section.projects div.body.candycrowd h2, div.section.projects div.body.candycrowd p {
-    color: #FFF; }
-  div.section.projects div.body.candycrowd p {
-    font-size: 19.6px; }
-  @media print {
-    div.section.projects div.body.candycrowd p {
-      font-size: 14px; } }
-
-div.section.projects div.body.eagle {
-  padding-top: 50px;
-  padding-bottom: 32px;
-  margin-top: 64px;
-  background: #DD636B; }
-  div.section.projects div.body.eagle h2, div.section.projects div.body.eagle small {
-    color: #FFF; }
-
-div.section.projects div.body.cena {
-  padding-top: 50px;
-  padding-bottom: 32px;
-  background: #8DC54D; }
-  div.section.projects div.body.cena .logo img {
-    width: 64px;
-    display: block;
-    margin: 0px auto 36px auto; }
-  div.section.projects div.body.cena h2 {
-    color: #FFF;
-    line-height: 1.4em; }
-
-div.section.projects div.body.que {
-  padding-top: 0px;
-  padding-bottom: 32px;
-  background: #ff8ca3; }
-  div.section.projects div.body.que .logo img {
-    width: 96px;
-    display: block;
-    margin: 36px auto; }
-    @media (min-width: 992px) {
-      div.section.projects div.body.que .logo img {
-        width: 128px; } }
-  div.section.projects div.body.que h2 {
-    color: #FFF;
-    line-height: 1.4em; }
-
-div.section.projects div.body.gs, div.section.projects div.body.nancysews {
-  background: #C7863D; }
-  div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
-    margin-bottom: 100px;
-    border: 2px solid #eeeeee; }
-  div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
-    color: #FFF; }
-    div.section.projects div.body.gs h2 span, div.section.projects div.body.nancysews h2 span {
-      padding-top: 4px;
+    div.section.projects.timeline div.body {
+      width: 45%;
+      float: left;
+      margin-top: 64px; }
+      div.section.projects.timeline div.body:nth-child(even) {
+        float: right;
+        min-height: 300px; }
+    div.section.projects.timeline::before {
+      content: ".";
+      color: transparent;
       display: block;
-      font-size: 65%;
+      width: 10px;
+      height: 110%;
+      background: #71C837;
+      position: absolute;
+      left: 50%;
+      margin-left: -5px; }
+    div.section.projects .timeline-bulb {
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      background: #fff;
+      border: 5px solid #71C837;
+      color: #fff;
+      width: 128px;
+      height: 100px;
+      font-size: 28px;
+      text-align: center;
+      padding: 20px;
+      margin-left: -64px;
+      display: block; }
+      div.section.projects .timeline-bulb img {
+        width: 72px; } }
+  div.section.projects div.body {
+    background: #fff;
+    padding-top: 50px; }
+    div.section.projects div.body .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects div.body .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects div.body .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects div.body .logo img {
+      width: 96px;
+      margin: 36px 0px; }
+    div.section.projects div.body .hero img {
+      width: 100%;
+      margin-top: 24px; }
+    div.section.projects div.body h1 {
+      color: #777777;
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px; }
+      div.section.projects div.body h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -12px;
+      font-size: 25.2px; }
+      div.section.projects div.body h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body a {
+      color: #FFF;
+      font-weight: bold; }
+    @media (min-width: 992px) {
+      div.section.projects div.body h1 {
+        font-size: 50.4px; }
+      div.section.projects div.body h2 {
+        font-size: 39.2px; }
+      div.section.projects div.body h2 small a {
+        font-size: 25.2px; } }
+  div.section.projects div.body.ikeaify {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    margin-top: 64px;
+    background: #AAA; }
+    div.section.projects div.body.ikeaify h2, div.section.projects div.body.ikeaify p {
+      color: #FFF; }
+    div.section.projects div.body.ikeaify p {
+      font-size: 22.4px; }
+    @media print {
+      div.section.projects div.body.ikeaify p {
+        font-size: 14px; } }
+  div.section.projects div.body.waltz {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #FF8080; }
+    div.section.projects div.body.waltz h2, div.section.projects div.body.waltz p {
+      color: #FFF; }
+    div.section.projects div.body.waltz p {
+      font-size: 19.6px; }
+    div.section.projects div.body.waltz img {
+      height: 100px;
+      margin: 0px auto 20px auto;
+      display: block; }
+    @media print {
+      div.section.projects div.body.waltz p {
+        font-size: 14px; } }
+  div.section.projects div.body.sproutlines {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #7BA804; }
+    div.section.projects div.body.sproutlines h2, div.section.projects div.body.sproutlines p {
+      color: #FFF; }
+    div.section.projects div.body.sproutlines p {
+      font-size: 19.6px; }
+    @media print {
+      div.section.projects div.body.sproutlines p {
+        font-size: 14px; } }
+  div.section.projects div.body.candycrowd {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #2ab573; }
+    div.section.projects div.body.candycrowd h2, div.section.projects div.body.candycrowd p {
+      color: #FFF; }
+    div.section.projects div.body.candycrowd p {
+      font-size: 19.6px; }
+    div.section.projects div.body.candycrowd img {
+      height: 100px;
+      margin: 0px auto 20px auto;
+      display: block; }
+    @media print {
+      div.section.projects div.body.candycrowd p {
+        font-size: 14px; } }
+  div.section.projects div.body.eagle {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #DD636B; }
+    div.section.projects div.body.eagle h2, div.section.projects div.body.eagle small {
+      color: #FFF; }
+  div.section.projects div.body.cena {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #8DC54D; }
+    div.section.projects div.body.cena .logo img {
+      width: 64px;
+      display: block;
+      margin: 0px auto 36px auto; }
+    div.section.projects div.body.cena h2 {
+      color: #FFF;
       line-height: 1.4em; }
-
-div.section.projects div.body.nancysews {
-  background: #6CD0BB; }
+  div.section.projects div.body.que {
+    padding-top: 0px;
+    padding-bottom: 32px;
+    background: #ff8ca3; }
+    div.section.projects div.body.que .logo img {
+      width: 96px;
+      display: block;
+      margin: 36px auto; }
+      @media (min-width: 992px) {
+        div.section.projects div.body.que .logo img {
+          width: 128px; } }
+    div.section.projects div.body.que h2 {
+      color: #FFF;
+      line-height: 1.4em; }
+  div.section.projects div.body.gs, div.section.projects div.body.nancysews {
+    background: #C7863D; }
+    div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
+      margin-bottom: 100px;
+      border: 2px solid #eeeeee; }
+    div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
+      color: #FFF; }
+      div.section.projects div.body.gs h2 span, div.section.projects div.body.nancysews h2 span {
+        padding-top: 4px;
+        display: block;
+        font-size: 65%;
+        line-height: 1.4em; }
+  div.section.projects div.body.nancysews {
+    background: #6CD0BB; }
 
 div.skills .logo {
   margin-top: 64px; }

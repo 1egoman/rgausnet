@@ -143,6 +143,10 @@ div.section {
 // My Projects
 // All of the projects I'm proud of. At least the recent ones that I've made public.
 div.section.projects {
+  position: relative;
+
+  // hide timeline bulb on mobile (no timeline in the first place)
+  .timeline-bulb { display: none; }
 
   // align projects and achevements to left or right
   @media (min-width: $screen-md-min) {
@@ -158,7 +162,6 @@ div.section.projects {
       }
     }
     &.timeline {
-
       // make the "line" down the center of the timeline
       &::before {
         content: ".";
@@ -166,12 +169,33 @@ div.section.projects {
 
         display: block;
         width: 10px;
-        height: 180%;
+        height: 110%;
         background: $logo-green;
 
         position: absolute;
         left: 50%;
         margin-left: -5px;
+      }
+    }
+
+    // the "RG" logo at the bottom of the timeline that is outlined
+    .timeline-bulb {
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      background: $body-bg;
+      border: 5px solid $logo-green;
+      color: #fff;
+      width: 128px;
+      height: 100px;
+      font-size: 2 * $font-size-base;
+      text-align: center;
+      padding: 20px;
+      margin-left: -64px;
+      display: block;
+
+      img {
+        width: 72px;
       }
     }
   }
@@ -222,7 +246,10 @@ div.section.projects {
       }
     }
 
-    a { color: #FFF; }
+    a {
+      color: #FFF;
+      font-weight: bold;
+    }
 
     @media (min-width: $screen-md) {
       h1 {
@@ -235,21 +262,78 @@ div.section.projects {
         font-size: $font-size-base * 1.8;
       }
     }
-
-
   }
 
+  // Ikeaify
+  div.body.ikeaify {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    margin-top: 64px;
+    background: #AAA;
 
+    h2, p { color: #FFF; }
+    p { font-size: $font-size-base * 1.6; }
+
+    @media print {
+      p {
+        font-size: $font-size-base;
+      }
+    }
+  }
+
+  // Waltz
+  div.body.waltz {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #FF8080;
+
+    h2, p { color: #FFF; }
+    p { font-size: $font-size-base * 1.4; }
+
+    img {
+      height: 100px;
+      margin: 0px auto 20px auto;
+      display: block;
+    }
+
+    @media print {
+      p {
+        font-size: $font-size-base;
+      }
+    }
+  }
+
+  // Sproutlines
+  div.body.sproutlines {
+    padding-top: 50px;
+    padding-bottom: 32px;
+    background: #7BA804;
+
+    h2, p { color: #FFF; }
+    p { font-size: $font-size-base * 1.4; }
+
+    @media print {
+      p {
+        font-size: $font-size-base;
+      }
+    }
+  }
 
   // CandyCrowd
   div.body.candycrowd {
     padding-top: 50px;
     padding-bottom: 32px;
-    margin-top: 64px;
     background: #2ab573;
 
     h2, p { color: #FFF; }
     p { font-size: $font-size-base * 1.4; }
+
+    img {
+      height: 100px;
+      margin: 0px auto 20px auto;
+      display: block;
+    }
+
 
     @media print {
       p {
@@ -262,7 +346,6 @@ div.section.projects {
   div.body.eagle {
     padding-top: 50px;
     padding-bottom: 32px;
-    margin-top: 64px;
     background: #DD636B;
 
     h2, small {
