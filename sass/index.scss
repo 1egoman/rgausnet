@@ -24,6 +24,22 @@ $logo-green: #71C837;
   }
 }
 
+// a bulleted list that has colored bullets
+@mixin bullet-list($bullet: 2em, $font: 100%) {
+  li {
+    padding: 0px;
+    list-style-type: none;
+    line-height: 1.7em;
+    font-size: $font;
+    &:before {
+      content: "• ";
+      color: $logo-green;
+      font-size: $bullet;
+      vertical-align: middle;
+    }
+  }
+}
+
 // About page
 // this is the section with my big "My Name is Ryan Gaus" text and social media
 // stuff. Also, my nice picture is in here!
@@ -420,7 +436,6 @@ div.section.projects {
 
 // Skills on my resume
 div.skills {
-
   .logo {
     margin-top: 64px;
   }
@@ -429,39 +444,25 @@ div.skills {
     margin-top: 16px;
   }
 
-  .skill-list {
-    ul {
-      padding-left: 0px;
-      margin-top: 20px;
+  .skill-list > ul {
+    padding-left: 0px;
+    list-style-type: none;
+    @include bullet-list;
 
-      li {
-        list-style-type: none;
-        padding: 12px 0px;
+    & > li {
+      padding: 0.5em;
+      margin: 0.2em;
 
-        .name {
-          font-size: $font-size-base * 2;
-          padding-bottom: 10px;
-          text-align: center;
-        }
+      font-size: 2em;
+      text-align: left;
 
-        .progress {
-          @extend .pull-right;
-          padding: 0px;
-          height: 32px;
-
-          .progress-bar {
-            background-color: darken($logo-green, 6%);
-            box-shadow: none;
-          }
-        }
-
-        @media (min-width: $screen-md) {
-          .name { text-align: left; }
-          .progress { margin-top: $font-size-base * -3; }
-        }
+      // more details
+      .details {
+        font-size: 0.6em;
+        vertical-align: middle;
+        color: $gray-light;
       }
     }
-
   }
 }
 
@@ -518,19 +519,7 @@ div.skills {
       }
 
       // a list of tasks that I have completed for a job
-      .task-list {
-        li {
-          padding: 0px;
-          list-style-type: none;
-          line-height: 1.7em;
-          &:before {
-            content: "• ";
-            color: $logo-green;
-            font-size: 2em;
-            vertical-align: middle;
-          }
-        }
-      }
+      .task-list { @include bullet-list; }
 
       @media (min-width: $screen-md) {
         .name { text-align: left; }

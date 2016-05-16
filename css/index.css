@@ -1414,8 +1414,7 @@ blockquote {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
-blockquote.pull-right,
-div.skills .skill-list ul li blockquote.progress {
+blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
@@ -1424,16 +1423,16 @@ div.skills .skill-list ul li blockquote.progress {
   .blockquote-reverse footer:before,
   .blockquote-reverse small:before,
   .blockquote-reverse .small:before,
-  blockquote.pull-right footer:before, div.skills .skill-list ul li blockquote.progress footer:before,
-  blockquote.pull-right small:before, div.skills .skill-list ul li blockquote.progress small:before,
-  blockquote.pull-right .small:before, div.skills .skill-list ul li blockquote.progress .small:before {
+  blockquote.pull-right footer:before,
+  blockquote.pull-right small:before,
+  blockquote.pull-right .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
-  blockquote.pull-right footer:after, div.skills .skill-list ul li blockquote.progress footer:after,
-  blockquote.pull-right small:after, div.skills .skill-list ul li blockquote.progress small:after,
-  blockquote.pull-right .small:after, div.skills .skill-list ul li blockquote.progress .small:after {
+  blockquote.pull-right footer:after,
+  blockquote.pull-right small:after,
+  blockquote.pull-right .small:after {
     content: '\00A0 \2014'; }
 
 address {
@@ -3077,7 +3076,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right, div.skills .skill-list ul li .dropdown-menu.progress {
+  .dropdown-menu.pull-right {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -3145,7 +3144,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu, div.skills .skill-list ul li .progress > .dropdown-menu {
+.pull-right > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -4395,8 +4394,7 @@ a.thumbnail.active {
   display: block; }
 
 .media-right,
-.media > .pull-right, div.skills .skill-list ul li
-.media > .progress {
+.media > .pull-right {
   padding-left: 10px; }
 
 .media-left,
@@ -5444,7 +5442,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right, div.skills .skill-list ul li .progress {
+.pull-right {
   float: right !important; }
 
 .pull-left {
@@ -5943,27 +5941,28 @@ div.skills .logo {
 div.skills .logo:first-child {
   margin-top: 16px; }
 
-div.skills .skill-list ul {
+div.skills .skill-list > ul {
   padding-left: 0px;
-  margin-top: 20px; }
-  div.skills .skill-list ul li {
+  list-style-type: none; }
+  div.skills .skill-list > ul li {
+    padding: 0px;
     list-style-type: none;
-    padding: 12px 0px; }
-    div.skills .skill-list ul li .name {
-      font-size: 28px;
-      padding-bottom: 10px;
-      text-align: center; }
-    div.skills .skill-list ul li .progress {
-      padding: 0px;
-      height: 32px; }
-      div.skills .skill-list ul li .progress .progress-bar {
-        background-color: #63b030;
-        box-shadow: none; }
-    @media (min-width: 992px) {
-      div.skills .skill-list ul li .name {
-        text-align: left; }
-      div.skills .skill-list ul li .progress {
-        margin-top: -42px; } }
+    line-height: 1.7em;
+    font-size: 100%; }
+    div.skills .skill-list > ul li:before {
+      content: "• ";
+      color: #71C837;
+      font-size: 2em;
+      vertical-align: middle; }
+  div.skills .skill-list > ul > li {
+    padding: 0.5em;
+    margin: 0.2em;
+    font-size: 2em;
+    text-align: left; }
+    div.skills .skill-list > ul > li .details {
+      font-size: 0.6em;
+      vertical-align: middle;
+      color: #777777; }
 
 .edu-list {
   font-size: 28px; }
@@ -6001,7 +6000,8 @@ div.skills .skill-list ul {
     .work-list ul li .task-list li {
       padding: 0px;
       list-style-type: none;
-      line-height: 1.7em; }
+      line-height: 1.7em;
+      font-size: 100%; }
       .work-list ul li .task-list li:before {
         content: "• ";
         color: #71C837;
