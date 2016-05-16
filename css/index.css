@@ -5985,15 +5985,28 @@ div.skills .skill-list ul {
     list-style-type: none;
     padding: 12px 0px; }
     .work-list ul li .name {
-      font-size: 28px;
-      padding-bottom: 10px;
-      text-align: center; }
+      font-size: 1.6em;
+      padding-bottom: 10px; }
+      .work-list ul li .name.small {
+        font-size: 1.2em; }
+        @media (min-width: 768px) {
+          .work-list ul li .name.small {
+            font-size: 1.6em; } }
       .work-list ul li .name .date {
         float: right;
-        font-size: 21px;
+        font-size: 0.6em;
         margin-top: 6px; }
     .work-list ul li .desc {
-      font-size: 16.8px; }
+      font-size: 1.1em; }
+    .work-list ul li .task-list li {
+      padding: 0px;
+      list-style-type: none;
+      line-height: 1.7em; }
+      .work-list ul li .task-list li:before {
+        content: "• ";
+        color: #71C837;
+        font-size: 2em;
+        vertical-align: middle; }
     @media (min-width: 992px) {
       .work-list ul li .name {
         text-align: left; } }

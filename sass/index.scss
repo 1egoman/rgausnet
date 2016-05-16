@@ -416,7 +416,6 @@ div.section.projects {
   div.body.nancysews {
     background: #6CD0BB;
   }
-
 }
 
 // Skills on my resume
@@ -496,19 +495,41 @@ div.skills {
       list-style-type: none;
       padding: 12px 0px;
 
+      // name of the job
       .name {
-        font-size: $font-size-base * 2;
+        font-size: 1.6em;
         padding-bottom: 10px;
-        text-align: center;
+        &.small {
+          font-size: 1.2em;
+          @media (min-width: $screen-sm) {
+            font-size: 1.6em;
+          }
+        }
+
         .date {
           float: right;
-          font-size: $font-size-base * 1.5;
+          font-size: 0.6em;
           margin-top: 6px;
         }
       }
 
       .desc {
-        font-size: $font-size-base * 1.2;
+        font-size: 1.1em;
+      }
+
+      // a list of tasks that I have completed for a job
+      .task-list {
+        li {
+          padding: 0px;
+          list-style-type: none;
+          line-height: 1.7em;
+          &:before {
+            content: "• ";
+            color: $logo-green;
+            font-size: 2em;
+            vertical-align: middle;
+          }
+        }
       }
 
       @media (min-width: $screen-md) {
