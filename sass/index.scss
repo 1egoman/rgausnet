@@ -70,12 +70,11 @@ div.one {
 
   .row.subtitle {
     div.inner {
-
       // sm: 3 6 3
       @include make-sm-column(6);
       @include make-sm-column-offset(3);
 
-      // md: 2 5 2
+      // md: 3 6 3
       @include make-md-column(6);
       @include make-md-column-offset(3);
 
@@ -84,9 +83,11 @@ div.one {
       // My social media icons.
       // These are under the description.
       div.social {
+        padding: 2em 1em 0.2em 1em;
+
         ul {
           list-style-type: none;
-          padding: 40px 20px 0px 20px;
+          padding: 0em;
           li {
             display: inline;
             img {
@@ -139,7 +140,6 @@ div.one {
           img.emoji { height: $font-size-base * 2.2; }
           }
       }
-
     }
   }
 }
@@ -316,6 +316,11 @@ div.section.projects {
     h1 {
       text-align: center;
     }
+  }
+
+  // provide some space above the first project
+  .body:first-child {
+    margin-top: 2em;
   }
 
   // ==========
@@ -525,7 +530,7 @@ div.skills {
   margin: 0px auto;
 
   background: $logo-green;
-  padding: 1em 2em; /* Adjust to suit */
+  padding: 1em 2em;
 }
 
 // The ribbon, for reals this time
