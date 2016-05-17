@@ -311,6 +311,17 @@ div.section.projects {
     font-weight: bold;
   }
 
+  // center align all headers
+  .body {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  // ==========
+  // projects
+  // ==========
+
   // Ikeaify
   .ikeaify {
     @include project;
@@ -356,13 +367,13 @@ div.section.projects {
   }
 
   // I'm an eagle scout!
-  .body.eagle {
+  .eagle {
     @include project(#DD636B);
     p { text-align: center; }
   }
 
   // Cena: The grocery list app v1
-  div.body.cena {
+  .cena {
     @include project(#8DC54D);
 
     .logo img {
@@ -378,7 +389,7 @@ div.section.projects {
   }
 
   // Que: My internet-of-things controller that I haven't worked on in a while.
-  div.body.que {
+  .que {
     @include project(#ff8ca3);
 
     h2 {
@@ -388,7 +399,7 @@ div.section.projects {
   }
 
   // Girl Scouts: The girl scout service unit's website.
-  div.body.gs, div.body.nancysews {
+  .gs, .nancysews {
     @include project(#C7863D);
     img {
       border: 2px solid $gray-lighter;
@@ -398,9 +409,7 @@ div.section.projects {
   }
 
   // Nancy Sews: My mommy's website!
-  div.body.nancysews {
-    background: #6CD0BB;
-  }
+  .nancysews { background-color: #6CD0BB; }
 }
 
 // Skills on my resume

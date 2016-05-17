@@ -5814,6 +5814,8 @@ div.section.projects {
   div.section.projects.timeline a {
     color: #FFF;
     font-weight: bold; }
+  div.section.projects .body h1 {
+    text-align: center; }
   div.section.projects .ikeaify {
     padding-top: 3.2em;
     padding-bottom: 2em;
@@ -6084,7 +6086,7 @@ div.section.projects {
     @media print {
       div.section.projects .candycrowd p {
         font-size: 14px; } }
-  div.section.projects .body.eagle {
+  div.section.projects .eagle {
     padding-top: 3.2em;
     padding-bottom: 2em;
     background-color: #DD636B;
@@ -6095,9 +6097,9 @@ div.section.projects {
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 992px) {
-      div.section.projects .body.eagle {
+      div.section.projects .eagle {
         width: 45%; } }
-    div.section.projects .body.eagle .timeline-card {
+    div.section.projects .eagle .timeline-card {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
@@ -6109,48 +6111,48 @@ div.section.projects {
       padding-left: 15px;
       padding-right: 15px; }
       @media (min-width: 992px) {
-        div.section.projects .body.eagle .timeline-card {
+        div.section.projects .eagle .timeline-card {
           float: left;
           width: 83.3333333333%; } }
       @media (min-width: 992px) {
-        div.section.projects .body.eagle .timeline-card {
+        div.section.projects .eagle .timeline-card {
           margin-left: 8.3333333333%; } }
-    div.section.projects .body.eagle h1 {
+    div.section.projects .eagle h1 {
       text-align: center;
       margin-top: -12px;
       margin-bottom: 24px;
       font-weight: bold;
       font-size: 25.2px;
       color: #fff; }
-      div.section.projects .body.eagle h1 small a {
+      div.section.projects .eagle h1 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects .body.eagle h2 {
+    div.section.projects .eagle h2 {
       color: #777777;
       text-align: center;
       margin-top: -0.4em;
       font-size: 2.4em;
       color: #fff; }
-      div.section.projects .body.eagle h2 small a {
+      div.section.projects .eagle h2 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects .body.eagle p {
+    div.section.projects .eagle p {
       color: #fff;
       font-size: 1.3em; }
-    div.section.projects .body.eagle img {
+    div.section.projects .eagle img {
       height: 100px;
       margin: 0em auto 2em auto;
       display: block; }
     @media (min-width: 992px) {
-      div.section.projects .body.eagle h1 {
+      div.section.projects .eagle h1 {
         font-size: 8em; }
-      div.section.projects .body.eagle h2 {
+      div.section.projects .eagle h2 {
         font-size: 2.1em; }
-      div.section.projects .body.eagle h2 small a {
+      div.section.projects .eagle h2 small a {
         font-size: 1.8em; } }
-    div.section.projects .body.eagle p {
+    div.section.projects .eagle p {
       text-align: center; }
-  div.section.projects div.body.cena {
+  div.section.projects .cena {
     padding-top: 3.2em;
     padding-bottom: 2em;
     background-color: #8DC54D;
@@ -6161,9 +6163,9 @@ div.section.projects {
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 992px) {
-      div.section.projects div.body.cena {
+      div.section.projects .cena {
         width: 45%; } }
-    div.section.projects div.body.cena .timeline-card {
+    div.section.projects .cena .timeline-card {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
@@ -6175,53 +6177,53 @@ div.section.projects {
       padding-left: 15px;
       padding-right: 15px; }
       @media (min-width: 992px) {
-        div.section.projects div.body.cena .timeline-card {
+        div.section.projects .cena .timeline-card {
           float: left;
           width: 83.3333333333%; } }
       @media (min-width: 992px) {
-        div.section.projects div.body.cena .timeline-card {
+        div.section.projects .cena .timeline-card {
           margin-left: 8.3333333333%; } }
-    div.section.projects div.body.cena h1 {
+    div.section.projects .cena h1 {
       text-align: center;
       margin-top: -12px;
       margin-bottom: 24px;
       font-weight: bold;
       font-size: 25.2px;
       color: #fff; }
-      div.section.projects div.body.cena h1 small a {
+      div.section.projects .cena h1 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body.cena h2 {
+    div.section.projects .cena h2 {
       color: #777777;
       text-align: center;
       margin-top: -0.4em;
       font-size: 2.4em;
       color: #fff; }
-      div.section.projects div.body.cena h2 small a {
+      div.section.projects .cena h2 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body.cena p {
+    div.section.projects .cena p {
       color: #fff;
       font-size: 1.3em; }
-    div.section.projects div.body.cena img {
+    div.section.projects .cena img {
       height: 100px;
       margin: 0em auto 2em auto;
       display: block; }
     @media (min-width: 992px) {
-      div.section.projects div.body.cena h1 {
+      div.section.projects .cena h1 {
         font-size: 8em; }
-      div.section.projects div.body.cena h2 {
+      div.section.projects .cena h2 {
         font-size: 2.1em; }
-      div.section.projects div.body.cena h2 small a {
+      div.section.projects .cena h2 small a {
         font-size: 1.8em; } }
-    div.section.projects div.body.cena .logo img {
+    div.section.projects .cena .logo img {
       width: 64px;
       display: block;
       margin: 0px auto 36px auto; }
-    div.section.projects div.body.cena h2 {
+    div.section.projects .cena h2 {
       color: #FFF;
       line-height: 1.4em; }
-  div.section.projects div.body.que {
+  div.section.projects .que {
     padding-top: 3.2em;
     padding-bottom: 2em;
     background-color: #ff8ca3;
@@ -6232,9 +6234,9 @@ div.section.projects {
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 992px) {
-      div.section.projects div.body.que {
+      div.section.projects .que {
         width: 45%; } }
-    div.section.projects div.body.que .timeline-card {
+    div.section.projects .que .timeline-card {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
@@ -6246,49 +6248,49 @@ div.section.projects {
       padding-left: 15px;
       padding-right: 15px; }
       @media (min-width: 992px) {
-        div.section.projects div.body.que .timeline-card {
+        div.section.projects .que .timeline-card {
           float: left;
           width: 83.3333333333%; } }
       @media (min-width: 992px) {
-        div.section.projects div.body.que .timeline-card {
+        div.section.projects .que .timeline-card {
           margin-left: 8.3333333333%; } }
-    div.section.projects div.body.que h1 {
+    div.section.projects .que h1 {
       text-align: center;
       margin-top: -12px;
       margin-bottom: 24px;
       font-weight: bold;
       font-size: 25.2px;
       color: #fff; }
-      div.section.projects div.body.que h1 small a {
+      div.section.projects .que h1 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body.que h2 {
+    div.section.projects .que h2 {
       color: #777777;
       text-align: center;
       margin-top: -0.4em;
       font-size: 2.4em;
       color: #fff; }
-      div.section.projects div.body.que h2 small a {
+      div.section.projects .que h2 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body.que p {
+    div.section.projects .que p {
       color: #fff;
       font-size: 1.3em; }
-    div.section.projects div.body.que img {
+    div.section.projects .que img {
       height: 100px;
       margin: 0em auto 2em auto;
       display: block; }
     @media (min-width: 992px) {
-      div.section.projects div.body.que h1 {
+      div.section.projects .que h1 {
         font-size: 8em; }
-      div.section.projects div.body.que h2 {
+      div.section.projects .que h2 {
         font-size: 2.1em; }
-      div.section.projects div.body.que h2 small a {
+      div.section.projects .que h2 small a {
         font-size: 1.8em; } }
-    div.section.projects div.body.que h2 {
+    div.section.projects .que h2 {
       color: #FFF;
       line-height: 1.4em; }
-  div.section.projects div.body.gs, div.section.projects div.body.nancysews {
+  div.section.projects .gs, div.section.projects .nancysews {
     padding-top: 3.2em;
     padding-bottom: 2em;
     background-color: #C7863D;
@@ -6299,9 +6301,9 @@ div.section.projects {
     padding-left: 15px;
     padding-right: 15px; }
     @media (min-width: 992px) {
-      div.section.projects div.body.gs, div.section.projects div.body.nancysews {
+      div.section.projects .gs, div.section.projects .nancysews {
         width: 45%; } }
-    div.section.projects div.body.gs .timeline-card, div.section.projects div.body.nancysews .timeline-card {
+    div.section.projects .gs .timeline-card, div.section.projects .nancysews .timeline-card {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
@@ -6313,51 +6315,51 @@ div.section.projects {
       padding-left: 15px;
       padding-right: 15px; }
       @media (min-width: 992px) {
-        div.section.projects div.body.gs .timeline-card, div.section.projects div.body.nancysews .timeline-card {
+        div.section.projects .gs .timeline-card, div.section.projects .nancysews .timeline-card {
           float: left;
           width: 83.3333333333%; } }
       @media (min-width: 992px) {
-        div.section.projects div.body.gs .timeline-card, div.section.projects div.body.nancysews .timeline-card {
+        div.section.projects .gs .timeline-card, div.section.projects .nancysews .timeline-card {
           margin-left: 8.3333333333%; } }
-    div.section.projects div.body.gs h1, div.section.projects div.body.nancysews h1 {
+    div.section.projects .gs h1, div.section.projects .nancysews h1 {
       text-align: center;
       margin-top: -12px;
       margin-bottom: 24px;
       font-weight: bold;
       font-size: 25.2px;
       color: #fff; }
-      div.section.projects div.body.gs h1 small a, div.section.projects div.body.nancysews h1 small a {
+      div.section.projects .gs h1 small a, div.section.projects .nancysews h1 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
+    div.section.projects .gs h2, div.section.projects .nancysews h2 {
       color: #777777;
       text-align: center;
       margin-top: -0.4em;
       font-size: 2.4em;
       color: #fff; }
-      div.section.projects div.body.gs h2 small a, div.section.projects div.body.nancysews h2 small a {
+      div.section.projects .gs h2 small a, div.section.projects .nancysews h2 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body.gs p, div.section.projects div.body.nancysews p {
+    div.section.projects .gs p, div.section.projects .nancysews p {
       color: #fff;
       font-size: 1.3em; }
-    div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
+    div.section.projects .gs img, div.section.projects .nancysews img {
       height: 100px;
       margin: 0em auto 2em auto;
       display: block; }
     @media (min-width: 992px) {
-      div.section.projects div.body.gs h1, div.section.projects div.body.nancysews h1 {
+      div.section.projects .gs h1, div.section.projects .nancysews h1 {
         font-size: 8em; }
-      div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
+      div.section.projects .gs h2, div.section.projects .nancysews h2 {
         font-size: 2.1em; }
-      div.section.projects div.body.gs h2 small a, div.section.projects div.body.nancysews h2 small a {
+      div.section.projects .gs h2 small a, div.section.projects .nancysews h2 small a {
         font-size: 1.8em; } }
-    div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
+    div.section.projects .gs img, div.section.projects .nancysews img {
       border: 2px solid #eeeeee;
       height: auto;
       width: 100%; }
-  div.section.projects div.body.nancysews {
-    background: #6CD0BB; }
+  div.section.projects .nancysews {
+    background-color: #6CD0BB; }
 
 div.skills .logo {
   margin-top: 64px; }
