@@ -5673,7 +5673,7 @@ div.one {
   height: 100%; }
   div.one .row.hero .logo img {
     width: 100%;
-    max-width: 350px;
+    max-width: 228px;
     margin: 40px auto 0px auto;
     display: block; }
   div.one .row.subtitle div.inner {
@@ -5715,14 +5715,14 @@ div.one {
     div.one .row.subtitle div.inner div.social-print ul {
       display: none; }
     div.one .row.subtitle div.inner h1 {
-      font-size: 35px;
+      font-size: 2.4em;
       letter-spacing: 0.05em;
       font-weight: normal;
       text-align: center;
       margin-bottom: 40px; }
     div.one .row.subtitle div.inner h2 {
       margin-top: -12px;
-      font-size: 14px;
+      font-size: 1.4em;
       color: #777777;
       line-height: 1.3571428575;
       text-align: center; }
@@ -5731,9 +5731,9 @@ div.one {
         display: inline-block !important; }
     @media (min-width: 992px) {
       div.one .row.subtitle div.inner h1 {
-        font-size: 67.2px; }
+        font-size: 3.2em; }
       div.one .row.subtitle div.inner h2 {
-        font-size: 30.8px; }
+        font-size: 1.8em; }
         div.one .row.subtitle div.inner h2 img.emoji {
           height: 30.8px; } }
 
@@ -5818,8 +5818,6 @@ div.section.projects {
     font-weight: bold; }
   div.section.projects .body h1 {
     text-align: center; }
-  div.section.projects .body:first-child {
-    margin-top: 2em; }
   div.section.projects .ikeaify {
     padding-top: 3.2em;
     padding-bottom: 2em;
@@ -6455,7 +6453,7 @@ div.skills .skill-list > ul {
         text-align: left; } }
 
 .ribbon {
-  font-size: 24px !important;
+  font-size: 1.4em !important;
   width: 100%;
   margin: 0px auto;
   background: #71C837;

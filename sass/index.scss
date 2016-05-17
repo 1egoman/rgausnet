@@ -1,4 +1,3 @@
-//
 // My website
 // by Ryan Gaus
 // 
@@ -62,7 +61,7 @@ div.one {
   // image row
   .row.hero .logo img {
     width: 100%;
-    max-width: 350px;
+    max-width: 228px;
     
     margin: 40px auto 0px auto;
     display: block;
@@ -105,7 +104,7 @@ div.one {
 
       // "My Name is Ryan Gaus"
       h1 {
-        font-size: $font-size-base * 2.5;
+        font-size: 2.4em;
         letter-spacing: 0.05em;
         font-weight: normal;
         text-align: center;
@@ -115,7 +114,7 @@ div.one {
       // The about me description blurb
       h2 {
         margin-top: -12px;
-        font-size: $font-size-base * 1;
+        font-size: 1.4em;
         color: $gray-light;
         line-height: $line-height-base * 0.95;
         text-align: center;
@@ -131,10 +130,10 @@ div.one {
       // responsive crap to make everything look good on every layout.
       @media (min-width: $screen-md) {
         h1 {
-          font-size: $font-size-base * 4.8;
+          font-size: 3.2em;
         }
         h2 {
-          font-size: $font-size-base * 2.2;
+          font-size: 1.8em;
 
           // emoji images
           img.emoji { height: $font-size-base * 2.2; }
@@ -316,11 +315,6 @@ div.section.projects {
     h1 {
       text-align: center;
     }
-  }
-
-  // provide some space above the first project
-  .body:first-child {
-    margin-top: 2em;
   }
 
   // ==========
@@ -524,7 +518,7 @@ div.skills {
 
 // On phones/other small things, flatten the ribbon's "curls" on the end.
 .ribbon {
-  font-size: 24px !important;
+  font-size: 1.4em !important;
 
   width: 100%;
   margin: 0px auto;
