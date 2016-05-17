@@ -40,6 +40,14 @@ $logo-green: #71C837;
   }
 }
 
+// make links green
+a {
+  color: $logo-green;
+  &:active, &:hover, &:focus {
+    color: darken($logo-green, 5%);
+  }
+}
+
 // About page
 // this is the section with my big "My Name is Ryan Gaus" text and social media
 // stuff. Also, my nice picture is in here!
@@ -216,6 +224,12 @@ div.section.projects {
     }
   }
 
+  // make links within the project timeline white
+  &.timeline a {
+    color: #FFF;
+    font-weight: bold;
+  }
+
   // projects body
   div.body {
     background: $body-bg;
@@ -260,11 +274,6 @@ div.section.projects {
         font-size: $font-size-base * 1.2;
         text-align: center;
       }
-    }
-
-    a {
-      color: #FFF;
-      font-weight: bold;
     }
 
     @media (min-width: $screen-md) {
@@ -505,6 +514,10 @@ div.skills {
           @media (min-width: $screen-sm) {
             font-size: 1.6em;
           }
+        }
+
+        .link {
+          font-size: 0.6em;
         }
 
         .date {

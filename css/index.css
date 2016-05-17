@@ -5664,6 +5664,11 @@ button.close {
     .logo {
       margin-left: 33.3333333333%; } }
 
+a {
+  color: #71C837; }
+  a:active, a:hover, a:focus {
+    color: #66b432; }
+
 div.one {
   height: 100%; }
   div.one .row.hero .logo img {
@@ -5781,6 +5786,9 @@ div.section.projects {
       display: block; }
       div.section.projects .timeline-bulb img {
         width: 72px; } }
+  div.section.projects.timeline a {
+    color: #FFF;
+    font-weight: bold; }
   div.section.projects div.body {
     background: #fff;
     padding-top: 50px; }
@@ -5826,9 +5834,6 @@ div.section.projects {
       div.section.projects div.body h2 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body a {
-      color: #FFF;
-      font-weight: bold; }
     @media (min-width: 992px) {
       div.section.projects div.body h1 {
         font-size: 50.4px; }
@@ -5991,6 +5996,8 @@ div.skills .skill-list > ul {
         @media (min-width: 768px) {
           .work-list ul li .name.small {
             font-size: 1.6em; } }
+      .work-list ul li .name .link {
+        font-size: 0.6em; }
       .work-list ul li .name .date {
         float: right;
         font-size: 0.6em;
