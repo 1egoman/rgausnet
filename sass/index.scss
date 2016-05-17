@@ -168,26 +168,103 @@ div.section {
   }
 }
 
+// generate the markup for a project
+$tile-width-md: 45%;
+@mixin project($color: #aaa) {
+  padding-top: 3.2em;
+  padding-bottom: 2em;
+  background-color: $color;
+
+  // properly size each block
+  @include make-xs-column(12);
+  @media (min-width: $screen-md) {
+    width: $tile-width-md;
+  }
+
+  // the inner container of each of the projects on the timeline
+  .timeline-card {
+    @include make-md-column(10);
+    @include make-md-column-offset(1);
+    @include make-xs-column(12);
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: -12px;
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-size: $font-size-base * 1.8;
+    color: #fff;
+    small a {
+      font-size: $font-size-base * 1.2;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    color: $gray-light;
+    text-align: center;
+    margin-top: -0.4em;
+    font-size: 2.4em;
+    color: #fff;
+    small a {
+      font-size: $font-size-base * 1.2;
+      text-align: center;
+    }
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.3em;
+  }
+
+  img {
+    height: 100px;
+    margin: 0em auto 2em auto;
+    display: block;
+  }
+
+  @media (min-width: $screen-md) {
+    h1 {
+      font-size: 8em;
+    }
+    h2 {
+      font-size: 2.1em;
+    }
+    h2 small a  {
+      font-size: 1.8em;
+    }
+  }
+}
+
 // My Projects
 // All of the projects I'm proud of. At least the recent ones that I've made public.
 div.section.projects {
   position: relative;
+  @include container-fixed;
+
+  // the timeline should only be a container, unless we're in xs then make it
+  // full width.
+  width: 100%;
+  &.timeline {
+    @media (min-width: $screen-md) {
+      @media (min-width: $screen-sm-min) { width: $container-sm; }
+      @media (min-width: $screen-md-min) { width: $container-md; }
+      @media (min-width: $screen-lg-min) { width: $container-lg; }
+    }
+  }
 
   // hide timeline bulb on mobile (no timeline in the first place)
   .timeline-bulb { display: none; }
 
   // align projects and achevements to left or right
   @media (min-width: $screen-md-min) {
-    &.timeline div.body {
-      width: 45%;
+    &.timeline .body {
+      @include clearfix;
       float: left;
-
       margin-top: 64px;
 
-      &:nth-child(even) {
-        float: right;
-        min-height: 300px;
-      }
+      &.right { float: right; }
     }
     &.timeline {
       // make the "line" down the center of the timeline
@@ -234,74 +311,9 @@ div.section.projects {
     font-weight: bold;
   }
 
-  // projects body
-  div.body {
-    background: $body-bg;
-    padding-top: 50px;
-
-    // the inner container of each of the projects on the timeline
-    .timeline-card {
-      @include make-md-column(10);
-      @include make-md-column-offset(1);
-      @include make-xs-column(12);
-    }
-
-    .logo img {
-      width: 96px;
-      margin: 36px 0px;
-    }
-
-    .hero img {
-      width: 100%;
-      margin-top: 24px;
-    }
-
-    h1 {
-      color: $gray-light;
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: $font-size-base * 1.8;
-      small a {
-        font-size: $font-size-base * 1.2;
-        text-align: center;
-      }
-    }
-
-    h2 {
-      color: $gray-light;
-      text-align: center;
-      margin-top: -12px;
-      font-size: $font-size-base * 1.8;
-      small a {
-        font-size: $font-size-base * 1.2;
-        text-align: center;
-      }
-    }
-
-    @media (min-width: $screen-md) {
-      h1 {
-        font-size: $font-size-base * 3.6;
-      }
-      h2 {
-        font-size: $font-size-base * 2.8;
-      }
-      h2 small a  {
-        font-size: $font-size-base * 1.8;
-      }
-    }
-  }
-
   // Ikeaify
-  div.body.ikeaify {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    margin-top: 64px;
-    background: #AAA;
-
-    h2, p { color: #FFF; }
-    p { font-size: $font-size-base * 1.6; }
+  .ikeaify {
+    @include project;
 
     @media print {
       p {
@@ -311,19 +323,9 @@ div.section.projects {
   }
 
   // Waltz
-  div.body.waltz {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #FF8080;
-
-    h2, p { color: #FFF; }
-    p { font-size: $font-size-base * 1.4; }
-
-    img {
-      height: 100px;
-      margin: 0px auto 20px auto;
-      display: block;
-    }
+  .waltz {
+    @include project(#51c4c4);
+    h2 { color: transparent; }
 
     @media print {
       p {
@@ -333,13 +335,8 @@ div.section.projects {
   }
 
   // Sproutlines
-  div.body.sproutlines {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #7BA804;
-
-    h2, p { color: #FFF; }
-    p { font-size: $font-size-base * 1.4; }
+  .sproutlines {
+    @include project(#7BA804);
 
     @media print {
       p {
@@ -349,21 +346,8 @@ div.section.projects {
   }
 
   // CandyCrowd
-  div.body.candycrowd {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #2ab573;
-
-    h2, p { color: #FFF; }
-    p { font-size: $font-size-base * 1.4; }
-
-    img {
-      height: 100px;
-      margin: 0px auto 20px auto;
-      display: block;
-    }
-
-
+  .candycrowd {
+    @include project(#2ab573);
     @media print {
       p {
         font-size: $font-size-base;
@@ -372,21 +356,14 @@ div.section.projects {
   }
 
   // I'm an eagle scout!
-  div.body.eagle {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #DD636B;
-
-    h2, small {
-      color: #FFF;
-    }
+  .body.eagle {
+    @include project(#DD636B);
+    p { text-align: center; }
   }
 
   // Cena: The grocery list app v1
   div.body.cena {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #8DC54D;
+    @include project(#8DC54D);
 
     .logo img {
       width: 64px;
@@ -402,16 +379,7 @@ div.section.projects {
 
   // Que: My internet-of-things controller that I haven't worked on in a while.
   div.body.que {
-    padding-top: 0px;
-    padding-bottom: 32px;
-    background: #ff8ca3;
-
-    .logo img {
-      width: 96px;
-      display: block;
-      margin: 36px auto;
-      @media (min-width: $screen-md) { width: 128px; }
-    }
+    @include project(#ff8ca3);
 
     h2 {
       color: #FFF;
@@ -421,24 +389,12 @@ div.section.projects {
 
   // Girl Scouts: The girl scout service unit's website.
   div.body.gs, div.body.nancysews {
-    background: #C7863D;
-
+    @include project(#C7863D);
     img {
-      margin-bottom: 100px;
       border: 2px solid $gray-lighter;
+      height: auto;
+      width: 100%;
     }
-
-
-    h2 {
-      color: #FFF;
-      span {
-        padding-top: 4px;
-        display: block;
-        font-size: 65%;
-        line-height: 1.4em;
-      }
-    }
-
   }
 
   // Nancy Sews: My mommy's website!
@@ -709,5 +665,4 @@ $print-font-base: 14px;
     padding-bottom: 30px !important;
     margin: 0px !important;
   }
-
 }

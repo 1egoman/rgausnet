@@ -5749,17 +5749,42 @@ div.section {
       margin-top: -36px; }
 
 div.section.projects {
-  position: relative; }
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%; }
+  div.section.projects:before, div.section.projects:after {
+    content: " ";
+    display: table; }
+  div.section.projects:after {
+    clear: both; }
+
+@media (min-width: 992px) and (min-width: 768px) {
+  div.section.projects.timeline {
+    width: 750px; } }
+
+@media (min-width: 992px) and (min-width: 992px) {
+  div.section.projects.timeline {
+    width: 970px; } }
+
+@media (min-width: 992px) and (min-width: 1200px) {
+  div.section.projects.timeline {
+    width: 1170px; } }
   div.section.projects .timeline-bulb {
     display: none; }
   @media (min-width: 992px) {
-    div.section.projects.timeline div.body {
-      width: 45%;
+    div.section.projects.timeline .body {
       float: left;
       margin-top: 64px; }
-      div.section.projects.timeline div.body:nth-child(even) {
-        float: right;
-        min-height: 300px; }
+      div.section.projects.timeline .body:before, div.section.projects.timeline .body:after {
+        content: " ";
+        display: table; }
+      div.section.projects.timeline .body:after {
+        clear: both; }
+      div.section.projects.timeline .body.right {
+        float: right; }
     div.section.projects.timeline::before {
       content: ".";
       color: transparent;
@@ -5789,10 +5814,20 @@ div.section.projects {
   div.section.projects.timeline a {
     color: #FFF;
     font-weight: bold; }
-  div.section.projects div.body {
-    background: #fff;
-    padding-top: 50px; }
-    div.section.projects div.body .timeline-card {
+  div.section.projects .ikeaify {
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #aaa;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects .ikeaify {
+        width: 45%; } }
+    div.section.projects .ikeaify .timeline-card {
       position: relative;
       min-height: 1px;
       padding-left: 15px;
@@ -5804,106 +5839,381 @@ div.section.projects {
       padding-left: 15px;
       padding-right: 15px; }
       @media (min-width: 992px) {
-        div.section.projects div.body .timeline-card {
+        div.section.projects .ikeaify .timeline-card {
           float: left;
           width: 83.3333333333%; } }
       @media (min-width: 992px) {
-        div.section.projects div.body .timeline-card {
+        div.section.projects .ikeaify .timeline-card {
           margin-left: 8.3333333333%; } }
-    div.section.projects div.body .logo img {
-      width: 96px;
-      margin: 36px 0px; }
-    div.section.projects div.body .hero img {
-      width: 100%;
-      margin-top: 24px; }
-    div.section.projects div.body h1 {
-      color: #777777;
+    div.section.projects .ikeaify h1 {
       text-align: center;
       margin-top: -12px;
       margin-bottom: 24px;
       font-weight: bold;
-      font-size: 25.2px; }
-      div.section.projects div.body h1 small a {
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects .ikeaify h1 small a {
         font-size: 16.8px;
         text-align: center; }
-    div.section.projects div.body h2 {
+    div.section.projects .ikeaify h2 {
       color: #777777;
       text-align: center;
-      margin-top: -12px;
-      font-size: 25.2px; }
-      div.section.projects div.body h2 small a {
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects .ikeaify h2 small a {
         font-size: 16.8px;
         text-align: center; }
+    div.section.projects .ikeaify p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects .ikeaify img {
+      height: 100px;
+      margin: 0em auto 2em auto;
+      display: block; }
     @media (min-width: 992px) {
-      div.section.projects div.body h1 {
-        font-size: 50.4px; }
-      div.section.projects div.body h2 {
-        font-size: 39.2px; }
-      div.section.projects div.body h2 small a {
-        font-size: 25.2px; } }
-  div.section.projects div.body.ikeaify {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    margin-top: 64px;
-    background: #AAA; }
-    div.section.projects div.body.ikeaify h2, div.section.projects div.body.ikeaify p {
-      color: #FFF; }
-    div.section.projects div.body.ikeaify p {
-      font-size: 22.4px; }
+      div.section.projects .ikeaify h1 {
+        font-size: 8em; }
+      div.section.projects .ikeaify h2 {
+        font-size: 2.1em; }
+      div.section.projects .ikeaify h2 small a {
+        font-size: 1.8em; } }
     @media print {
-      div.section.projects div.body.ikeaify p {
+      div.section.projects .ikeaify p {
         font-size: 14px; } }
-  div.section.projects div.body.waltz {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #FF8080; }
-    div.section.projects div.body.waltz h2, div.section.projects div.body.waltz p {
-      color: #FFF; }
-    div.section.projects div.body.waltz p {
-      font-size: 19.6px; }
-    div.section.projects div.body.waltz img {
+  div.section.projects .waltz {
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #51c4c4;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects .waltz {
+        width: 45%; } }
+    div.section.projects .waltz .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects .waltz .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects .waltz .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects .waltz h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects .waltz h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .waltz h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects .waltz h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .waltz p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects .waltz img {
       height: 100px;
-      margin: 0px auto 20px auto;
+      margin: 0em auto 2em auto;
       display: block; }
+    @media (min-width: 992px) {
+      div.section.projects .waltz h1 {
+        font-size: 8em; }
+      div.section.projects .waltz h2 {
+        font-size: 2.1em; }
+      div.section.projects .waltz h2 small a {
+        font-size: 1.8em; } }
+    div.section.projects .waltz h2 {
+      color: transparent; }
     @media print {
-      div.section.projects div.body.waltz p {
+      div.section.projects .waltz p {
         font-size: 14px; } }
-  div.section.projects div.body.sproutlines {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #7BA804; }
-    div.section.projects div.body.sproutlines h2, div.section.projects div.body.sproutlines p {
-      color: #FFF; }
-    div.section.projects div.body.sproutlines p {
-      font-size: 19.6px; }
-    @media print {
-      div.section.projects div.body.sproutlines p {
-        font-size: 14px; } }
-  div.section.projects div.body.candycrowd {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #2ab573; }
-    div.section.projects div.body.candycrowd h2, div.section.projects div.body.candycrowd p {
-      color: #FFF; }
-    div.section.projects div.body.candycrowd p {
-      font-size: 19.6px; }
-    div.section.projects div.body.candycrowd img {
+  div.section.projects .sproutlines {
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #7BA804;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects .sproutlines {
+        width: 45%; } }
+    div.section.projects .sproutlines .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects .sproutlines .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects .sproutlines .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects .sproutlines h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects .sproutlines h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .sproutlines h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects .sproutlines h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .sproutlines p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects .sproutlines img {
       height: 100px;
-      margin: 0px auto 20px auto;
+      margin: 0em auto 2em auto;
       display: block; }
+    @media (min-width: 992px) {
+      div.section.projects .sproutlines h1 {
+        font-size: 8em; }
+      div.section.projects .sproutlines h2 {
+        font-size: 2.1em; }
+      div.section.projects .sproutlines h2 small a {
+        font-size: 1.8em; } }
     @media print {
-      div.section.projects div.body.candycrowd p {
+      div.section.projects .sproutlines p {
         font-size: 14px; } }
-  div.section.projects div.body.eagle {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #DD636B; }
-    div.section.projects div.body.eagle h2, div.section.projects div.body.eagle small {
-      color: #FFF; }
+  div.section.projects .candycrowd {
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #2ab573;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects .candycrowd {
+        width: 45%; } }
+    div.section.projects .candycrowd .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects .candycrowd .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects .candycrowd .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects .candycrowd h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects .candycrowd h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .candycrowd h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects .candycrowd h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .candycrowd p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects .candycrowd img {
+      height: 100px;
+      margin: 0em auto 2em auto;
+      display: block; }
+    @media (min-width: 992px) {
+      div.section.projects .candycrowd h1 {
+        font-size: 8em; }
+      div.section.projects .candycrowd h2 {
+        font-size: 2.1em; }
+      div.section.projects .candycrowd h2 small a {
+        font-size: 1.8em; } }
+    @media print {
+      div.section.projects .candycrowd p {
+        font-size: 14px; } }
+  div.section.projects .body.eagle {
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #DD636B;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects .body.eagle {
+        width: 45%; } }
+    div.section.projects .body.eagle .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects .body.eagle .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects .body.eagle .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects .body.eagle h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects .body.eagle h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .body.eagle h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects .body.eagle h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects .body.eagle p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects .body.eagle img {
+      height: 100px;
+      margin: 0em auto 2em auto;
+      display: block; }
+    @media (min-width: 992px) {
+      div.section.projects .body.eagle h1 {
+        font-size: 8em; }
+      div.section.projects .body.eagle h2 {
+        font-size: 2.1em; }
+      div.section.projects .body.eagle h2 small a {
+        font-size: 1.8em; } }
+    div.section.projects .body.eagle p {
+      text-align: center; }
   div.section.projects div.body.cena {
-    padding-top: 50px;
-    padding-bottom: 32px;
-    background: #8DC54D; }
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #8DC54D;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects div.body.cena {
+        width: 45%; } }
+    div.section.projects div.body.cena .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects div.body.cena .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects div.body.cena .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects div.body.cena h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects div.body.cena h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body.cena h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects div.body.cena h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body.cena p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects div.body.cena img {
+      height: 100px;
+      margin: 0em auto 2em auto;
+      display: block; }
+    @media (min-width: 992px) {
+      div.section.projects div.body.cena h1 {
+        font-size: 8em; }
+      div.section.projects div.body.cena h2 {
+        font-size: 2.1em; }
+      div.section.projects div.body.cena h2 small a {
+        font-size: 1.8em; } }
     div.section.projects div.body.cena .logo img {
       width: 64px;
       display: block;
@@ -5912,31 +6222,140 @@ div.section.projects {
       color: #FFF;
       line-height: 1.4em; }
   div.section.projects div.body.que {
-    padding-top: 0px;
-    padding-bottom: 32px;
-    background: #ff8ca3; }
-    div.section.projects div.body.que .logo img {
-      width: 96px;
-      display: block;
-      margin: 36px auto; }
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #ff8ca3;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects div.body.que {
+        width: 45%; } }
+    div.section.projects div.body.que .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
       @media (min-width: 992px) {
-        div.section.projects div.body.que .logo img {
-          width: 128px; } }
+        div.section.projects div.body.que .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects div.body.que .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects div.body.que h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects div.body.que h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body.que h2 {
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects div.body.que h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body.que p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects div.body.que img {
+      height: 100px;
+      margin: 0em auto 2em auto;
+      display: block; }
+    @media (min-width: 992px) {
+      div.section.projects div.body.que h1 {
+        font-size: 8em; }
+      div.section.projects div.body.que h2 {
+        font-size: 2.1em; }
+      div.section.projects div.body.que h2 small a {
+        font-size: 1.8em; } }
     div.section.projects div.body.que h2 {
       color: #FFF;
       line-height: 1.4em; }
   div.section.projects div.body.gs, div.section.projects div.body.nancysews {
-    background: #C7863D; }
-    div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
-      margin-bottom: 100px;
-      border: 2px solid #eeeeee; }
+    padding-top: 3.2em;
+    padding-bottom: 2em;
+    background-color: #C7863D;
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    @media (min-width: 992px) {
+      div.section.projects div.body.gs, div.section.projects div.body.nancysews {
+        width: 45%; } }
+    div.section.projects div.body.gs .timeline-card, div.section.projects div.body.nancysews .timeline-card {
+      position: relative;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      position: relative;
+      float: left;
+      width: 100%;
+      min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px; }
+      @media (min-width: 992px) {
+        div.section.projects div.body.gs .timeline-card, div.section.projects div.body.nancysews .timeline-card {
+          float: left;
+          width: 83.3333333333%; } }
+      @media (min-width: 992px) {
+        div.section.projects div.body.gs .timeline-card, div.section.projects div.body.nancysews .timeline-card {
+          margin-left: 8.3333333333%; } }
+    div.section.projects div.body.gs h1, div.section.projects div.body.nancysews h1 {
+      text-align: center;
+      margin-top: -12px;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 25.2px;
+      color: #fff; }
+      div.section.projects div.body.gs h1 small a, div.section.projects div.body.nancysews h1 small a {
+        font-size: 16.8px;
+        text-align: center; }
     div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
-      color: #FFF; }
-      div.section.projects div.body.gs h2 span, div.section.projects div.body.nancysews h2 span {
-        padding-top: 4px;
-        display: block;
-        font-size: 65%;
-        line-height: 1.4em; }
+      color: #777777;
+      text-align: center;
+      margin-top: -0.4em;
+      font-size: 2.4em;
+      color: #fff; }
+      div.section.projects div.body.gs h2 small a, div.section.projects div.body.nancysews h2 small a {
+        font-size: 16.8px;
+        text-align: center; }
+    div.section.projects div.body.gs p, div.section.projects div.body.nancysews p {
+      color: #fff;
+      font-size: 1.3em; }
+    div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
+      height: 100px;
+      margin: 0em auto 2em auto;
+      display: block; }
+    @media (min-width: 992px) {
+      div.section.projects div.body.gs h1, div.section.projects div.body.nancysews h1 {
+        font-size: 8em; }
+      div.section.projects div.body.gs h2, div.section.projects div.body.nancysews h2 {
+        font-size: 2.1em; }
+      div.section.projects div.body.gs h2 small a, div.section.projects div.body.nancysews h2 small a {
+        font-size: 1.8em; } }
+    div.section.projects div.body.gs img, div.section.projects div.body.nancysews img {
+      border: 2px solid #eeeeee;
+      height: auto;
+      width: 100%; }
   div.section.projects div.body.nancysews {
     background: #6CD0BB; }
 
