@@ -37,6 +37,10 @@ $logo-green: #71C837;
       font-size: $bullet;
       vertical-align: middle;
     }
+
+    @media print {
+      padding-left: 2.5em;
+    }
   }
 }
 
@@ -464,6 +468,12 @@ div.skills {
 
       font-size: 2em;
       text-align: left;
+      width: 100%;
+
+      @media print {
+        font-size: 1.5em;
+        padding: 0em;
+      }
 
       // more details
       .details {

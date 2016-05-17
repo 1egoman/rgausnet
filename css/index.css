@@ -5959,11 +5959,19 @@ div.skills .skill-list > ul {
       color: #71C837;
       font-size: 2em;
       vertical-align: middle; }
+    @media print {
+      div.skills .skill-list > ul li {
+        padding-left: 2.5em; } }
   div.skills .skill-list > ul > li {
     padding: 0.5em;
     margin: 0.2em;
     font-size: 2em;
-    text-align: left; }
+    text-align: left;
+    width: 100%; }
+    @media print {
+      div.skills .skill-list > ul > li {
+        font-size: 1.5em;
+        padding: 0em; } }
     div.skills .skill-list > ul > li .details {
       font-size: 0.6em;
       vertical-align: middle;
@@ -6014,6 +6022,9 @@ div.skills .skill-list > ul {
         color: #71C837;
         font-size: 2em;
         vertical-align: middle; }
+      @media print {
+        .work-list ul li .task-list li {
+          padding-left: 2.5em; } }
     @media (min-width: 992px) {
       .work-list ul li .name {
         text-align: left; } }
