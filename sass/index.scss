@@ -6,11 +6,29 @@
 
 
 // Google web fonts and bootstrap
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600');
 @import "bootstrap";
 
 // Colors
 $logo-green: #71C837;
+$logo-blue: #46B5D0;
+
+$header-bg: $logo-blue;
+$header-fg: #FFF;
+
+@import "header";
+
+.btn-oval {
+  @include button-variant(#FFF, transparent, #FFF);
+  border: 2px solid #FFF;
+  border-radius: $border-radius-large;
+  transition: all 100ms ease-in-out;
+
+  &:hover {
+    @include button-variant($logo-blue, #FFF, #FFF);
+  }
+}
 
 // Header sections for each group. Only apply these if we are of @media screen
 // though. Basically, these correctly place the title in the page flow.
