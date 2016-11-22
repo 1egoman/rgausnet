@@ -1491,35 +1491,35 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .social-badges {
+.container, .header-description, .social-badges {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .social-badges:before, .container:after, .social-badges:after {
+  .container:before, .header-description:before, .social-badges:before, .container:after, .header-description:after, .social-badges:after {
     content: " ";
     display: table; }
-  .container:after, .social-badges:after {
+  .container:after, .header-description:after, .social-badges:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .social-badges {
+    .container, .header-description, .social-badges {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .social-badges {
+    .container, .header-description, .social-badges {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .social-badges {
+    .container, .header-description, .social-badges {
       width: 1170px; } }
 
-.container-fluid, div.one, div.section {
+.container-fluid {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container-fluid:before, div.one:before, div.section:before, .container-fluid:after, div.one:after, div.section:after {
+  .container-fluid:before, .container-fluid:after {
     content: " ";
     display: table; }
-  .container-fluid:after, div.one:after, div.section:after {
+  .container-fluid:after {
     clear: both; }
 
 .row {
@@ -3619,17 +3619,17 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .social-badges > .navbar-header,
-.container > .navbar-collapse, .social-badges > .navbar-collapse,
-.container-fluid > .navbar-header, div.one > .navbar-header, div.section > .navbar-header,
-.container-fluid > .navbar-collapse, div.one > .navbar-collapse, div.section > .navbar-collapse {
+.container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header,
+.container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse,
+.container-fluid > .navbar-header,
+.container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .social-badges > .navbar-header,
-    .container > .navbar-collapse, .social-badges > .navbar-collapse,
-    .container-fluid > .navbar-header, div.one > .navbar-header, div.section > .navbar-header,
-    .container-fluid > .navbar-collapse, div.one > .navbar-collapse, div.section > .navbar-collapse {
+    .container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header,
+    .container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse,
+    .container-fluid > .navbar-header,
+    .container-fluid > .navbar-collapse {
       margin-right: 0;
       margin-left: 0; } }
 
@@ -3671,10 +3671,8 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .social-badges .navbar-brand,
-    .navbar > .container-fluid .navbar-brand,
-    .navbar > div.one .navbar-brand,
-    .navbar > div.section .navbar-brand {
+    .navbar > .container .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
 .navbar-toggle {
@@ -4196,16 +4194,16 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .social-badges .jumbotron,
-  .container-fluid .jumbotron, div.one .jumbotron, div.section .jumbotron {
+  .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron,
+  .container-fluid .jumbotron {
     border-radius: 8px; }
-  .jumbotron .container, .jumbotron .social-badges {
+  .jumbotron .container, .jumbotron .header-description, .jumbotron .social-badges {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding: 48px 0; }
-      .container .jumbotron, .social-badges .jumbotron,
-      .container-fluid .jumbotron, div.one .jumbotron, div.section .jumbotron {
+      .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron,
+      .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
       .jumbotron h1,
@@ -5634,10 +5632,10 @@ button.close {
     .visible-print-inline {
       display: inline !important; } }
 
-.visible-print-inline-block, div.one .row.subtitle div.inner h2 img.emoji {
+.visible-print-inline-block {
   display: none !important; }
   @media print {
-    .visible-print-inline-block, div.one .row.subtitle div.inner h2 img.emoji {
+    .visible-print-inline-block {
       display: inline-block !important; } }
 
 @media print {
@@ -5696,6 +5694,13 @@ header {
     @media (min-width: 992px) {
       header .image {
         background-position: right center; } }
+
+.header-description {
+  margin-top: 4.8rem;
+  font-size: 2em;
+  color: #777777;
+  font-weight: 300;
+  text-align: center; }
 
 .social-badges {
   text-align: center;
@@ -5783,795 +5788,15 @@ a {
   a:active, a:hover, a:focus {
     color: #66b432; }
 
-div.one {
-  height: 100%; }
-  div.one .row.hero .logo img {
-    width: 100%;
-    max-width: 228px;
-    margin: 40px auto 0px auto;
-    display: block; }
-  div.one .row.subtitle div.inner {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-top: 20px; }
-    @media (min-width: 768px) {
-      div.one .row.subtitle div.inner {
-        float: left;
-        width: 50%; } }
-    @media (min-width: 768px) {
-      div.one .row.subtitle div.inner {
-        margin-left: 25%; } }
-    @media (min-width: 992px) {
-      div.one .row.subtitle div.inner {
-        float: left;
-        width: 50%; } }
-    @media (min-width: 992px) {
-      div.one .row.subtitle div.inner {
-        margin-left: 25%; } }
-    div.one .row.subtitle div.inner div.social {
-      padding: 2em 1em 0.2em 1em; }
-      div.one .row.subtitle div.inner div.social ul {
-        list-style-type: none;
-        padding: 0em; }
-        div.one .row.subtitle div.inner div.social ul li {
-          display: inline; }
-          div.one .row.subtitle div.inner div.social ul li img {
-            width: 36px; }
-          @media (min-width: 992px) {
-            div.one .row.subtitle div.inner div.social ul li img {
-              width: 64px; } }
-    div.one .row.subtitle div.inner div.social-print ul {
-      display: none; }
-    div.one .row.subtitle div.inner h1 {
-      font-size: 2.4em;
-      letter-spacing: 0.05em;
-      font-weight: normal;
-      text-align: center;
-      margin-bottom: 40px; }
-    div.one .row.subtitle div.inner h2 {
-      margin-top: -12px;
-      font-size: 1.4em;
-      color: #777777;
-      line-height: 1.3571428575;
-      text-align: center; }
-      div.one .row.subtitle div.inner h2 img.emoji {
-        height: 14px;
-        display: inline-block !important; }
-    @media (min-width: 992px) {
-      div.one .row.subtitle div.inner h1 {
-        font-size: 3.2em; }
-      div.one .row.subtitle div.inner h2 {
-        font-size: 1.8em; }
-        div.one .row.subtitle div.inner h2 img.emoji {
-          height: 30.8px; } }
-
-div.section {
-  margin-top: 7.5%;
-  padding: 0px; }
-  div.section div.header {
-    height: 64.8px;
-    padding: 12px 0px;
-    position: relative;
-    z-index: 1; }
-    div.section div.header h1 {
-      text-align: center;
-      color: #FFF;
-      margin-top: -36px; }
-
-div.section.projects {
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 100%; }
-  div.section.projects:before, div.section.projects:after {
-    content: " ";
-    display: table; }
-  div.section.projects:after {
-    clear: both; }
-
-@media (min-width: 992px) and (min-width: 768px) {
-  div.section.projects.timeline {
-    width: 750px; } }
-
-@media (min-width: 992px) and (min-width: 992px) {
-  div.section.projects.timeline {
-    width: 970px; } }
-
-@media (min-width: 992px) and (min-width: 1200px) {
-  div.section.projects.timeline {
-    width: 1170px; } }
-  div.section.projects .timeline-bulb {
-    display: none; }
-  @media (min-width: 992px) {
-    div.section.projects.timeline .body {
-      float: left;
-      margin-top: 64px; }
-      div.section.projects.timeline .body:before, div.section.projects.timeline .body:after {
-        content: " ";
-        display: table; }
-      div.section.projects.timeline .body:after {
-        clear: both; }
-      div.section.projects.timeline .body.right {
-        float: right; }
-    div.section.projects.timeline::before {
-      content: ".";
-      color: transparent;
-      display: block;
-      width: 10px;
-      height: 110%;
-      background: #71C837;
-      position: absolute;
-      left: 50%;
-      margin-left: -5px; }
-    div.section.projects .timeline-bulb {
-      position: absolute;
-      bottom: -150px;
-      left: 50%;
-      background: #fff;
-      border: 5px solid #71C837;
-      color: #fff;
-      width: 128px;
-      height: 100px;
-      font-size: 28px;
-      text-align: center;
-      padding: 20px;
-      margin-left: -64px;
-      display: block; }
-      div.section.projects .timeline-bulb img {
-        width: 72px; } }
-  div.section.projects.timeline a {
-    color: #FFF;
-    font-weight: bold; }
-  div.section.projects .body h1 {
-    text-align: center; }
-  div.section.projects .ikeaify {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #aaa;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .ikeaify {
-        width: 45%; } }
-    div.section.projects .ikeaify .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .ikeaify .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .ikeaify .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .ikeaify h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .ikeaify h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .ikeaify h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .ikeaify h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .ikeaify p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .ikeaify img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .ikeaify h1 {
-        font-size: 8em; }
-      div.section.projects .ikeaify h2 {
-        font-size: 2.1em; }
-      div.section.projects .ikeaify h2 small a {
-        font-size: 1.8em; } }
-    @media print {
-      div.section.projects .ikeaify p {
-        font-size: 14px; } }
-  div.section.projects .waltz {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #51c4c4;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .waltz {
-        width: 45%; } }
-    div.section.projects .waltz .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .waltz .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .waltz .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .waltz h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .waltz h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .waltz h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .waltz h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .waltz p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .waltz img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .waltz h1 {
-        font-size: 8em; }
-      div.section.projects .waltz h2 {
-        font-size: 2.1em; }
-      div.section.projects .waltz h2 small a {
-        font-size: 1.8em; } }
-    div.section.projects .waltz h2 {
-      color: transparent; }
-    @media print {
-      div.section.projects .waltz p {
-        font-size: 14px; } }
-  div.section.projects .sproutlines {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #7BA804;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .sproutlines {
-        width: 45%; } }
-    div.section.projects .sproutlines .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .sproutlines .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .sproutlines .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .sproutlines h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .sproutlines h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .sproutlines h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .sproutlines h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .sproutlines p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .sproutlines img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .sproutlines h1 {
-        font-size: 8em; }
-      div.section.projects .sproutlines h2 {
-        font-size: 2.1em; }
-      div.section.projects .sproutlines h2 small a {
-        font-size: 1.8em; } }
-    @media print {
-      div.section.projects .sproutlines p {
-        font-size: 14px; } }
-  div.section.projects .candycrowd {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #2ab573;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .candycrowd {
-        width: 45%; } }
-    div.section.projects .candycrowd .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .candycrowd .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .candycrowd .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .candycrowd h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .candycrowd h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .candycrowd h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .candycrowd h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .candycrowd p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .candycrowd img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .candycrowd h1 {
-        font-size: 8em; }
-      div.section.projects .candycrowd h2 {
-        font-size: 2.1em; }
-      div.section.projects .candycrowd h2 small a {
-        font-size: 1.8em; } }
-    @media print {
-      div.section.projects .candycrowd p {
-        font-size: 14px; } }
-  div.section.projects .eagle {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #DD636B;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .eagle {
-        width: 45%; } }
-    div.section.projects .eagle .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .eagle .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .eagle .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .eagle h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .eagle h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .eagle h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .eagle h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .eagle p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .eagle img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .eagle h1 {
-        font-size: 8em; }
-      div.section.projects .eagle h2 {
-        font-size: 2.1em; }
-      div.section.projects .eagle h2 small a {
-        font-size: 1.8em; } }
-    div.section.projects .eagle p {
-      text-align: center; }
-  div.section.projects .cena {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #8DC54D;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .cena {
-        width: 45%; } }
-    div.section.projects .cena .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .cena .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .cena .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .cena h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .cena h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .cena h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .cena h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .cena p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .cena img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .cena h1 {
-        font-size: 8em; }
-      div.section.projects .cena h2 {
-        font-size: 2.1em; }
-      div.section.projects .cena h2 small a {
-        font-size: 1.8em; } }
-    div.section.projects .cena .logo img {
-      width: 64px;
-      display: block;
-      margin: 0px auto 36px auto; }
-    div.section.projects .cena h2 {
-      color: #FFF;
-      line-height: 1.4em; }
-  div.section.projects .que {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #ff8ca3;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .que {
-        width: 45%; } }
-    div.section.projects .que .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .que .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .que .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .que h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .que h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .que h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .que h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .que p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .que img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .que h1 {
-        font-size: 8em; }
-      div.section.projects .que h2 {
-        font-size: 2.1em; }
-      div.section.projects .que h2 small a {
-        font-size: 1.8em; } }
-    div.section.projects .que h2 {
-      color: #FFF;
-      line-height: 1.4em; }
-  div.section.projects .gs, div.section.projects .nancysews {
-    padding-top: 3.2em;
-    padding-bottom: 2em;
-    background-color: #C7863D;
-    position: relative;
-    float: left;
-    width: 100%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px; }
-    @media (min-width: 992px) {
-      div.section.projects .gs, div.section.projects .nancysews {
-        width: 45%; } }
-    div.section.projects .gs .timeline-card, div.section.projects .nancysews .timeline-card {
-      position: relative;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      position: relative;
-      float: left;
-      width: 100%;
-      min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px; }
-      @media (min-width: 992px) {
-        div.section.projects .gs .timeline-card, div.section.projects .nancysews .timeline-card {
-          float: left;
-          width: 83.3333333333%; } }
-      @media (min-width: 992px) {
-        div.section.projects .gs .timeline-card, div.section.projects .nancysews .timeline-card {
-          margin-left: 8.3333333333%; } }
-    div.section.projects .gs h1, div.section.projects .nancysews h1 {
-      text-align: center;
-      margin-top: -12px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      font-size: 25.2px;
-      color: #fff; }
-      div.section.projects .gs h1 small a, div.section.projects .nancysews h1 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .gs h2, div.section.projects .nancysews h2 {
-      color: #777777;
-      text-align: center;
-      margin-top: -0.4em;
-      font-size: 2.4em;
-      color: #fff; }
-      div.section.projects .gs h2 small a, div.section.projects .nancysews h2 small a {
-        font-size: 16.8px;
-        text-align: center; }
-    div.section.projects .gs p, div.section.projects .nancysews p {
-      color: #fff;
-      font-size: 1.3em; }
-    div.section.projects .gs img, div.section.projects .nancysews img {
-      height: 100px;
-      margin: 0em auto 2em auto;
-      display: block; }
-    @media (min-width: 992px) {
-      div.section.projects .gs h1, div.section.projects .nancysews h1 {
-        font-size: 8em; }
-      div.section.projects .gs h2, div.section.projects .nancysews h2 {
-        font-size: 2.1em; }
-      div.section.projects .gs h2 small a, div.section.projects .nancysews h2 small a {
-        font-size: 1.8em; } }
-    div.section.projects .gs img, div.section.projects .nancysews img {
-      border: 2px solid #eeeeee;
-      height: auto;
-      width: 100%; }
-  div.section.projects .nancysews {
-    background-color: #6CD0BB; }
-
-div.skills .logo {
-  margin-top: 64px; }
-
-div.skills .logo:first-child {
-  margin-top: 16px; }
-
-div.skills .skill-list > ul {
-  padding-left: 0px;
-  list-style-type: none; }
-  div.skills .skill-list > ul li {
-    padding: 0px;
-    list-style-type: none;
-    line-height: 1.7em;
-    font-size: 100%; }
-    div.skills .skill-list > ul li:before {
-      content: "• ";
-      color: #71C837;
-      font-size: 2em;
-      vertical-align: middle; }
-    @media print {
-      div.skills .skill-list > ul li {
-        padding-left: 2.5em; } }
-  div.skills .skill-list > ul > li {
-    padding: 0.5em;
-    margin: 0.2em;
-    font-size: 2em;
-    text-align: left;
-    width: 100%; }
-    @media print {
-      div.skills .skill-list > ul > li {
-        font-size: 1.5em;
-        padding: 0em; } }
-    div.skills .skill-list > ul > li .details {
-      font-size: 0.6em;
-      vertical-align: middle;
-      color: #777777; }
-
-.edu-list {
-  font-size: 28px; }
-  .edu-list > ul {
-    list-style-type: none;
-    padding-left: 0px; }
-    .edu-list > ul > li {
-      padding-bottom: 10px; }
-    .edu-list > ul ul {
-      list-style-type: none;
-      padding-left: 0px;
-      text-align: left;
-      font-size: 16.8px; }
-
-.work-list ul {
-  padding-left: 0px;
-  margin-top: 20px; }
-  .work-list ul li {
-    list-style-type: none;
-    padding: 12px 0px; }
-    .work-list ul li .name {
-      font-size: 1.6em;
-      padding-bottom: 10px; }
-      .work-list ul li .name.small {
-        font-size: 1.2em; }
-        @media (min-width: 768px) {
-          .work-list ul li .name.small {
-            font-size: 1.6em; } }
-      .work-list ul li .name .link {
-        font-size: 0.6em; }
-      .work-list ul li .name .date {
-        float: right;
-        font-size: 0.6em;
-        margin-top: 6px; }
-    .work-list ul li .desc {
-      font-size: 1.1em; }
-    .work-list ul li .task-list li {
-      padding: 0px;
-      list-style-type: none;
-      line-height: 1.7em;
-      font-size: 100%; }
-      .work-list ul li .task-list li:before {
-        content: "• ";
-        color: #71C837;
-        font-size: 2em;
-        vertical-align: middle; }
-      @media print {
-        .work-list ul li .task-list li {
-          padding-left: 2.5em; } }
-    @media (min-width: 992px) {
-      .work-list ul li .name {
-        text-align: left; } }
-
 .ribbon {
   font-size: 1.4em !important;
+  text-align: center;
   width: 100%;
   margin: 0px auto;
   background: #71C837;
   padding: 1em 2em; }
+  .ribbon .ribbon-content {
+    color: #FFF; }
 
 @media (min-width: 992px) {
   .ribbon {

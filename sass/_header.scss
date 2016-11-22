@@ -39,3 +39,13 @@ header {
   }
 }
 
+// The text below the header.
+.header-description {
+  @extend .container;
+  margin-top: 4.8rem;
+
+  font-size: 2em;
+  color: $gray-light;
+  font-weight: 300;
+  text-align: center;
+}
