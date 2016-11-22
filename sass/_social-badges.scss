@@ -1,0 +1,11 @@
+.social-badges {
+  @extend .container;
+  text-align: center;
+  margin-top: 3rem;
+
+  img {
+    display: inline-block;
+    width: 120px;
+    margin: 3rem;
+  }
+}

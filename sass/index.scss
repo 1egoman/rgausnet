@@ -18,6 +18,7 @@ $header-bg: $logo-blue;
 $header-fg: #FFF;
 
 @import "header";
+@import "social-badges";
 
 .btn-oval {
   @include button-variant(#FFF, transparent, #FFF);
