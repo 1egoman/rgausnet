@@ -5712,11 +5712,6 @@ header {
 
 .colored-cards-container {
   overflow: hidden; }
-  @media (min-width: 992px) {
-    .colored-cards-container .colored-cards-group {
-      padding-top: 2em; }
-      .colored-cards-container .colored-cards-group:first-child {
-        padding-top: 0em; } }
   .colored-cards-container .colored-cards-group .colored-card {
     width: 100%;
     padding: 2em;

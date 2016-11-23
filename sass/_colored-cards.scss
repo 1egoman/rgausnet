@@ -4,14 +4,6 @@
   .colored-cards-group {
     @extend .container;
 
-    @media (min-width: $screen-md-min) {
-      // add vertical space between rows when in desktop mode
-      padding-top: 2em;
-      &:first-child {
-        padding-top: 0em;
-      }
-    }
-
     .colored-card {
       width: 100%;
       padding: 2em;
