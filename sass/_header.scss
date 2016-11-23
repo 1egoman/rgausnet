@@ -6,6 +6,7 @@ header {
   min-height: 400px;
   margin-top: -20px;
 
+  // "My name is Ryan Gaus" and friends
   .text {
     @include make-xs-column(12);
     @include make-md-column(7);
@@ -23,6 +24,7 @@ header {
     }
   }
 
+  // Picture of me!
   .image {
     @include make-xs-column(12);
     @include make-md-column(5);
@@ -36,6 +38,13 @@ header {
     @media (min-width: $screen-md-min) {
       background-position: right center;
     }
+  }
+
+  // the hero button on the left side
+  .btn {
+    width: 256px;
+    font-size: 1.5em;
+    line-height: 2;
   }
 }
 

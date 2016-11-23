@@ -5694,6 +5694,10 @@ header {
     @media (min-width: 992px) {
       header .image {
         background-position: right center; } }
+  header .btn {
+    width: 256px;
+    font-size: 1.5em;
+    line-height: 2; }
 
 .header-description {
   margin-top: 4.8rem;
@@ -5757,6 +5761,56 @@ header {
   .colored-cards-container .colored-cards-group .colored-card.color-waltz {
     background-color: #71C837; }
 
+.ribbon {
+  text-align: center;
+  width: 100%;
+  margin: 0px auto;
+  background: #71C837;
+  padding: 1em 2em; }
+  .ribbon .ribbon-content {
+    color: #FFF; }
+
+@media (min-width: 992px) {
+  .ribbon {
+    font-size: 24px !important;
+    width: 800px;
+    margin: 0px auto;
+    position: relative;
+    background: #71C837;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em;
+    /* Adjust to suit */
+    margin: 2em auto 3em; }
+    .ribbon:before, .ribbon:after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -1em;
+      border: 1.5em solid #63b030;
+      z-index: -1; }
+    .ribbon:before {
+      left: -2em;
+      border-right-width: 1.5em;
+      border-left-color: transparent; }
+    .ribbon:after {
+      right: -2em;
+      border-left-width: 1.5em;
+      border-right-color: transparent; }
+  .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #5aa02c transparent transparent transparent;
+    bottom: -1em; }
+  .ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em; }
+  .ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 0 0; } }
+
 .btn-oval {
   color: #FFF;
   background-color: transparent;
@@ -5809,82 +5863,10 @@ header {
       color: #FFF;
       background-color: #46B5D0; }
 
-@media screen {
-  .logo {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    float: left;
-    width: 83.3333333333%;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 8.3333333333%; } }
-  @media screen and (min-width: 992px) {
-    .logo {
-      float: left;
-      width: 33.3333333333%; } }
-  @media screen and (min-width: 992px) {
-    .logo {
-      margin-left: 33.3333333333%; } }
-
 a {
   color: #71C837; }
   a:active, a:hover, a:focus {
     color: #66b432; }
-
-.ribbon {
-  font-size: 1.4em !important;
-  text-align: center;
-  width: 100%;
-  margin: 0px auto;
-  background: #71C837;
-  padding: 1em 2em; }
-  .ribbon .ribbon-content {
-    color: #FFF; }
-
-@media (min-width: 992px) {
-  .ribbon {
-    font-size: 24px !important;
-    width: 800px;
-    margin: 0px auto;
-    position: relative;
-    background: #71C837;
-    color: #fff;
-    text-align: center;
-    padding: 1em 2em;
-    /* Adjust to suit */
-    margin: 2em auto 3em; }
-    .ribbon:before, .ribbon:after {
-      content: "";
-      position: absolute;
-      display: block;
-      bottom: -1em;
-      border: 1.5em solid #63b030;
-      z-index: -1; }
-    .ribbon:before {
-      left: -2em;
-      border-right-width: 1.5em;
-      border-left-color: transparent; }
-    .ribbon:after {
-      right: -2em;
-      border-left-width: 1.5em;
-      border-right-color: transparent; }
-  .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-    content: "";
-    position: absolute;
-    display: block;
-    border-style: solid;
-    border-color: #5aa02c transparent transparent transparent;
-    bottom: -1em; }
-  .ribbon .ribbon-content:before {
-    left: 0;
-    border-width: 1em 0 0 1em; }
-  .ribbon .ribbon-content:after {
-    right: 0;
-    border-width: 1em 1em 0 0; } }
 
 @media print {
   img {
