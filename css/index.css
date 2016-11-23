@@ -1491,24 +1491,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .header-description, .social-badges {
+.container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .header-description:before, .social-badges:before, .container:after, .header-description:after, .social-badges:after {
+  .container:before, .header-description:before, .social-badges:before, .colored-cards-container .colored-cards-group:before, .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
     content: " ";
     display: table; }
-  .container:after, .header-description:after, .social-badges:after {
+  .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .header-description, .social-badges {
+    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .header-description, .social-badges {
+    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .header-description, .social-badges {
+    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
       width: 1170px; } }
 
 .container-fluid {
@@ -3619,15 +3619,15 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header,
-.container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse,
+.container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
+.container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header,
-    .container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse,
+    .container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
+    .container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3671,7 +3671,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand,
+    .navbar > .container .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand, .colored-cards-container .navbar > .colored-cards-group .navbar-brand,
     .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
@@ -4194,15 +4194,15 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron,
+  .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
   .container-fluid .jumbotron {
     border-radius: 8px; }
-  .jumbotron .container, .jumbotron .header-description, .jumbotron .social-badges {
+  .jumbotron .container, .jumbotron .header-description, .jumbotron .social-badges, .jumbotron .colored-cards-container .colored-cards-group, .colored-cards-container .jumbotron .colored-cards-group {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding: 48px 0; }
-      .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron,
+      .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
@@ -5709,6 +5709,58 @@ header {
     display: inline-block;
     width: 120px;
     margin: 3rem; }
+
+.colored-cards-container {
+  overflow: hidden; }
+  @media (min-width: 992px) {
+    .colored-cards-container .colored-cards-group {
+      padding-top: 2em; }
+      .colored-cards-container .colored-cards-group:first-child {
+        padding-top: 0em; } }
+  .colored-cards-container .colored-cards-group .colored-card {
+    width: 100%;
+    padding: 2em;
+    border-radius: 8px;
+    color: #FFF;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 2em; }
+    .colored-cards-container .colored-cards-group .colored-card[role=presentational] {
+      background-color: #eeeeee;
+      width: 200%;
+      display: none; }
+      @media (min-width: 992px) {
+        .colored-cards-container .colored-cards-group .colored-card[role=presentational] {
+          display: block; } }
+      .colored-cards-container .colored-cards-group .colored-card[role=presentational].colored-card-left {
+        margin-left: -100%; }
+    .colored-cards-container .colored-cards-group .colored-card img {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 27px; }
+    .colored-cards-container .colored-cards-group .colored-card h3 {
+      position: absolute;
+      left: 118px;
+      font-size: 2.1em; }
+    .colored-cards-container .colored-cards-group .colored-card p {
+      color: #FFF;
+      font-size: 1.7rem; }
+    .colored-cards-container .colored-cards-group .colored-card a {
+      margin-top: 0.8rem;
+      color: #FFF;
+      font-size: 1.7rem; }
+  .colored-cards-container .colored-cards-group .colored-card.color-candycrowd {
+    background-color: #E16868; }
+  .colored-cards-container .colored-cards-group .colored-card.color-ikeaify {
+    background-color: #36A4BF; }
+  .colored-cards-container .colored-cards-group .colored-card.color-cena {
+    background-color: #BF7F36; }
+  .colored-cards-container .colored-cards-group .colored-card.color-que {
+    background-color: #FF8CA3; }
+  .colored-cards-container .colored-cards-group .colored-card.color-waltz {
+    background-color: #71C837; }
 
 .btn-oval {
   color: #FFF;

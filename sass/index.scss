@@ -14,11 +14,21 @@
 $logo-green: #71C837;
 $logo-blue: #46B5D0;
 
+$candycrowd-accent: #E16868;
+$ikeaify-accent: #36A4BF;
+$cena-accent: #BF7F36;
+$que-accent: #FF8CA3;
+$waltz-accent: $logo-green;
+
 $header-bg: $logo-blue;
 $header-fg: #FFF;
 
+$colored-cards-image-size: 64px;
+$colored-cards-image-padding: 54px;
+
 @import "header";
 @import "social-badges";
+@import "colored-cards";
 
 .btn-oval {
   @include button-variant(#FFF, transparent, #FFF);

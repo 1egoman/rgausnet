@@ -1,0 +1,76 @@
+.colored-cards-container {
+  overflow: hidden;
+
+  .colored-cards-group {
+    @extend .container;
+
+    @media (min-width: $screen-md-min) {
+      // add vertical space between rows when in desktop mode
+      padding-top: 2em;
+      &:first-child {
+        padding-top: 0em;
+      }
+    }
+
+    .colored-card {
+      width: 100%;
+      padding: 2em;
+      border-radius: $border-radius-large;
+      color: #FFF;
+      min-height: 250px;
+
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      // add spacing between colored cards
+      margin-top: 2em;
+
+      // a "grayed-out" card that is purely presentational
+      &[role=presentational] {
+        background-color: $gray-lighter;
+        width: 200%;
+        display: none;
+
+        @media (min-width: $screen-md-min) {
+          display: block;
+        }
+
+        // cards on the left side need to change position in order to be
+        // positioned correctly
+        &.colored-card-left {
+          margin-left: -100%;
+        }
+      }
+
+      img {
+        width: $colored-cards-image-size;
+        height: $colored-cards-image-size;
+        margin-bottom: $colored-cards-image-padding / 2;
+      }
+
+      h3 {
+        position: absolute;
+        left: $colored-cards-image-size + $colored-cards-image-padding;
+        font-size: 2.1em;
+      }
+
+      p {
+        color: #FFF;
+        font-size: 1.7rem;
+      }
+
+      a {
+        margin-top: 0.8rem;
+        color: #FFF;
+        font-size: 1.7rem;
+      }
+    }
+
+    .colored-card.color-candycrowd { background-color: $candycrowd-accent; }
+    .colored-card.color-ikeaify { background-color: $ikeaify-accent; }
+    .colored-card.color-cena { background-color: $cena-accent; }
+    .colored-card.color-que { background-color: $que-accent; }
+    .colored-card.color-waltz { background-color: $waltz-accent; }
+  }
+}
