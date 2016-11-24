@@ -1,9 +1,9 @@
 header {
   background-color: $header-bg;
   color: $header-fg;
-  border-bottom: 8px solid $logo-green;
+  border-bottom: 12px solid $logo-green;
 
-  min-height: 400px;
+  min-height: 480px;
   margin-top: -20px;
 
   // "My name is Ryan Gaus" and friends
@@ -15,6 +15,7 @@ header {
       font-family: 'Josefin Slab', sans-serif;
       font-size: 3.2em;
       padding-top: 2em;
+      margin-bottom: 0.5em;
 
       & > span { font-weight: 600; }
     }

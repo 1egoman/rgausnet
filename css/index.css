@@ -5645,8 +5645,8 @@ button.close {
 header {
   background-color: #46B5D0;
   color: #FFF;
-  border-bottom: 8px solid #71C837;
-  min-height: 400px;
+  border-bottom: 12px solid #71C837;
+  min-height: 480px;
   margin-top: -20px; }
   header .text {
     position: relative;
@@ -5666,7 +5666,8 @@ header {
     header .text h1 {
       font-family: 'Josefin Slab', sans-serif;
       font-size: 3.2em;
-      padding-top: 2em; }
+      padding-top: 2em;
+      margin-bottom: 0.5em; }
       header .text h1 > span {
         font-weight: 600; }
     header .text p {
