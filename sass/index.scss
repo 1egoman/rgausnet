@@ -6,7 +6,7 @@
 
 
 // Google web fonts and bootstrap
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600');
 @import "bootstrap";
 
@@ -29,6 +29,7 @@ $colored-cards-image-padding: 54px;
 @import "header";
 @import "social-badges";
 @import "colored-cards";
+@import "worked-with";
 
 @import "ribbon";
 

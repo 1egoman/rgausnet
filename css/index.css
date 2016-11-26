@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Slab:300,400,600");
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
@@ -1491,24 +1491,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+.container, .header-description, .social-badges, .colored-cards-container .colored-cards-group, .worked-with-group {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .header-description:before, .social-badges:before, .colored-cards-container .colored-cards-group:before, .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
+  .container:before, .header-description:before, .social-badges:before, .colored-cards-container .colored-cards-group:before, .worked-with-group:before, .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after, .worked-with-group:after {
     content: " ";
     display: table; }
-  .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
+  .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after, .worked-with-group:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group, .worked-with-group {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group, .worked-with-group {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group, .worked-with-group {
       width: 1170px; } }
 
 .container-fluid {
@@ -3619,15 +3619,15 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
-.container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
+.container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header, .worked-with-group > .navbar-header,
+.container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse, .worked-with-group > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
-    .container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
+    .container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header, .worked-with-group > .navbar-header,
+    .container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse, .worked-with-group > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3671,7 +3671,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand, .colored-cards-container .navbar > .colored-cards-group .navbar-brand,
+    .navbar > .container .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand, .colored-cards-container .navbar > .colored-cards-group .navbar-brand, .navbar > .worked-with-group .navbar-brand,
     .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
@@ -4194,15 +4194,15 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
+  .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron, .worked-with-group .jumbotron,
   .container-fluid .jumbotron {
     border-radius: 8px; }
-  .jumbotron .container, .jumbotron .header-description, .jumbotron .social-badges, .jumbotron .colored-cards-container .colored-cards-group, .colored-cards-container .jumbotron .colored-cards-group {
+  .jumbotron .container, .jumbotron .header-description, .jumbotron .social-badges, .jumbotron .colored-cards-container .colored-cards-group, .colored-cards-container .jumbotron .colored-cards-group, .jumbotron .worked-with-group {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding: 48px 0; }
-      .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
+      .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron, .worked-with-group .jumbotron,
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
@@ -5763,6 +5763,169 @@ header {
   .colored-cards-container .colored-cards-group .colored-card.color-waltz {
     background-color: #71C837; }
 
+.worked-with-group {
+  margin-top: 4em;
+  padding-top: 4em; }
+  .worked-with-group .company-density {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    margin: 2.1em 0em;
+    border-radius: 8px;
+    min-height: 200px;
+    color: #FFFFFF;
+    background: #4198FF; }
+    .worked-with-group .company-density, .worked-with-group .company-density:hover, .worked-with-group .company-density:active, .worked-with-group .company-density:focus {
+      color: #FFFFFF;
+      text-decoration: none; }
+    .worked-with-group .company-density .image {
+      width: 150px;
+      text-align: center;
+      display: inline-table;
+      margin-right: 2em; }
+      .worked-with-group .company-density .image img {
+        width: 120px;
+        display: inline-block;
+        margin-bottom: auto;
+        padding-bottom: 1em; }
+    .worked-with-group .company-density .description {
+      padding-left: 10px; }
+      .worked-with-group .company-density .description h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-top: 0.2em; }
+        .worked-with-group .company-density .description h1 small {
+          color: #FFFFFF;
+          font-weight: 100; }
+      .worked-with-group .company-density .description a {
+        color: #46B5D0; }
+      .worked-with-group .company-density .description ul {
+        padding-left: 0px;
+        padding-left: 1em;
+        padding-top: 0.5em;
+        font-weight: 100;
+        font-size: 1.2em; }
+        .worked-with-group .company-density .description ul li {
+          margin-bottom: 0.6em;
+          margin-left: -0.8em; }
+      .worked-with-group .company-density .description p {
+        padding-left: 0px;
+        font-weight: 100;
+        font-size: 1.2em; }
+    .worked-with-group .company-density .fake-link {
+      color: #FFFFFF; }
+      .worked-with-group .company-density .fake-link:hover {
+        text-decoration: underline; }
+    .worked-with-group .company-density .date-range {
+      font-size: 1.1em;
+      font-weight: 100; }
+  .worked-with-group .company-lono {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    margin: 2.1em 0em;
+    border-radius: 8px;
+    min-height: 200px;
+    color: #333333;
+    background: #FFFFFF; }
+    .worked-with-group .company-lono, .worked-with-group .company-lono:hover, .worked-with-group .company-lono:active, .worked-with-group .company-lono:focus {
+      color: #333333;
+      text-decoration: none; }
+    .worked-with-group .company-lono .image {
+      width: 150px;
+      text-align: center;
+      display: inline-table;
+      margin-right: 2em; }
+      .worked-with-group .company-lono .image img {
+        width: 120px;
+        display: inline-block;
+        margin-bottom: auto;
+        padding-bottom: 1em; }
+    .worked-with-group .company-lono .description {
+      padding-left: 10px; }
+      .worked-with-group .company-lono .description h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-top: 0.2em; }
+        .worked-with-group .company-lono .description h1 small {
+          color: #333333;
+          font-weight: 100; }
+      .worked-with-group .company-lono .description a {
+        color: #46B5D0; }
+      .worked-with-group .company-lono .description ul {
+        padding-left: 0px;
+        padding-left: 1em;
+        padding-top: 0.5em;
+        font-weight: 100;
+        font-size: 1.2em; }
+        .worked-with-group .company-lono .description ul li {
+          margin-bottom: 0.6em;
+          margin-left: -0.8em; }
+      .worked-with-group .company-lono .description p {
+        padding-left: 0px;
+        font-weight: 100;
+        font-size: 1.2em; }
+    .worked-with-group .company-lono .fake-link {
+      color: #333333; }
+      .worked-with-group .company-lono .fake-link:hover {
+        text-decoration: underline; }
+    .worked-with-group .company-lono .date-range {
+      font-size: 1.1em;
+      font-weight: 100; }
+  .worked-with-group .company-freelancer {
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+    margin: 2.1em 0em;
+    border-radius: 8px;
+    min-height: 200px;
+    color: #333333;
+    background: #FFFFFF; }
+    .worked-with-group .company-freelancer, .worked-with-group .company-freelancer:hover, .worked-with-group .company-freelancer:active, .worked-with-group .company-freelancer:focus {
+      color: #333333;
+      text-decoration: none; }
+    .worked-with-group .company-freelancer .image {
+      width: 150px;
+      text-align: center;
+      display: inline-table;
+      margin-right: 2em; }
+      .worked-with-group .company-freelancer .image img {
+        width: 120px;
+        display: inline-block;
+        margin-bottom: auto;
+        padding-bottom: 1em; }
+    .worked-with-group .company-freelancer .description {
+      padding-left: 10px; }
+      .worked-with-group .company-freelancer .description h1 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-top: 0.2em; }
+        .worked-with-group .company-freelancer .description h1 small {
+          color: #333333;
+          font-weight: 100; }
+      .worked-with-group .company-freelancer .description a {
+        color: #46B5D0; }
+      .worked-with-group .company-freelancer .description ul {
+        padding-left: 0px;
+        padding-left: 1em;
+        padding-top: 0.5em;
+        font-weight: 100;
+        font-size: 1.2em; }
+        .worked-with-group .company-freelancer .description ul li {
+          margin-bottom: 0.6em;
+          margin-left: -0.8em; }
+      .worked-with-group .company-freelancer .description p {
+        padding-left: 0px;
+        font-weight: 100;
+        font-size: 1.2em; }
+    .worked-with-group .company-freelancer .fake-link {
+      color: #333333; }
+      .worked-with-group .company-freelancer .fake-link:hover {
+        text-decoration: underline; }
+    .worked-with-group .company-freelancer .date-range {
+      font-size: 1.1em;
+      font-weight: 100; }
+
 .ribbon {
   text-align: center;
   width: 100%;
@@ -5770,7 +5933,8 @@ header {
   background: #71C837;
   padding: 1em 2em; }
   .ribbon .ribbon-content {
-    color: #FFF; }
+    color: #FFF;
+    font-weight: normal; }
 
 @media (min-width: 992px) {
   .ribbon {

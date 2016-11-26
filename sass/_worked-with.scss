@@ -1,0 +1,98 @@
+
+@mixin company($brand-color: transparent, $second-color: #FFF) {
+  display: flex;
+  flex-direction: row;
+
+  padding: 2em;
+  margin: 2.1em 0em;
+  border-radius: $border-radius-large;
+  min-height: 200px;
+
+  color: $second-color;
+  background: $brand-color;
+
+  &, &:hover, &:active, &:focus {
+    color: $second-color;
+    text-decoration: none;
+  }
+
+  .image {
+    width: 150px;
+    text-align: center;
+    display: inline-table;
+    margin-right: 2em;
+
+    img {
+      width: 120px;
+      display: inline-block;
+      margin-bottom: auto;
+      padding-bottom: 1em;
+    }
+  }
+
+  .description {
+    padding-left: 10px;
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-top: 0.2em;
+      small {
+        color: $second-color;
+        font-weight: 100;
+      }
+    }
+
+    a {
+      color: $logo-blue;
+    }
+
+    // The main body
+    ul {
+      padding-left: 0px;
+      padding-left: 1em;
+      padding-top: 0.5em;
+      font-weight: 100;
+      font-size: 1.2em;
+
+      li {
+        margin-bottom: 0.6em;
+        margin-left: -0.8em;
+      }
+    }
+    p {
+      padding-left: 0px;
+      font-weight: 100;
+      font-size: 1.2em;
+    }
+  }
+
+  .fake-link {
+    color: $second-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .date-range {
+    font-size: 1.1em;
+    font-weight: 100;
+  }
+}
+
+.worked-with-group {
+  @extend .container;
+  margin-top: 4em;
+  padding-top: 4em;
+
+  .company-density {
+    // (density "primary" color below)
+    @include company(#4198FF, #FFFFFF);
+  }
+  .company-lono {
+    @include company(#FFFFFF, $text-color);
+  }
+  .company-freelancer {
+    @include company(#FFFFFF, $text-color);
+  }
+}
