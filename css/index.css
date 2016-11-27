@@ -5778,6 +5778,8 @@ header {
     .worked-with-group .company-density, .worked-with-group .company-density:hover, .worked-with-group .company-density:active, .worked-with-group .company-density:focus {
       color: #FFFFFF;
       text-decoration: none; }
+    .worked-with-group .company-density[href]:active {
+      transform: scale(0.99); }
     .worked-with-group .company-density .image {
       width: 150px;
       text-align: center;
@@ -5798,7 +5800,7 @@ header {
           color: #FFFFFF;
           font-weight: 100; }
       .worked-with-group .company-density .description a {
-        color: #46B5D0; }
+        color: #71C837; }
       .worked-with-group .company-density .description ul {
         padding-left: 0px;
         padding-left: 1em;
@@ -5812,10 +5814,6 @@ header {
         padding-left: 0px;
         font-weight: 100;
         font-size: 1.2em; }
-    .worked-with-group .company-density .fake-link {
-      color: #FFFFFF; }
-      .worked-with-group .company-density .fake-link:hover {
-        text-decoration: underline; }
     .worked-with-group .company-density .date-range {
       font-size: 1.1em;
       font-weight: 100; }
@@ -5831,6 +5829,8 @@ header {
     .worked-with-group .company-lono, .worked-with-group .company-lono:hover, .worked-with-group .company-lono:active, .worked-with-group .company-lono:focus {
       color: #333333;
       text-decoration: none; }
+    .worked-with-group .company-lono[href]:active {
+      transform: scale(0.99); }
     .worked-with-group .company-lono .image {
       width: 150px;
       text-align: center;
@@ -5851,7 +5851,7 @@ header {
           color: #333333;
           font-weight: 100; }
       .worked-with-group .company-lono .description a {
-        color: #46B5D0; }
+        color: #71C837; }
       .worked-with-group .company-lono .description ul {
         padding-left: 0px;
         padding-left: 1em;
@@ -5865,10 +5865,6 @@ header {
         padding-left: 0px;
         font-weight: 100;
         font-size: 1.2em; }
-    .worked-with-group .company-lono .fake-link {
-      color: #333333; }
-      .worked-with-group .company-lono .fake-link:hover {
-        text-decoration: underline; }
     .worked-with-group .company-lono .date-range {
       font-size: 1.1em;
       font-weight: 100; }
@@ -5884,6 +5880,8 @@ header {
     .worked-with-group .company-freelancer, .worked-with-group .company-freelancer:hover, .worked-with-group .company-freelancer:active, .worked-with-group .company-freelancer:focus {
       color: #333333;
       text-decoration: none; }
+    .worked-with-group .company-freelancer[href]:active {
+      transform: scale(0.99); }
     .worked-with-group .company-freelancer .image {
       width: 150px;
       text-align: center;
@@ -5904,7 +5902,7 @@ header {
           color: #333333;
           font-weight: 100; }
       .worked-with-group .company-freelancer .description a {
-        color: #46B5D0; }
+        color: #71C837; }
       .worked-with-group .company-freelancer .description ul {
         padding-left: 0px;
         padding-left: 1em;
@@ -5918,10 +5916,6 @@ header {
         padding-left: 0px;
         font-weight: 100;
         font-size: 1.2em; }
-    .worked-with-group .company-freelancer .fake-link {
-      color: #333333; }
-      .worked-with-group .company-freelancer .fake-link:hover {
-        text-decoration: underline; }
     .worked-with-group .company-freelancer .date-range {
       font-size: 1.1em;
       font-weight: 100; }

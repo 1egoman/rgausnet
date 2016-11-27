@@ -1,4 +1,3 @@
-
 @mixin company($brand-color: transparent, $second-color: #FFF) {
   display: flex;
   flex-direction: row;
@@ -11,9 +10,17 @@
   color: $second-color;
   background: $brand-color;
 
+  // The element that is being "taken over" by the styles can be (and is in some
+  // cases) a link. The below removes the underline and color of the default
+  // link styles.
   &, &:hover, &:active, &:focus {
     color: $second-color;
     text-decoration: none;
+  }
+
+  // If clicking does something, add an animation.
+  &[href]:active {
+    transform: scale(0.99);
   }
 
   .image {
@@ -44,7 +51,7 @@
     }
 
     a {
-      color: $logo-blue;
+      color: $logo-green;
     }
 
     // The main body
@@ -64,13 +71,6 @@
       padding-left: 0px;
       font-weight: 100;
       font-size: 1.2em;
-    }
-  }
-
-  .fake-link {
-    color: $second-color;
-    &:hover {
-      text-decoration: underline;
     }
   }
 
