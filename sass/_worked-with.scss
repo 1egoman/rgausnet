@@ -18,7 +18,7 @@
     text-decoration: none;
   }
 
-  // If clicking does something, add an animation.
+  // If clicking does something (ie, it's a link), add an animation on "press".
   &[href]:active {
     transform: scale(0.99);
   }
@@ -61,6 +61,7 @@
       padding-top: 0.5em;
       font-weight: 100;
       font-size: 1.2em;
+      padding-right: 1em;
 
       li {
         margin-bottom: 0.6em;
@@ -81,7 +82,6 @@
 }
 
 .worked-with-group {
-  @extend .container;
   margin-top: 4em;
   padding-top: 4em;
 
@@ -90,6 +90,9 @@
     @include company(#4198FF, #FFFFFF);
   }
   .company-lono {
+    @include company($logo-green, #FFFFFF);
+  }
+  .company-mcon {
     @include company(#FFFFFF, $text-color);
   }
   .company-freelancer {
