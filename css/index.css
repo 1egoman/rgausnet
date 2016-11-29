@@ -5768,7 +5768,7 @@ header {
   padding-top: 4em; }
   .worked-with-group .company-density {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 2em;
     margin: 2.1em 0em;
     border-radius: 8px;
@@ -5781,10 +5781,11 @@ header {
     .worked-with-group .company-density[href]:active {
       transform: scale(0.99); }
     .worked-with-group .company-density .image {
-      width: 150px;
+      width: 100%;
+      display: block;
       text-align: center;
-      display: inline-table;
-      margin-right: 2em; }
+      margin-right: 2em;
+      margin-bottom: 1em; }
       .worked-with-group .company-density .image img {
         width: 120px;
         display: inline-block;
@@ -5818,9 +5819,16 @@ header {
     .worked-with-group .company-density .date-range {
       font-size: 1.1em;
       font-weight: 100; }
+    @media (min-width: 768px) {
+      .worked-with-group .company-density {
+        flex-direction: row; }
+        .worked-with-group .company-density .image {
+          width: 150px;
+          display: inline-table;
+          margin-bottom: 0em; } }
   .worked-with-group .company-lono {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 2em;
     margin: 2.1em 0em;
     border-radius: 8px;
@@ -5833,10 +5841,11 @@ header {
     .worked-with-group .company-lono[href]:active {
       transform: scale(0.99); }
     .worked-with-group .company-lono .image {
-      width: 150px;
+      width: 100%;
+      display: block;
       text-align: center;
-      display: inline-table;
-      margin-right: 2em; }
+      margin-right: 2em;
+      margin-bottom: 1em; }
       .worked-with-group .company-lono .image img {
         width: 120px;
         display: inline-block;
@@ -5870,9 +5879,16 @@ header {
     .worked-with-group .company-lono .date-range {
       font-size: 1.1em;
       font-weight: 100; }
+    @media (min-width: 768px) {
+      .worked-with-group .company-lono {
+        flex-direction: row; }
+        .worked-with-group .company-lono .image {
+          width: 150px;
+          display: inline-table;
+          margin-bottom: 0em; } }
   .worked-with-group .company-mcon {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 2em;
     margin: 2.1em 0em;
     border-radius: 8px;
@@ -5885,10 +5901,11 @@ header {
     .worked-with-group .company-mcon[href]:active {
       transform: scale(0.99); }
     .worked-with-group .company-mcon .image {
-      width: 150px;
+      width: 100%;
+      display: block;
       text-align: center;
-      display: inline-table;
-      margin-right: 2em; }
+      margin-right: 2em;
+      margin-bottom: 1em; }
       .worked-with-group .company-mcon .image img {
         width: 120px;
         display: inline-block;
@@ -5922,9 +5939,16 @@ header {
     .worked-with-group .company-mcon .date-range {
       font-size: 1.1em;
       font-weight: 100; }
+    @media (min-width: 768px) {
+      .worked-with-group .company-mcon {
+        flex-direction: row; }
+        .worked-with-group .company-mcon .image {
+          width: 150px;
+          display: inline-table;
+          margin-bottom: 0em; } }
   .worked-with-group .company-freelancer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 2em;
     margin: 2.1em 0em;
     border-radius: 8px;
@@ -5937,10 +5961,11 @@ header {
     .worked-with-group .company-freelancer[href]:active {
       transform: scale(0.99); }
     .worked-with-group .company-freelancer .image {
-      width: 150px;
+      width: 100%;
+      display: block;
       text-align: center;
-      display: inline-table;
-      margin-right: 2em; }
+      margin-right: 2em;
+      margin-bottom: 1em; }
       .worked-with-group .company-freelancer .image img {
         width: 120px;
         display: inline-block;
@@ -5974,6 +5999,13 @@ header {
     .worked-with-group .company-freelancer .date-range {
       font-size: 1.1em;
       font-weight: 100; }
+    @media (min-width: 768px) {
+      .worked-with-group .company-freelancer {
+        flex-direction: row; }
+        .worked-with-group .company-freelancer .image {
+          width: 150px;
+          display: inline-table;
+          margin-bottom: 0em; } }
 
 .ribbon {
   text-align: center;

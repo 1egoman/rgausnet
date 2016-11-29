@@ -1,6 +1,6 @@
 @mixin company($brand-color: transparent, $second-color: #FFF) {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   padding: 2em;
   margin: 2.1em 0em;
@@ -24,10 +24,11 @@
   }
 
   .image {
-    width: 150px;
+    width: 100%;
+    display: block;
     text-align: center;
-    display: inline-table;
     margin-right: 2em;
+    margin-bottom: 1em;
 
     img {
       width: 120px;
@@ -79,6 +80,16 @@
     font-size: 1.1em;
     font-weight: 100;
   }
+
+  @media (min-width: $screen-sm-min) {
+    flex-direction: row;
+    .image {
+      width: 150px;
+      display: inline-table;
+      margin-bottom: 0em;
+    }
+  }
+
 }
 
 .worked-with-group {
