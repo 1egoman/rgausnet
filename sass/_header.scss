@@ -29,15 +29,16 @@ header {
   .image {
     @include make-xs-column(12);
     @include make-md-column(5);
-    height: 400px;
+    height: 480px;
 
     background-image: url(/img/me.png);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
 
     // on desktops, move the image to the right
     @media (min-width: $screen-md-min) {
-      background-position: right center;
+      background-position: right bottom;
     }
   }
 
@@ -52,10 +53,10 @@ header {
 // The text below the header.
 .header-description {
   @extend .container;
-  margin-top: 1.2rem;
-  margin-bottom: 2.4rem;
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
 
-  font-size: 1.5em;
+  font-size: 2.2em;
   color: $gray-light;
   font-weight: 300;
   text-align: center;

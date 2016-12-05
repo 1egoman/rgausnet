@@ -5684,26 +5684,27 @@ header {
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    height: 400px;
+    height: 480px;
     background-image: url(/img/me.png);
     background-repeat: no-repeat;
-    background-position: center; }
+    background-position: center;
+    background-size: contain; }
     @media (min-width: 992px) {
       header .image {
         float: left;
         width: 41.6666666667%; } }
     @media (min-width: 992px) {
       header .image {
-        background-position: right center; } }
+        background-position: right bottom; } }
   header .btn {
     width: 256px;
     font-size: 1.5em;
     line-height: 2; }
 
 .header-description {
-  margin-top: 1.2rem;
-  margin-bottom: 2.4rem;
-  font-size: 1.5em;
+  margin-top: 4.8rem;
+  margin-bottom: 4.8rem;
+  font-size: 2.2em;
   color: #777777;
   font-weight: 300;
   text-align: center; }
