@@ -6008,6 +6008,48 @@ header {
           display: inline-table;
           margin-bottom: 0em; } }
 
+.footer {
+  background-color: #333333;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+  .footer .logo-medallion {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #eeeeee;
+    background-image: url(/img/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: center center;
+    margin-bottom: 2em; }
+  .footer ul {
+    list-style-type: none;
+    padding-left: 0px;
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center; }
+    .footer ul li {
+      font-size: 1.2em; }
+      .footer ul li a {
+        color: #FFF; }
+  @media (min-width: 768px) {
+    .footer ul li {
+      display: inline-block;
+      padding-left: 0em;
+      padding-right: 0em; }
+      .footer ul li:before {
+        content: "•";
+        color: #FFF;
+        padding-left: 0.5em;
+        padding-right: 0.5em; }
+      .footer ul li:first-child:before {
+        content: "";
+        padding-left: 0em;
+        padding-right: 0em; } }
+
 .ribbon {
   text-align: center;
   width: 100%;

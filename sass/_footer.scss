@@ -1,0 +1,59 @@
+$medallion-width: 128px;
+$medallion-margin: 24px;
+.footer {
+  background-color: $gray-dark;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  .logo-medallion {
+    width: $medallion-width;
+    height: $medallion-width;
+    border-radius: 50%;
+    display: inline-block;
+
+    background-color: $gray-lighter;
+    background-image: url(/img/logo.svg);
+    background-repeat: no-repeat;
+    background-size: $medallion-width - $medallion-margin * 2;
+    background-position: center center;
+
+    margin-bottom: 2em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    text-align: left;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+
+    // Each footer item
+    li {
+      font-size: 1.2em;
+      a { color: #FFF; }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    ul li {
+      display: inline-block;
+      padding-left: 0em;
+      padding-right: 0em;
+
+      // Bullets separating each item.
+      &:before {
+        content: "•";
+        color: #FFF;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+      &:first-child:before {
+        content: "";
+        padding-left: 0em;
+        padding-right: 0em;
+      }
+    }
+  }
+}
