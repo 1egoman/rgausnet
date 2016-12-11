@@ -9,36 +9,71 @@ header {
   // "My name is Ryan Gaus" and friends
   .text {
     @include make-xs-column(12);
-    @include make-md-column(7);
+    @include make-md-column(8);
+    @include make-md-column-offset(2);
+    text-align: center;
 
     h1 {
       font-family: 'Josefin Slab', sans-serif;
-      font-size: 3.2em;
+      font-size: 2.4em;
       padding-top: 2em;
       margin-bottom: 0.5em;
 
-      & > span { font-weight: 600; }
+      & > span {
+        font-weight: 600;
+        white-space: nowrap;
+      }
     }
     p {
       font-weight: 300;
-      font-size: 2.2em;
+      font-size: 1.8em;
+
+      // bits that should always wrap together
+      span { white-space: nowrap; }
     }
   }
 
-  // Picture of me!
-  .image {
+  // Imaages that represent me
+  .images {
     @include make-xs-column(12);
-    @include make-md-column(5);
-    height: 480px;
+    @include make-md-column(8);
+    @include make-md-column-offset(2);
+    margin-top: 3em;
 
-    background-image: url(/img/me.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    li {
+      @include make-xs-column(4);
+      list-style-type: none;
+      text-align: center;
+      margin-top: 2em;
+      margin-bottom: 2em;
 
-    // on desktops, move the image to the right
-    @media (min-width: $screen-md-min) {
-      background-position: right bottom;
+      img {
+        max-width: 72px;
+        display: inline-block;
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    // on desktops, make the three images bigger
+    .images li img {
+      max-width: 96px;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    .text {
+      h1 {
+        font-size: 3.2em;
+      }
+      p {
+        font-size: 2.2em;
+      }
+    }
+
+    // on desktops, make the three images bigger
+    .images li img {
+      max-width: 150px;
     }
   }
 
@@ -54,7 +89,7 @@ header {
 .header-description {
   @extend .container;
   margin-top: 4.8rem;
-  margin-bottom: 4.8rem;
+  margin-bottom: 2.8rem;
 
   font-size: 2.2em;
   color: $gray-light;
