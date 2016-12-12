@@ -5738,11 +5738,25 @@ header {
 
 .social-badges {
   text-align: center;
-  margin-top: 3rem; }
-  .social-badges img {
-    display: inline-block;
-    width: 120px;
-    margin: 3rem; }
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 288px; }
+  .social-badges a {
+    position: relative;
+    float: left;
+    width: 33.3333333333%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center; }
+    .social-badges a img {
+      width: 72px;
+      display: inline-block; }
+  @media (min-width: 768px) {
+    .social-badges {
+      width: 640px; }
+      .social-badges a img {
+        width: 128px; } }
 
 .colored-cards-container {
   overflow: hidden; }
