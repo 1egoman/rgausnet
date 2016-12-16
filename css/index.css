@@ -5681,6 +5681,7 @@ header {
       header .text p span {
         white-space: nowrap; }
   header .images {
+    margin-top: 3em;
     position: relative;
     float: left;
     width: 100%;
@@ -5691,7 +5692,10 @@ header {
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-top: 3em; }
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
     @media (min-width: 992px) {
       header .images {
         float: left;
@@ -5699,6 +5703,13 @@ header {
     @media (min-width: 992px) {
       header .images {
         margin-left: 16.6666666667%; } }
+    @media (min-width: 1200px) {
+      header .images {
+        float: left;
+        width: 50%; } }
+    @media (min-width: 1200px) {
+      header .images {
+        margin-left: 25%; } }
     header .images li {
       position: relative;
       float: left;
@@ -5711,18 +5722,19 @@ header {
       margin-top: 2em;
       margin-bottom: 2em; }
       header .images li img {
-        max-width: 72px;
+        max-width: 128px;
+        width: 100%;
         display: inline-block; }
-  @media (min-width: 768px) {
-    header .images li img {
-      max-width: 96px; } }
-  @media (min-width: 992px) {
-    header .text h1 {
-      font-size: 3.2em; }
-    header .text p {
-      font-size: 2.2em; }
-    header .images li img {
-      max-width: 150px; } }
+    @media (min-width: 768px) {
+      header .images .images li img {
+        max-width: 96px; } }
+    @media (min-width: 992px) {
+      header .images .text h1 {
+        font-size: 3.2em; }
+      header .images .text p {
+        font-size: 2.2em; }
+      header .images .images li img {
+        max-width: 256px; } }
   header .btn {
     width: 256px;
     font-size: 1.5em;
@@ -5736,27 +5748,60 @@ header {
   font-weight: 300;
   text-align: center; }
 
-.social-badges {
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: 288px; }
-  .social-badges a {
+.social-badges .images {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 992px) {
+    .social-badges .images {
+      float: left;
+      width: 66.6666666667%; } }
+  @media (min-width: 992px) {
+    .social-badges .images {
+      margin-left: 16.6666666667%; } }
+  @media (min-width: 1200px) {
+    .social-badges .images {
+      float: left;
+      width: 50%; } }
+  @media (min-width: 1200px) {
+    .social-badges .images {
+      margin-left: 25%; } }
+  .social-badges .images li {
     position: relative;
     float: left;
     width: 33.3333333333%;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    text-align: center; }
-    .social-badges a img {
-      width: 72px;
+    list-style-type: none;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em; }
+    .social-badges .images li img {
+      max-width: 128px;
+      width: 100%;
       display: inline-block; }
   @media (min-width: 768px) {
-    .social-badges {
-      width: 640px; }
-      .social-badges a img {
-        width: 128px; } }
+    .social-badges .images .images li img {
+      max-width: 96px; } }
+  @media (min-width: 992px) {
+    .social-badges .images .text h1 {
+      font-size: 3.2em; }
+    .social-badges .images .text p {
+      font-size: 2.2em; }
+    .social-badges .images .images li img {
+      max-width: 256px; } }
 
 .colored-cards-container {
   overflow: hidden; }

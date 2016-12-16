@@ -1,27 +1,6 @@
-$social-badge-size: 72px; // the width of each cell
-$social-badge-padding: 72px; // The spacing of all the cells.
-$social-badge-size-lg: 128px;
-$social-badge-padding-lg: 256px;
 .social-badges {
   @extend .container;
-  text-align: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  width: $social-badge-size * 3 + $social-badge-padding;
-
-  a {
-    @include make-xs-column(4);
-    text-align: center;
-    img {
-      width: $social-badge-size;
-      display: inline-block;
-    }
-  }
-
-  @media (min-width: $screen-sm-min) {
-    width: $social-badge-size-lg * 3 + $social-badge-padding-lg;
-    a img {
-      width: $social-badge-size-lg;
-    }
+  .images {
+    @include image-list;
   }
 }
