@@ -1,48 +1,3 @@
-@mixin image-list {
-  @include make-xs-column(12);
-  @include make-md-column(8);
-  @include make-md-column-offset(2);
-  @include make-lg-column(6);
-  @include make-lg-column-offset(3);
-
-  li {
-    @include make-xs-column(4);
-    list-style-type: none;
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 2em;
-
-    img {
-      max-width: 128px;
-      width: 100%;
-      display: inline-block;
-    }
-  }
-
-  @media (min-width: $screen-sm-min) {
-    // on desktops, make the three images bigger
-    .images li img {
-      max-width: 96px;
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    .text {
-      h1 {
-        font-size: 3.2em;
-      }
-      p {
-        font-size: 2.2em;
-      }
-    }
-
-    // on desktops, make the three images bigger
-    .images li img {
-      max-width: 256px;
-    }
-  }
-}
-
 header {
   background-color: $header-bg;
   color: $header-fg;
@@ -80,8 +35,8 @@ header {
 
   // Imaages that represent me
   .images {
-    margin-top: 3em;
     @include image-list;
+    margin-top: 3em;
   }
 
   // the hero button on the left side

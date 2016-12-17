@@ -26,6 +26,8 @@ $header-fg: #FFF;
 $colored-cards-image-size: 64px;
 $colored-cards-image-padding: 54px;
 
+@import "mixins";
+
 @import "header";
 @import "social-badges";
 @import "colored-cards";

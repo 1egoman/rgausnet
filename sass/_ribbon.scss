@@ -4,6 +4,7 @@
 
   width: 100%;
   margin: 0px auto;
+  height: 3.2em;
 
   background: $logo-green;
   padding: 1em 2em;
@@ -11,6 +12,8 @@
   .ribbon-content {
     color: #FFF;
     font-weight: normal;
+    font-size: 0.6em;
+    white-space: nowrap;
   }
 }
 
@@ -49,6 +52,9 @@
       border-left-width: 1.5em;
       border-right-color: transparent;
     }
+  }
+  .ribbon .ribbon-content {
+    font-size: 1em;
   }
   .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
     content: "";
