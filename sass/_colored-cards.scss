@@ -66,3 +66,12 @@
     .colored-card.color-waltz { background-color: $waltz-accent; }
   }
 }
+
+@media print {
+  .colored-cards-container .colored-cards-group .colored-card {
+    margin-top: 0px;
+    h3 {
+      position: static;
+    }
+  }
+}

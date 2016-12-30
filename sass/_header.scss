@@ -6,6 +6,10 @@ header {
   min-height: 480px;
   margin-top: -20px;
 
+  .wrapper {
+    @extend .container;
+  }
+
   // "My name is Ryan Gaus" and friends
   .text {
     @include make-xs-column(12);
@@ -15,7 +19,7 @@ header {
 
     h1 {
       font-family: 'Josefin Slab', sans-serif;
-      font-size: 2.4em;
+      font-size: 4.2em;
       padding-top: 2em;
       margin-bottom: 0.5em;
 
@@ -26,7 +30,7 @@ header {
     }
     p {
       font-weight: 300;
-      font-size: 1.8em;
+      font-size: 2.4em;
 
       // bits that should always wrap together
       span { white-space: nowrap; }
@@ -57,4 +61,37 @@ header {
   color: $gray-light;
   font-weight: 300;
   text-align: center;
+}
+
+@media print {
+  header {
+    margin-top: 1rem;
+    border-bottom-width: 0px;
+    @include make-xs-column(6);
+
+    .wrapper {
+      width: 100%;
+    }
+
+    .text {
+      padding-left: 0px;
+      h1 {
+        font-size: 2.4em;
+        margin-top: 0px;
+        padding-top: 0px;
+        text-align: left;
+      }
+      p {
+        font-size: 1.2em;
+        text-align: left;
+      }
+    }
+    .images {
+      display: none;
+    }
+  }
+
+  .header-description {
+    display: none;
+  }
 }

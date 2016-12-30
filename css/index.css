@@ -1491,24 +1491,24 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+.container, header .wrapper, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container:before, .header-description:before, .social-badges:before, .colored-cards-container .colored-cards-group:before, .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
+  .container:before, header .wrapper:before, .header-description:before, .social-badges:before, .colored-cards-container .colored-cards-group:before, .container:after, header .wrapper:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
     content: " ";
     display: table; }
-  .container:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
+  .container:after, header .wrapper:after, .header-description:after, .social-badges:after, .colored-cards-container .colored-cards-group:after {
     clear: both; }
   @media (min-width: 768px) {
-    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+    .container, header .wrapper, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
       width: 750px; } }
   @media (min-width: 992px) {
-    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+    .container, header .wrapper, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
       width: 970px; } }
   @media (min-width: 1200px) {
-    .container, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
+    .container, header .wrapper, .header-description, .social-badges, .colored-cards-container .colored-cards-group {
       width: 1170px; } }
 
 .container-fluid {
@@ -3619,15 +3619,15 @@ tbody.collapse.in {
     .navbar-fixed-bottom .navbar-collapse {
       max-height: 200px; } }
 
-.container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
-.container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
+.container > .navbar-header, header .wrapper > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
+.container > .navbar-collapse, header .wrapper > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
 .container-fluid > .navbar-header,
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px; }
   @media (min-width: 768px) {
-    .container > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
-    .container > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
+    .container > .navbar-header, header .wrapper > .navbar-header, .header-description > .navbar-header, .social-badges > .navbar-header, .colored-cards-container .colored-cards-group > .navbar-header,
+    .container > .navbar-collapse, header .wrapper > .navbar-collapse, .header-description > .navbar-collapse, .social-badges > .navbar-collapse, .colored-cards-container .colored-cards-group > .navbar-collapse,
     .container-fluid > .navbar-header,
     .container-fluid > .navbar-collapse {
       margin-right: 0;
@@ -3671,7 +3671,7 @@ tbody.collapse.in {
   .navbar-brand > img {
     display: block; }
   @media (min-width: 768px) {
-    .navbar > .container .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand, .colored-cards-container .navbar > .colored-cards-group .navbar-brand,
+    .navbar > .container .navbar-brand, header .navbar > .wrapper .navbar-brand, .navbar > .header-description .navbar-brand, .navbar > .social-badges .navbar-brand, .colored-cards-container .navbar > .colored-cards-group .navbar-brand,
     .navbar > .container-fluid .navbar-brand {
       margin-left: -15px; } }
 
@@ -4194,15 +4194,15 @@ a.badge:hover, a.badge:focus {
     font-weight: 200; }
   .jumbotron > hr {
     border-top-color: #d5d5d5; }
-  .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
+  .container .jumbotron, header .wrapper .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
   .container-fluid .jumbotron {
     border-radius: 8px; }
-  .jumbotron .container, .jumbotron .header-description, .jumbotron .social-badges, .jumbotron .colored-cards-container .colored-cards-group, .colored-cards-container .jumbotron .colored-cards-group {
+  .jumbotron .container, .jumbotron header .wrapper, header .jumbotron .wrapper, .jumbotron .header-description, .jumbotron .social-badges, .jumbotron .colored-cards-container .colored-cards-group, .colored-cards-container .jumbotron .colored-cards-group {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
     .jumbotron {
       padding: 48px 0; }
-      .container .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
+      .container .jumbotron, header .wrapper .jumbotron, .header-description .jumbotron, .social-badges .jumbotron, .colored-cards-container .colored-cards-group .jumbotron,
       .container-fluid .jumbotron {
         padding-left: 60px;
         padding-right: 60px; }
@@ -5669,7 +5669,7 @@ header {
         margin-left: 16.6666666667%; } }
     header .text h1 {
       font-family: 'Josefin Slab', sans-serif;
-      font-size: 2.4em;
+      font-size: 4.2em;
       padding-top: 2em;
       margin-bottom: 0.5em; }
       header .text h1 > span {
@@ -5677,7 +5677,7 @@ header {
         white-space: nowrap; }
     header .text p {
       font-weight: 300;
-      font-size: 1.8em; }
+      font-size: 2.4em; }
       header .text p span {
         white-space: nowrap; }
   header .images {
@@ -5748,6 +5748,33 @@ header {
   font-weight: 300;
   text-align: center; }
 
+@media print {
+  header {
+    margin-top: 1rem;
+    border-bottom-width: 0px;
+    position: relative;
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    header .wrapper {
+      width: 100%; }
+    header .text {
+      padding-left: 0px; }
+      header .text h1 {
+        font-size: 2.4em;
+        margin-top: 0px;
+        padding-top: 0px;
+        text-align: left; }
+      header .text p {
+        font-size: 1.2em;
+        text-align: left; }
+    header .images {
+      display: none; }
+  .header-description {
+    display: none; } }
+
 .social-badges .images {
   position: relative;
   float: left;
@@ -5803,6 +5830,10 @@ header {
     .social-badges .images .images li img {
       max-width: 256px; } }
 
+@media print {
+  .social-badges {
+    display: none; } }
+
 .colored-cards-container {
   overflow: hidden; }
   .colored-cards-container .colored-cards-group .colored-card {
@@ -5849,6 +5880,12 @@ header {
     background-color: #FF8CA3; }
   .colored-cards-container .colored-cards-group .colored-card.color-waltz {
     background-color: #71C837; }
+
+@media print {
+  .colored-cards-container .colored-cards-group .colored-card {
+    margin-top: 0px; }
+    .colored-cards-container .colored-cards-group .colored-card h3 {
+      position: static; } }
 
 .worked-with-group {
   margin-top: 4em;

@@ -4,3 +4,9 @@
     @include image-list;
   }
 }
+
+@media print {
+  .social-badges {
+    display: none;
+  }
+}
