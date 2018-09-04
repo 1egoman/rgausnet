@@ -1,0 +1,42 @@
+{
+  "commit": "4e7e2f5d7940a711b59f89190b5b7e3029f050f5",
+  "pagesAndArtboards": {
+    "3BB277C1-D4B0-42B6-8FC1-728AFEDF2877": {
+      "name": "Page 1",
+      "artboards": {
+        "3264D847-1FFC-4663-A8E3-C50089310843": {
+          "name": "Desktop Copy"
+        },
+        "8D48E295-E7EA-4786-978C-87E5B4676533": {
+          "name": "Desktop Copy 2"
+        },
+        "A2AE444B-057F-498B-9DD7-2EF07C20912F": {
+          "name": "Desktop Copy 3"
+        }
+      }
+    }
+  },
+  "version": 103,
+  "fonts": [
+    "JosefinSans-SemiBold",
+    "JosefinSans"
+  ],
+  "compatibilityVersion": 99,
+  "app": "com.bohemiancoding.sketch3",
+  "autosaved": 1,
+  "variant": "NONAPPSTORE",
+  "created": {
+    "commit": "4e7e2f5d7940a711b59f89190b5b7e3029f050f5",
+    "appVersion": "50.2",
+    "build": 55047,
+    "app": "com.bohemiancoding.sketch3",
+    "compatibilityVersion": 99,
+    "version": 103,
+    "variant": "NONAPPSTORE"
+  },
+  "saveHistory": [
+    "NONAPPSTORE.55047"
+  ],
+  "appVersion": "50.2",
+  "build": 55047
+}
