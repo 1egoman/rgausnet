@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 import { blue, darkerBlue } from '../variables';
 
-const A = ({href, onClick, children}) => (
+const A = ({href, target, onClick, children}) => (
   <Fragment>
     {href ? (
-      <a href={href}>{children}</a>
+      <a href={href} target={target}>{children}</a>
     ) : (
       <a onClick={onClick}>{children}</a>
     )}

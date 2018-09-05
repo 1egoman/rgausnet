@@ -47,6 +47,9 @@ const Head = props => (
         font-size: 18px;
       }
     `}</style>
+
+    {/* Include instagram embed script */}
+    <script async defer src="https://www.instagram.com/embed.js"></script>
   </Fragment>
 );
 
