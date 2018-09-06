@@ -3,7 +3,7 @@ import Head from '../components/head';
 import A from '../components/a';
 import Masonry from 'react-masonry-component';
 
-import { grayLight } from '../variables.json';
+import { blue, grayLight } from '../variables.json';
 
 const Hero = () => (
   <Fragment>
@@ -30,7 +30,7 @@ const Hero = () => (
           </span>
         </p>
         <p className="hero-desc">
-          <A onClick={() => console.log('bla')}>Read More</A>
+          <A onClick={() => console.log('bla')}>Read more</A>
         </p>
       </div>
     </div>
@@ -116,75 +116,145 @@ class InstagramEmbed extends Component {
   }
 }
 
-const ProjectList = () => (
-  <Fragment>
-    <div className="projects-container">
-      <div className="projects-tab-row">
-        <div className="projects-tab-name">My Feed</div>
-      </div>
-      <div className="projects-content-wrapper">
-        <div className="projects-content">
-          <Masonry options={{gutter: 20}}>
-            <InstagramEmbed />
-            <InstagramEmbed />
-            <div
-              style={{background: 'red', width: 490, height: 300, marginBottom: 20}}
-            />
-            <div
-              style={{background: 'red', width: 490, height: 714}}
-            />
-            <div
-              style={{background: 'red', width: 490, height: 714}}
-            />
-          </Masonry>
+const GithubEmbed = () => {
+  return (
+    <Fragment>
+      <div className="github-card">
+        <span className="github-card-header">git-design</span>
+        <div className="github-card-desc">
+          A small shim for managing design assets (sketch and invision studio) with git.
+        </div>
+        <div className="github-card-footer">
+          <span className="github-card-footer-item">Learn more</span>
+          <span className="github-card-footer-platform">Github</span>
         </div>
       </div>
-    </div>
-    <style jsx>{`
-      .projects-container {
-        width: 100%;
-        background-color: ${grayLight};
-        margin-top: 42px;
+      <style jsx>{`
+        .github-card {
+          width: 100%;
+          max-width: 490px;
+          background-color: #fff;
+          border-radius: 3px;
+          border: 1px solid #dbdbdb;
 
-        position: relative;
-        min-height 300px;
-      }
-      .projects-tab-row {
-        position: absolute;
-        width: 100%;
-        top: -21px;
+          padding-top: 20px;
 
-        display: flex;
-        flex-direction: row;
-      }
-      .projects-tab-name {
-        display: inline-block;
-        font-size: 20px;
-        font-weight: 600;
-        border-radius: 4px;
+          margin-bottom: 20px;
+          cursor: pointer;
+          transition: all 100ms ease-in-out;
+        }
+        .github-card:active, .github-card:focus {
+          transform: translate(0px, 2px);
+        }
+        .github-card-header {
+          font-size: 24px;
+          font-weight: 600;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .github-card-desc {
+          margin-top: 16px;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .github-card-footer {
+          margin-top: 16px;
+          padding-left: 16px;
+          padding-right: 16px;
+          font-size: 18px;
+          line-height: 36px;
+          /* background-color: #dbdbdb; */
 
-        background-color: ${grayLight};
-        line-height: 42px;
+          display: flex;
+          flex-direction: row;
+        }
+        .github-card-footer-item {
+          margin-right: 10px;
+          color: ${blue};
+          font-weight: 600;
+        }
+        .github-card-footer-platform {
+          margin-left: auto;
+          font-weight: 600;
+        }
+      `}</style>
+    </Fragment>
+  );
+}
 
-        padding-left: 42px;
-        padding-right: 42px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .projects-content-wrapper {
-        padding-top: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      .projects-content {
-        width: 100%;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    `}</style>
-  </Fragment>
-);
+const ProjectList = ({children}) => {
+  return (
+    <Fragment>
+      <div className="projects-container">
+        <div className="projects-tab-row">
+          <div className="projects-tab-name">My Feed</div>
+        </div>
+        <div className="projects-content-wrapper">
+          <div className="projects-content">
+            <Masonry
+              className="projects-masonry"
+              options={{
+                columnWidth: 490,
+                gutter: 20,
+                fitWidth: true,
+                transitionDuration: '0.2s',
+              }}
+            >
+              {children}
+            </Masonry>
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
+        .projects-container {
+          width: 100%;
+          background-color: ${grayLight};
+          margin-top: 42px;
+
+          position: relative;
+          min-height 300px;
+        }
+        .projects-tab-row {
+          position: absolute;
+          width: 100%;
+          top: -21px;
+
+          display: flex;
+          flex-direction: row;
+        }
+        .projects-tab-name {
+          display: inline-block;
+          font-size: 20px;
+          font-weight: 600;
+          border-radius: 4px;
+
+          background-color: ${grayLight};
+          line-height: 42px;
+
+          padding-left: 42px;
+          padding-right: 42px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .projects-content-wrapper {
+          padding-top: 30px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .projects-content {
+          width: 100%;
+          max-width: 1000px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        :global(.projects-masonry) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      `}</style>
+    </Fragment>
+  );
+}
 
 const Home = () => (
   <div>
@@ -192,7 +262,17 @@ const Home = () => (
 
     <Hero />
 
-    <ProjectList />
+    <ProjectList>
+      <InstagramEmbed />
+      <GithubEmbed />
+      <InstagramEmbed />
+      <div
+        style={{background: 'red', width: 490, height: 714}}
+      />
+      <div
+        style={{background: 'red', width: 490, height: 714}}
+      />
+    </ProjectList>
   </div>
 )
 
