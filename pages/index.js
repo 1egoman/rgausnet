@@ -3,7 +3,26 @@ import Head from '../components/head';
 import A from '../components/a';
 import Masonry from 'react-masonry-component';
 
-import { blue, grayLight } from '../variables.json';
+import { black, blue, grayLight } from '../variables.json';
+
+const SOCIAL_CARDS = [
+  ...require('../media/instagram.json').map(entry => ({
+    ...entry,
+    type: 'instagram',
+    id: entry.node.shortcode,
+    timestamp: new Date(entry.node.taken_at_timestamp * 1000).toISOString(),
+  })),
+  ...require('../media/github.json').map(entry => ({
+    ...entry,
+    type: 'github',
+    id: entry.id,
+    timestamp: entry.created_at,
+  })),
+].sort((a, b) => {
+  return a.timestamp < b.timestamp;
+});
+
+const MasonryContext = React.createContext();
 
 const Hero = () => (
   <Fragment>
@@ -81,6 +100,8 @@ const Hero = () => (
 );
 
 class InstagramEmbed extends Component {
+  state = { complete: false }
+
   componentDidMount() {
     if (window.instgrm) {
       // Instagram is loaded.
@@ -97,42 +118,104 @@ class InstagramEmbed extends Component {
   }
 
   hydrateEmbed = () => {
-    instgrm.Embeds.process(this.widget);
+    setTimeout(() => {
+      instgrm.Embeds.process(this.widget);
+      const interval = window.setInterval(() => {
+        const child = this.container && this.container.children[0];
+        if (child && child.tagName === 'IFRAME') {
+          window.clearInterval(interval);
+          child.onload = () => {
+            this.setState({complete: true}, () => {
+              this.parentComponent.masonry.performLayout();
+              this.props.onComplete();
+            });
+          }
+        }
+      }, 500);
+    }, 250);
+  }
+
+  render() {
+    const { id } = this.props;
+    return <MasonryContext.Consumer children={cmp => {
+      this.parentComponent = cmp;
+      return (
+        <div style={
+          this.state.complete ? {width: 490, marginBottom: 8} : {width: 490, height: 0}
+        } ref={r => { this.container = r; }}>
+          <blockquote
+            className="instagram-media"
+            ref={r => { this.widget = r; }}
+            data-instgrm-captioned
+            data-instgrm-permalink={`https://www.instagram.com/p/${id}/?utm_source=ig_embed`}
+            data-instgrm-version="9"
+            style={{width: 490}}
+          ></blockquote>
+        </div>
+      );
+    }} />
+  }
+}
+
+class TwitterEmbed extends Component {
+  componentDidMount() {
+    if (window.twttr) {
+      // Twitter is loaded.
+      this.hydrateEmbed();
+    } else {
+      // Wait for twitter to load
+      const inverval = setInterval(() => {
+        if (window.twttr) {
+          this.hydrateEmbed();
+          window.clearInterval(inverval);
+        }
+      }, 250);
+    }
+  }
+
+  hydrateEmbed = () => {
+    const { id } = this.props;
+    window.twttr.widgets.createTweetEmbed(id, this.widget).then(() => {
+      setTimeout(() => {
+        this.parentComponent.masonry.performLayout();
+        this.props.onComplete();
+      }, 500)
+    })
   }
 
   render() {
     return (
-      <div style={{width: 490, height: 730, marginBottom: 20}}>
-        <blockquote
-          className="instagram-media"
-          ref={r => { this.widget = r; }}
-          data-instgrm-captioned
-          data-instgrm-permalink="https://www.instagram.com/p/BnRK2JSAyt3/?utm_source=ig_embed"
-          data-instgrm-version="9"
-          style={{width: 490, height: 730}}
-        ></blockquote>
-      </div>
+      <MasonryContext.Consumer children={cmp => {
+        this.parentComponent = cmp;
+        return (
+          <div style={{width: 490, marginBottom: 10}} ref={r => { this.widget = r; }}>
+          </div>
+        )
+      }} />
     );
   }
 }
 
-const GithubEmbed = () => {
+const GithubEmbed = ({data}) => {
   return (
     <Fragment>
-      <div className="github-card">
-        <span className="github-card-header">git-design</span>
-        <div className="github-card-desc">
-          A small shim for managing design assets (sketch and invision studio) with git.
+      <a className="github-card-link" target="_blank" href={data.html_url}>
+        <div className="github-card">
+          <span className="github-card-header">{data.name}&nbsp;&nbsp;{data.stargazers_count} stars</span>
+          <div className="github-card-desc">{data.description}</div>
+          <div className="github-card-footer">
+            <span className="github-card-footer-item">Learn more</span>
+            <span className="github-card-footer-platform">Github</span>
+          </div>
         </div>
-        <div className="github-card-footer">
-          <span className="github-card-footer-item">Learn more</span>
-          <span className="github-card-footer-platform">Github</span>
-        </div>
-      </div>
+      </a>
       <style jsx>{`
+        .github-card-link {
+          text-decoration none;
+          color: ${black};
+        }
         .github-card {
-          width: 100%;
-          max-width: 490px;
+          width: 490px;
           background-color: #fff;
           border-radius: 3px;
           border: 1px solid #dbdbdb;
@@ -144,26 +227,28 @@ const GithubEmbed = () => {
           transition: all 100ms ease-in-out;
         }
         .github-card:active, .github-card:focus {
-          transform: translate(0px, 2px);
+          opacity: 0.8;
         }
         .github-card-header {
           font-size: 24px;
           font-weight: 600;
           padding-left: 15px;
           padding-right: 15px;
+          text-decoration: none;
         }
         .github-card-desc {
           margin-top: 16px;
           padding-left: 16px;
           padding-right: 16px;
+          text-decoration: none;
         }
         .github-card-footer {
           margin-top: 16px;
+          margin-bottom: 4px;
           padding-left: 16px;
           padding-right: 16px;
           font-size: 18px;
           line-height: 36px;
-          /* background-color: #dbdbdb; */
 
           display: flex;
           flex-direction: row;
@@ -182,14 +267,14 @@ const GithubEmbed = () => {
   );
 }
 
-const ProjectList = ({children}) => {
+const ProjectList = ({visible, children}) => {
   return (
     <Fragment>
       <div className="projects-container">
         <div className="projects-tab-row">
-          <div className="projects-tab-name">My Feed</div>
+          <div className="projects-tab-name">Recent Projects</div>
         </div>
-        <div className="projects-content-wrapper">
+        <div className={`projects-content-wrapper ${visible ? 'visible' : ''}`}>
           <div className="projects-content">
             <Masonry
               className="projects-masonry"
@@ -199,8 +284,11 @@ const ProjectList = ({children}) => {
                 fitWidth: true,
                 transitionDuration: '0.2s',
               }}
+              ref={r => { this.masonry = r; }}
             >
-              {children}
+              <MasonryContext.Provider value={this}>
+                {children}
+              </MasonryContext.Provider>
             </Masonry>
           </div>
         </div>
@@ -256,24 +344,53 @@ const ProjectList = ({children}) => {
   );
 }
 
-const Home = () => (
-  <div>
-    <Head title="Ryan Gaus" />
+class Home extends Component {
+  state = {
+    loadedNumber: 0,
+  }
 
-    <Hero />
+  componentDidMount() {
+    this.setState({
+      loadedNumber: SOCIAL_CARDS.filter(i => i.type === 'github').length,
+    });
+  }
 
-    <ProjectList>
-      <InstagramEmbed />
-      <GithubEmbed />
-      <InstagramEmbed />
-      <div
-        style={{background: 'red', width: 490, height: 714}}
-      />
-      <div
-        style={{background: 'red', width: 490, height: 714}}
-      />
-    </ProjectList>
-  </div>
-)
+  render() {
+    return (
+      <div>
+        <Head title="Ryan Gaus" />
+
+        <Hero />
+
+        <ProjectList visible={this.state.loadedNumber === SOCIAL_CARDS.length}>
+          {SOCIAL_CARDS.map(entry => {
+            switch (entry.type) {
+            case 'github':
+              if (!entry.fork && entry.description && entry.description.length > 0) {
+                return <GithubEmbed
+                  key={entry.id}
+                  data={entry}
+                />;
+              } else {
+                return null;
+              }
+            case 'instagram':
+              return <InstagramEmbed
+                key={entry.id}
+                id={entry.id}
+                onComplete={() => {
+                  this.setState(oldState => ({loadedNumber: oldState.loadedNumber + 1}));
+                }}
+              />;
+            default:
+              return null;
+            }
+          })}
+          <TwitterEmbed onComplete={() => 0} />
+        </ProjectList>
+      </div>
+    )
+  }
+}
 
 export default Home

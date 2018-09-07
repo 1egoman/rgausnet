@@ -50,6 +50,9 @@ const Head = props => (
 
     {/* Include instagram embed script */}
     <script async defer src="https://www.instagram.com/embed.js"></script>
+
+    {/* Include twitter embed script */}
+    <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
   </Fragment>
 );
 
