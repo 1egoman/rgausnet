@@ -18,6 +18,12 @@ const SOCIAL_CARDS = [
     id: entry.id,
     timestamp: entry.created_at,
   })),
+  ...require('../media/twitter.json').map(entry => ({
+    ...entry,
+    type: 'twitter',
+    timestamp: new Date(entry.created_at).toISOString(),
+    id: entry.id_str,
+  })),
 ].sort((a, b) => {
   return a.timestamp < b.timestamp;
 });
@@ -99,62 +105,89 @@ const Hero = () => (
   </Fragment>
 );
 
-class InstagramEmbed extends Component {
-  state = { complete: false }
-
-  componentDidMount() {
-    if (window.instgrm) {
-      // Instagram is loaded.
-      this.hydrateEmbed();
-    } else {
-      // Wait for instagram to load
-      const inverval = setInterval(() => {
-        if (window.instgrm) {
-          this.hydrateEmbed();
-          window.clearInterval(inverval);
-        }
-      }, 250);
-    }
-  }
-
-  hydrateEmbed = () => {
-    setTimeout(() => {
-      instgrm.Embeds.process(this.widget);
-      const interval = window.setInterval(() => {
-        const child = this.container && this.container.children[0];
-        if (child && child.tagName === 'IFRAME') {
-          window.clearInterval(interval);
-          child.onload = () => {
-            this.setState({complete: true}, () => {
-              this.parentComponent.masonry.performLayout();
-              this.props.onComplete();
-            });
-          }
-        }
-      }, 500);
-    }, 250);
-  }
-
-  render() {
-    const { id } = this.props;
-    return <MasonryContext.Consumer children={cmp => {
-      this.parentComponent = cmp;
-      return (
-        <div style={
-          this.state.complete ? {width: 490, marginBottom: 8} : {width: 490, height: 0}
-        } ref={r => { this.container = r; }}>
-          <blockquote
-            className="instagram-media"
-            ref={r => { this.widget = r; }}
-            data-instgrm-captioned
-            data-instgrm-permalink={`https://www.instagram.com/p/${id}/?utm_source=ig_embed`}
-            data-instgrm-version="9"
-            style={{width: 490}}
-          ></blockquote>
+const InstagramEmbed = ({data}) => {
+  return (
+    <Fragment>
+      <a className="instagram-card-link" target="_blank" href={`https://www.instagram.com/p/${data.node.shortcode}`}>
+        <div className="instagram-card">
+          <img className="instagram-card-img" src={data.node.display_url} />
+          <div className="instagram-card-desc">
+            {(() => {
+              if (data.node.edge_media_to_caption.edges[0]) {
+                return data.node.edge_media_to_caption.edges[0].node.text.split(' ').map((word, index) => {
+                  if (word.startsWith('#')) {
+                    return <strong key={`${word}+${index}`}>{word} </strong>;
+                  } else {
+                    return <Fragment key={`${word}+${index}`}>{word} </Fragment>;
+                  }
+                })
+              } else {
+                return null;
+              }
+            })()}
+          </div>
+          <div className="instagram-card-footer">
+            <span className="instagram-card-footer-item">Learn more</span>
+            <span className="instagram-card-footer-platform">Instagram</span>
+          </div>
         </div>
-      );
-    }} />
-  }
+      </a>
+      <style jsx>{`
+        .instagram-card-link {
+          text-decoration none;
+          color: ${black};
+        }
+        .instagram-card {
+          width: 490px;
+          background-color: #fff;
+          border-radius: 3px;
+          border: 1px solid #dbdbdb;
+
+          margin-bottom: 20px;
+          cursor: pointer;
+          transition: all 100ms ease-in-out;
+          user-select: none;
+        }
+        .instagram-card:active, .instagram-card:focus {
+          opacity: 0.8;
+        }
+        .instagram-card-img {
+          width: 490px;
+          border-top-left-radius: 3px;
+          border-top-right-radius: 3px;
+        }
+        .instagram-card-desc {
+          margin-top: 16px;
+          padding-left: 16px;
+          padding-right: 16px;
+          text-decoration: none;
+        }
+        .instagram-card-desc > strong {
+          font-weight: 600;
+        }
+        .instagram-card-footer {
+          margin-top: 16px;
+          margin-bottom: 4px;
+          padding-left: 16px;
+          padding-right: 16px;
+          font-size: 18px;
+          line-height: 36px;
+
+          display: flex;
+          flex-direction: row;
+        }
+        .instagram-card-footer-item {
+          margin-right: 10px;
+          color: ${blue};
+          font-weight: 600;
+        }
+        .instagram-card-footer-platform {
+          margin-left: auto;
+          font-weight: 600;
+        }
+      `}</style>
+    </Fragment>
+  );
 }
 
 class TwitterEmbed extends Component {
@@ -178,7 +211,6 @@ class TwitterEmbed extends Component {
     window.twttr.widgets.createTweetEmbed(id, this.widget).then(() => {
       setTimeout(() => {
         this.parentComponent.masonry.performLayout();
-        this.props.onComplete();
       }, 500)
     })
   }
@@ -201,7 +233,7 @@ const GithubEmbed = ({data}) => {
     <Fragment>
       <a className="github-card-link" target="_blank" href={data.html_url}>
         <div className="github-card">
-          <span className="github-card-header">{data.name}&nbsp;&nbsp;{data.stargazers_count} stars</span>
+          <span className="github-card-header">{data.name}</span>
           <div className="github-card-desc">{data.description}</div>
           <div className="github-card-footer">
             <span className="github-card-footer-item">Learn more</span>
@@ -224,11 +256,13 @@ const GithubEmbed = ({data}) => {
 
           margin-bottom: 20px;
           cursor: pointer;
+
           transition: all 100ms ease-in-out;
+          opacity: 0.75;
+          user-select: none;
         }
-        .github-card:active, .github-card:focus {
-          opacity: 0.8;
-        }
+        .github-card:hover { opacity: 1; }
+        .github-card:active, .github-card:focus { opacity: 0.8; }
         .github-card-header {
           font-size: 24px;
           font-weight: 600;
@@ -325,7 +359,7 @@ const ProjectList = ({visible, children}) => {
           margin-right: auto;
         }
         .projects-content-wrapper {
-          padding-top: 30px;
+          padding-top: 42px;
           padding-left: 10px;
           padding-right: 10px;
         }
@@ -344,53 +378,39 @@ const ProjectList = ({visible, children}) => {
   );
 }
 
-class Home extends Component {
-  state = {
-    loadedNumber: 0,
-  }
+const Home = () => {
+  return (
+    <div>
+      <Head title="Ryan Gaus" />
 
-  componentDidMount() {
-    this.setState({
-      loadedNumber: SOCIAL_CARDS.filter(i => i.type === 'github').length,
-    });
-  }
+      <Hero />
 
-  render() {
-    return (
-      <div>
-        <Head title="Ryan Gaus" />
-
-        <Hero />
-
-        <ProjectList visible={this.state.loadedNumber === SOCIAL_CARDS.length}>
-          {SOCIAL_CARDS.map(entry => {
-            switch (entry.type) {
-            case 'github':
-              if (!entry.fork && entry.description && entry.description.length > 0) {
-                return <GithubEmbed
-                  key={entry.id}
-                  data={entry}
-                />;
-              } else {
-                return null;
-              }
-            case 'instagram':
-              return <InstagramEmbed
+      <ProjectList>
+        {SOCIAL_CARDS.map(entry => {
+          switch (entry.type) {
+          case 'github':
+            if (!entry.fork && entry.description && entry.description.length > 0) {
+              return <GithubEmbed
                 key={entry.id}
-                id={entry.id}
-                onComplete={() => {
-                  this.setState(oldState => ({loadedNumber: oldState.loadedNumber + 1}));
-                }}
+                data={entry}
               />;
-            default:
+            } else {
               return null;
             }
-          })}
-          <TwitterEmbed onComplete={() => 0} />
-        </ProjectList>
-      </div>
-    )
-  }
+          case 'instagram':
+            return <InstagramEmbed
+              key={entry.id}
+              data={entry}
+            />;
+          case 'twitter':
+            return <TwitterEmbed key={entry.id} id={entry.id} />;
+          default:
+            return null;
+          }
+        })}
+      </ProjectList>
+    </div>
+  );
 }
 
 export default Home
