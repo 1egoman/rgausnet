@@ -5,6 +5,9 @@ import Masonry from 'react-masonry-component';
 
 import { black, blue, grayLight } from '../variables.json';
 
+import InstagramCard from '../components/cards/instagram-card';
+import GithubCard from '../components/cards/github-card';
+
 const SOCIAL_CARDS = [
   ...require('../media/instagram.json').map(entry => ({
     ...entry,
@@ -25,12 +28,12 @@ const SOCIAL_CARDS = [
     id: entry.id_str,
   })),
 ].sort((a, b) => {
-  return a.timestamp < b.timestamp;
+  return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
 });
 
 const MasonryContext = React.createContext();
 
-const Hero = () => (
+const Hero = ({showReadMore, onClickReadMore}) => (
   <Fragment>
     <div className="hero-wrapper">
       <div className="hero">
@@ -54,8 +57,8 @@ const Hero = () => (
             <A target="_blank" href="https://instagram.com/rgausgaus">Instagram</A>
           </span>
         </p>
-        <p className="hero-desc">
-          <A onClick={() => console.log('bla')}>Read more</A>
+        <p className="hero-desc" style={showReadMore ? {display: 'block'} : {display: 'none'}}>
+          <A onClick={onClickReadMore}>Read more</A>
         </p>
       </div>
     </div>
@@ -64,6 +67,9 @@ const Hero = () => (
         padding-top: 64px;
         padding-left: 10px;
         padding-right: 10px;
+        padding-bottom: 5px;
+        background-color: ${showReadMore ? '#FFF' : '#F8F8F8'};
+        transition: all 250ms ease-in-out;
       }
       .hero {
         max-width: 530px;
@@ -105,91 +111,6 @@ const Hero = () => (
   </Fragment>
 );
 
-const InstagramEmbed = ({data}) => {
-  return (
-    <Fragment>
-      <a className="instagram-card-link" target="_blank" href={`https://www.instagram.com/p/${data.node.shortcode}`}>
-        <div className="instagram-card">
-          <img className="instagram-card-img" src={data.node.display_url} />
-          <div className="instagram-card-desc">
-            {(() => {
-              if (data.node.edge_media_to_caption.edges[0]) {
-                return data.node.edge_media_to_caption.edges[0].node.text.split(' ').map((word, index) => {
-                  if (word.startsWith('#')) {
-                    return <strong key={`${word}+${index}`}>{word} </strong>;
-                  } else {
-                    return <Fragment key={`${word}+${index}`}>{word} </Fragment>;
-                  }
-                })
-              } else {
-                return null;
-              }
-            })()}
-          </div>
-          <div className="instagram-card-footer">
-            <span className="instagram-card-footer-item">Learn more</span>
-            <span className="instagram-card-footer-platform">Instagram</span>
-          </div>
-        </div>
-      </a>
-      <style jsx>{`
-        .instagram-card-link {
-          text-decoration none;
-          color: ${black};
-        }
-        .instagram-card {
-          width: 490px;
-          background-color: #fff;
-          border-radius: 3px;
-          border: 1px solid #dbdbdb;
-
-          margin-bottom: 20px;
-          cursor: pointer;
-          transition: all 100ms ease-in-out;
-          user-select: none;
-        }
-        .instagram-card:active, .instagram-card:focus {
-          opacity: 0.8;
-        }
-        .instagram-card-img {
-          width: 490px;
-          border-top-left-radius: 3px;
-          border-top-right-radius: 3px;
-        }
-        .instagram-card-desc {
-          margin-top: 16px;
-          padding-left: 16px;
-          padding-right: 16px;
-          text-decoration: none;
-        }
-        .instagram-card-desc > strong {
-          font-weight: 600;
-        }
-        .instagram-card-footer {
-          margin-top: 16px;
-          margin-bottom: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          font-size: 18px;
-          line-height: 36px;
-
-          display: flex;
-          flex-direction: row;
-        }
-        .instagram-card-footer-item {
-          margin-right: 10px;
-          color: ${blue};
-          font-weight: 600;
-        }
-        .instagram-card-footer-platform {
-          margin-left: auto;
-          font-weight: 600;
-        }
-      `}</style>
-    </Fragment>
-  );
-}
-
 class TwitterEmbed extends Component {
   componentDidMount() {
     if (window.twttr) {
@@ -226,79 +147,6 @@ class TwitterEmbed extends Component {
       }} />
     );
   }
-}
-
-const GithubEmbed = ({data}) => {
-  return (
-    <Fragment>
-      <a className="github-card-link" target="_blank" href={data.html_url}>
-        <div className="github-card">
-          <span className="github-card-header">{data.name}</span>
-          <div className="github-card-desc">{data.description}</div>
-          <div className="github-card-footer">
-            <span className="github-card-footer-item">Learn more</span>
-            <span className="github-card-footer-platform">Github</span>
-          </div>
-        </div>
-      </a>
-      <style jsx>{`
-        .github-card-link {
-          text-decoration none;
-          color: ${black};
-        }
-        .github-card {
-          width: 490px;
-          background-color: #fff;
-          border-radius: 3px;
-          border: 1px solid #dbdbdb;
-
-          padding-top: 20px;
-
-          margin-bottom: 20px;
-          cursor: pointer;
-
-          transition: all 100ms ease-in-out;
-          opacity: 0.75;
-          user-select: none;
-        }
-        .github-card:hover { opacity: 1; }
-        .github-card:active, .github-card:focus { opacity: 0.8; }
-        .github-card-header {
-          font-size: 24px;
-          font-weight: 600;
-          padding-left: 15px;
-          padding-right: 15px;
-          text-decoration: none;
-        }
-        .github-card-desc {
-          margin-top: 16px;
-          padding-left: 16px;
-          padding-right: 16px;
-          text-decoration: none;
-        }
-        .github-card-footer {
-          margin-top: 16px;
-          margin-bottom: 4px;
-          padding-left: 16px;
-          padding-right: 16px;
-          font-size: 18px;
-          line-height: 36px;
-
-          display: flex;
-          flex-direction: row;
-        }
-        .github-card-footer-item {
-          margin-right: 10px;
-          color: ${blue};
-          font-weight: 600;
-        }
-        .github-card-footer-platform {
-          margin-left: auto;
-          font-weight: 600;
-        }
-      `}</style>
-    </Fragment>
-  );
 }
 
 const ProjectList = ({visible, children}) => {
@@ -378,39 +226,116 @@ const ProjectList = ({visible, children}) => {
   );
 }
 
-const Home = () => {
-  return (
-    <div>
-      <Head title="Ryan Gaus" />
+const HeroReadMore = ({visible}) => (
+  <Fragment>
+    <div className="hero-read-more-wrapper">
+      <div className="hero-read-more">
+        <p className="hero-read-more-p">
+          As far back as I can remember, I've always enjoyed making things. 
+        </p>
+        <p className="hero-read-more-p">
+          I first started programming (hey, that's a form of making, right?) when I was 10.
+          After quickly figuring out most of the fundementals, I realized that software
+          development is something that I'm passionate about. Since then, I've been slowly
+          building my skills and building cool, useful pieces of software. Along the way, I've
+          won a <A
+            target="_blank"
+            href="https://medium.com/@hackupstate/hack-upstate-the-results-cc08656fa5cc"
+          >couple</A> <A
+            href="https://medium.com/@hackupstate/hack-upstate-vii-the-results-are-in-384766680f1d"
+          >awards</A> and turned software
+          development into my career – first at <A href="https://lono.io">Lono</A> and now at{' '}
+          <A href="https://density.io">Density</A>.  
+        </p>
+        <p className="hero-read-more-p">
+          In my youth, I didn't have access to much money – if I wanted something, I had to
+          make it. So, through trial and error and a lot of iteration, I eventually figured out
+          how to construct physical contraptions. When I was a little older and my parents
+          started to let me use their tools, I also found that making things with my hands is
+          something I found deeply satisfying. While software development could pay the bills,
+          it was clear that woodworking, metalworking, sewing, and all other manual arts would
+          be an important part of my life.
+        </p>
+        <p className="hero-read-more-p">
+          Since that realization, I've slowly been building up a space for me to make. At first, it
+          was a desk in my bedrooom. All throughout high school, it was a corner of my parents
+          basement. Now, I'm lucky enough to have a space devoted to my art, even if it's
+          windowless and only has one outlet.
+        </p>
+      </div>
+    </div>
+    <style jsx>{`
+      .hero-read-more-wrapper {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        max-height: ${visible ? '999999999%' : '0px'};
+        opacity: ${visible ? 1 : 0};
+        transition: all 250ms ease-in-out;
+      }
+      .hero-read-more {
+        max-width: 530px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
 
-      <Hero />
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-read-more-p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 18.5px;
+        line-height: 28px;
+      }
+    `}</style>
+  </Fragment>
+);
 
-      <ProjectList>
-        {SOCIAL_CARDS.map(entry => {
-          switch (entry.type) {
-          case 'github':
-            if (!entry.fork && entry.description && entry.description.length > 0) {
-              return <GithubEmbed
+class Home extends Component {
+  state = {
+    readMore: false,
+  }
+
+  render() {
+    return (
+      <div>
+        <Head title="Ryan Gaus" />
+
+        <Hero
+          onClickReadMore={() => this.setState({readMore: true})}
+          showReadMore={!this.state.readMore}
+        />
+
+        <HeroReadMore visible={this.state.readMore} />
+
+        <ProjectList>
+          {SOCIAL_CARDS.map(entry => {
+            switch (entry.type) {
+            case 'github':
+              if (!entry.fork && entry.description && entry.description.length > 0) {
+                return <GithubCard
+                  key={entry.id}
+                  data={entry}
+                />;
+              } else {
+                return null;
+              }
+            case 'instagram':
+              return <InstagramCard
                 key={entry.id}
                 data={entry}
               />;
-            } else {
+            case 'twitter':
+              return <TwitterEmbed key={entry.id} id={entry.id} />;
+            default:
               return null;
             }
-          case 'instagram':
-            return <InstagramEmbed
-              key={entry.id}
-              data={entry}
-            />;
-          case 'twitter':
-            return <TwitterEmbed key={entry.id} id={entry.id} />;
-          default:
-            return null;
-          }
-        })}
-      </ProjectList>
-    </div>
-  );
+          })}
+        </ProjectList>
+      </div>
+    );
+  }
 }
 
 export default Home
