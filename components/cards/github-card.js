@@ -35,6 +35,9 @@ const GithubEmbed = ({data}) => {
           opacity: 0.75;
           user-select: none;
         }
+        @media (max-width: 490px) {
+          .github-card { width: calc(100vw - 20px); }
+        }
         .github-card:hover { opacity: 1; }
         .github-card:active, .github-card:focus { opacity: 0.8; }
         .github-card-header {

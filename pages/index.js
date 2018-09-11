@@ -98,6 +98,7 @@ const Hero = ({showReadMore, onClickReadMore}) => (
         margin-top: 8px;
         margin-bottom: 8px;
         font-size: 20px;
+        line-height: 28px;
       }
       .hero-social {
         font-size: 14px;
@@ -141,7 +142,11 @@ class TwitterEmbed extends Component {
       <MasonryContext.Consumer children={cmp => {
         this.parentComponent = cmp;
         return (
-          <div style={{width: 490, marginBottom: 10}} ref={r => { this.widget = r; }}>
+          <div style={{
+            width: '100%',
+            maxWidth: 490,
+            marginBottom: 10,
+          }} ref={r => { this.widget = r; }}>
           </div>
         )
       }} />
@@ -149,81 +154,113 @@ class TwitterEmbed extends Component {
   }
 }
 
-const ProjectList = ({visible, children}) => {
-  return (
-    <Fragment>
-      <div className="projects-container">
-        <div className="projects-tab-row">
-          <div className="projects-tab-name">Recent Projects</div>
-        </div>
-        <div className={`projects-content-wrapper ${visible ? 'visible' : ''}`}>
-          <div className="projects-content">
-            <Masonry
-              className="projects-masonry"
-              options={{
-                columnWidth: 490,
-                gutter: 20,
-                fitWidth: true,
-                transitionDuration: '0.2s',
-              }}
-              ref={r => { this.masonry = r; }}
-            >
-              <MasonryContext.Provider value={this}>
-                {children}
-              </MasonryContext.Provider>
-            </Masonry>
+const TARGET_PROJECT_LIST_WIDTH_PX = 490;
+class ProjectList extends Component {
+  state = {
+    projectListWidth: typeof document !== 'undefined' ?
+      Math.min(TARGET_PROJECT_LIST_WIDTH_PX, document.body.clientWidth-20) : /* on page */
+      TARGET_PROJECT_LIST_WIDTH_PX, /* when initially server-side rendered */
+  }
+
+  lastResizeTimeout = null
+  onResize = () => {
+    this.setState({
+      projectListWidth: typeof document !== 'undefined' ?
+        Math.min(TARGET_PROJECT_LIST_WIDTH_PX, document.body.clientWidth-20) : /* on page */
+        TARGET_PROJECT_LIST_WIDTH_PX, /* when initially server-side rendered */
+    }, () => {
+      // Once done resizing, re-run masonry
+      this.lastResizeTimeout && window.clearTimeout(this.lastResizeTimeout);
+      this.lastResizeTimeout = window.setTimeout(() => {
+        this.masonry.performLayout();
+      }, 250);
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize)
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize)
+  }
+
+  render() {
+    const { visible, children } = this.props;
+    return (
+      <Fragment>
+        <div className="projects-container">
+          <div className="projects-tab-row">
+            <div className="projects-tab-name">Recent Projects</div>
+          </div>
+          <div className={`projects-content-wrapper ${visible ? 'visible' : ''}`}>
+            <div className="projects-content">
+              <Masonry
+                className="projects-masonry"
+                options={{
+                  columnWidth: this.state.projectListWidth,
+                  gutter: 20,
+                  fitWidth: true,
+                  transitionDuration: '0.2s',
+                }}
+                ref={r => { this.masonry = r; }}
+              >
+                <MasonryContext.Provider value={this}>
+                  {children}
+                </MasonryContext.Provider>
+              </Masonry>
+            </div>
           </div>
         </div>
-      </div>
-      <style jsx>{`
-        .projects-container {
-          width: 100%;
-          background-color: ${grayLight};
-          margin-top: 42px;
+        <style jsx>{`
+          .projects-container {
+            width: 100%;
+            background-color: ${grayLight};
+            margin-top: 42px;
 
-          position: relative;
-          min-height 300px;
-        }
-        .projects-tab-row {
-          position: absolute;
-          width: 100%;
-          top: -21px;
+            position: relative;
+            min-height 300px;
+          }
+          .projects-tab-row {
+            position: absolute;
+            width: 100vw;
+            top: -21px;
 
-          display: flex;
-          flex-direction: row;
-        }
-        .projects-tab-name {
-          display: inline-block;
-          font-size: 20px;
-          font-weight: 600;
-          border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+          }
+          .projects-tab-name {
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 4px;
 
-          background-color: ${grayLight};
-          line-height: 42px;
+            background-color: ${grayLight};
+            line-height: 42px;
 
-          padding-left: 42px;
-          padding-right: 42px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .projects-content-wrapper {
-          padding-top: 42px;
-          padding-left: 10px;
-          padding-right: 10px;
-        }
-        .projects-content {
-          width: 100%;
-          max-width: 1000px;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        :global(.projects-masonry) {
-          margin-left: auto;
-          margin-right: auto;
-        }
-      `}</style>
-    </Fragment>
-  );
+            padding-left: 42px;
+            padding-right: 42px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .projects-content-wrapper {
+            padding-top: 42px;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          .projects-content {
+            width: 100%;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          :global(.projects-masonry) {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        `}</style>
+      </Fragment>
+    );
+  }
 }
 
 const HeroReadMore = ({visible}) => (
@@ -247,6 +284,7 @@ const HeroReadMore = ({visible}) => (
           development into my career – first at <A href="https://lono.io">Lono</A> and now at{' '}
           <A href="https://density.io">Density</A>.  
         </p>
+        <img className="hero-read-more-image one" src="/static/terminal.png" />
         <p className="hero-read-more-p">
           In my youth, I didn't have access to much money – if I wanted something, I had to
           make it. So, through trial and error and a lot of iteration, I eventually figured out
@@ -256,12 +294,14 @@ const HeroReadMore = ({visible}) => (
           it was clear that woodworking, metalworking, sewing, and all other manual arts would
           be an important part of my life.
         </p>
+        <img className="hero-read-more-image two" src="/static/spool.png" />
         <p className="hero-read-more-p">
           Since that realization, I've slowly been building up a space for me to make. At first, it
           was a desk in my bedrooom. All throughout high school, it was a corner of my parents
           basement. Now, I'm lucky enough to have a space devoted to my art, even if it's
           windowless and only has one outlet.
         </p>
+        <img className="hero-read-more-image three" src="/static/anvil.png" />
       </div>
     </div>
     <style jsx>{`
@@ -272,6 +312,9 @@ const HeroReadMore = ({visible}) => (
         max-height: ${visible ? '999999999%' : '0px'};
         opacity: ${visible ? 1 : 0};
         transition: all 250ms ease-in-out;
+
+        position: relative;
+        overflow: hidden;
       }
       .hero-read-more {
         max-width: 530px;
@@ -288,6 +331,15 @@ const HeroReadMore = ({visible}) => (
         font-size: 18.5px;
         line-height: 28px;
       }
+      .hero-read-more-image {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        opacity: 0.5;
+      }
+      .hero-read-more-image.one { transform: translate(-300px, 0px); }
+      .hero-read-more-image.two { transform: translate(-300px, 230px); }
+      .hero-read-more-image.three { transform: translate(650px, 350px); }
     `}</style>
   </Fragment>
 );

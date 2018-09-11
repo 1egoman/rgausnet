@@ -35,7 +35,8 @@ const InstagramEmbed = ({data}) => {
           color: ${black};
         }
         .instagram-card {
-          width: 490px;
+          width: 100%;
+          max-width: 490px;
           background-color: #fff;
           border-radius: 3px;
           border: 1px solid #dbdbdb;
@@ -49,7 +50,8 @@ const InstagramEmbed = ({data}) => {
           opacity: 0.8;
         }
         .instagram-card-img {
-          width: 490px;
+          width: 100%;
+          max-width: 490px;
           border-top-left-radius: 3px;
           border-top-right-radius: 3px;
         }
