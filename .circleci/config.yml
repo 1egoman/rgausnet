@@ -1,0 +1,57 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.7
+    steps:
+      - checkout
+      - restore_cache:
+          key: node_modules-{{checksum "./package.json"}}-yarn
+      - run:
+          name: "Print out versions"
+          command: |
+            echo "node -v = $(node -v)"
+            echo "npm -v = $(npm -v)"
+            echo "yarn -v = $(yarn -v)"
+      - run:
+          name: "Install dependencies"
+          command: yarn
+      - save_cache:
+          key: node_modules-{{checksum "./package.json"}}-yarn
+          paths:
+            - "./node_modules"
+      - run:
+          name: "Regenerate social media cards"
+          command: make clean media
+      - run:
+          name: "Build site"
+          command: yarn build
+      - run:
+          name: "Add commit reference and hashes to build output"
+          command: |
+            echo $(git rev-parse HEAD) > .next/commit-hash
+            echo $(sha1sum .next/* | sha1sum ) > .next/sha1sum
+      - run:
+          name: "Deploy site"
+          command: |
+            npm i -g surge
+            pushd .next
+            # TODO: deploy!
+            popd
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build-and-deploy
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - build-and-deploy
