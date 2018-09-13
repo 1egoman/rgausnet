@@ -8,20 +8,27 @@ import { black, blue, grayLight } from '../variables.json';
 import InstagramCard from '../components/cards/instagram-card';
 import GithubCard from '../components/cards/github-card';
 
+import instagramData from '../media/instagram.json';
+import githubData from '../media/github.json';
+import twitterData from '../media/twitter.json';
+if (!Array.isArray(instagramData)) { throw new Error('media/instagram.json does not contain an array!'); }
+if (!Array.isArray(githubData)) { throw new Error('media/github.json does not contain an array!'); }
+if (!Array.isArray(twitterData)) { throw new Error('media/twitter.json does not contain an array!'); }
+
 const SOCIAL_CARDS = [
-  ...require('../media/instagram.json').map(entry => ({
+  ...instagramData.map(entry => ({
     ...entry,
     type: 'instagram',
     id: entry.node.shortcode,
     timestamp: new Date(entry.node.taken_at_timestamp * 1000).toISOString(),
   })),
-  ...require('../media/github.json').map(entry => ({
+  ...githubData.map(entry => ({
     ...entry,
     type: 'github',
     id: entry.id,
     timestamp: entry.created_at,
   })),
-  ...require('../media/twitter.json').map(entry => ({
+  ...twitterData.map(entry => ({
     ...entry,
     type: 'twitter',
     timestamp: new Date(entry.created_at).toISOString(),
