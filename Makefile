@@ -3,6 +3,7 @@ clean:
 
 media: media/instagram.json media/github.json media/twitter.json
 media/instagram.json:
+	mkdir -p media
 	curl https://www.instagram.com/rgausgaus/ | grep 'window._sharedData *=' | python -c 'import sys; data = sys.stdin.read(); print(data[data.find("{"):data.rfind("}")+1])' | jq .entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges > media/instagram.json
 media/github.json:
 	curl https://api.github.com/users/1egoman/repos?sort=created > media/github.json
