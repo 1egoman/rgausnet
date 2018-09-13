@@ -10,5 +10,8 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-masonry-component": "^6.2.1"
+  },
+  "devDependencies": {
+    "surge": "^0.20.1"
   }
 }

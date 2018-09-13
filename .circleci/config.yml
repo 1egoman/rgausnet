@@ -35,10 +35,7 @@ jobs:
       - run:
           name: "Deploy site"
           command: |
-            npm i -g surge
-            pushd .next
-            # TODO: deploy!
-            popd
+            ./node_modules/.bin/surge .next/ rgausnet.surge.sh
 
 workflows:
   version: 2
