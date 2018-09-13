@@ -309,7 +309,7 @@ const HeroReadMore = ({visible}) => (
         padding-top: 10px;
         padding-left: 10px;
         padding-right: 10px;
-        max-height: ${visible ? '999999999%' : '0px'};
+        max-height: ${visible ? '1000px' : '0px'};
         opacity: ${visible ? 1 : 0};
         transition: all 250ms ease-in-out;
 
