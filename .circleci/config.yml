@@ -30,8 +30,8 @@ jobs:
       - run:
           name: "Add commit reference and hashes to build output"
           command: |
-            echo $(git rev-parse HEAD) > .next/commit-hash
-            echo $(sha1sum .next/* | sha1sum ) > .next/sha1sum
+            echo $(git rev-parse HEAD) > out/commit-hash
+            echo $(sha1sum .next/* | sha1sum ) > out/sha1sum
       - run:
           name: "Deploy site"
           command: |
