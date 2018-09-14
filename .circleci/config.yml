@@ -30,12 +30,12 @@ jobs:
       - run:
           name: "Add commit reference and hashes to build output"
           command: |
+            echo $(sha1sum out/* | sha1sum ) > out/sha1sum
             echo $(git rev-parse HEAD) > out/commit-hash
-            echo $(sha1sum .next/* | sha1sum ) > out/sha1sum
       - run:
           name: "Deploy site"
           command: |
-            ./node_modules/.bin/surge .next/ rgausnet.surge.sh
+            ./node_modules/.bin/surge out/ rgausnet.surge.sh
 
 workflows:
   version: 2
