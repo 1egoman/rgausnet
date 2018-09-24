@@ -45,6 +45,7 @@ const Hero = ({showReadMore, onClickReadMore}) => (
     <div className="hero-wrapper">
       <div className="hero">
         <img className="hero-image" src="/static/me.png" />
+        <img className="hero-image overlay" src="/static/logo.png" />
         <h1 className="hero-title">I'm <span>Ryan</span>.</h1>
         <p className="hero-desc">
           I'm a software developer at <A target="_blank" href="https://density.io">Density</A>{' '}
@@ -93,6 +94,14 @@ const Hero = ({showReadMore, onClickReadMore}) => (
         width: 214px;
         height: 214px;
       }
+      .hero-image.overlay {
+        position: absolute;
+        left: 50%;
+        margin-left: -107px;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+      }
+      .hero-image.overlay:hover { opacity: 0.75; }
       .hero-title {
         font-weight: 400;
         margin-top: 5px;
