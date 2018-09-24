@@ -1,7 +1,7 @@
 {
   "name": "create-next-example-app",
   "scripts": {
-    "dev": "next -p $PORT",
+    "dev": "next -p ${PORT:-5000}",
     "build": "next build && next export",
     "start": "next start"
   },

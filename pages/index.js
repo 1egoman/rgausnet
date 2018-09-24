@@ -229,7 +229,7 @@ class ProjectList extends Component {
           }
           .projects-tab-row {
             position: absolute;
-            width: 100vw;
+            width: calc(100vw - 20px);
             top: -21px;
 
             display: flex;
@@ -309,6 +309,11 @@ const HeroReadMore = ({visible}) => (
           windowless and only has one outlet.
         </p>
         <img className="hero-read-more-image three" src="/static/anvil.png" />
+        <p className="hero-read-more-p">
+          These days, I usually spend my time building whatever I need, from wall hooks to a
+          complete, working bandsaw. I love exploring new processes and concepts and discovering
+          what they let me create.
+        </p>
       </div>
     </div>
     <style jsx>{`
@@ -346,7 +351,7 @@ const HeroReadMore = ({visible}) => (
       }
       .hero-read-more-image.one { transform: translate(-300px, 0px); }
       .hero-read-more-image.two { transform: translate(-300px, 230px); }
-      .hero-read-more-image.three { transform: translate(650px, 350px); }
+      .hero-read-more-image.three { transform: translate(650px, 230px); }
     `}</style>
   </Fragment>
 );
