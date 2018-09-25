@@ -34,7 +34,14 @@ jobs:
       - run:
           name: "Deploy site"
           command: |
-            ./node_modules/.bin/surge out/ rgausnet.surge.sh
+            # ./node_modules/.bin/surge out/ rgausnet.surge.sh
+            git clone git@github.com:1egoman/rgausnet.git
+            cd rgausnet
+            git sheckout gh-pages
+            cp -R ../out/* .
+            git add -A
+            git commit -m "[ci skip] publish site update"
+            git push origin gh-pages
 
 workflows:
   version: 2
