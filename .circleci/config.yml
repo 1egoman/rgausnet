@@ -44,24 +44,10 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          # cron: "0 0 * * *"
-          cron: "*/5 * * * *"
+          cron: "0 0 * * *"
           filters:
             branches:
-              only: master
+              only:
+                - master
     jobs:
       - build-and-deploy
-
-workflows:
-  version: 2
-  commit:
-    jobs:
-      - build-and-deploy
-  houlrly-workflow-1:
-    triggers:
-      - schedule:
-          filters:
-            branches:
-              only: master
-    jobs:
-      - build
