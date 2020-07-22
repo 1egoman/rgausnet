@@ -36,8 +36,10 @@ jobs:
           command: |
             # ./node_modules/.bin/surge out/ rgausnet.surge.sh
             git clone git@github.com:1egoman/rgausnet.git
+            git config --global user.email "circleci@rgaus.net"
+            git config --global user.name "CircleCI"
             cd rgausnet
-            git sheckout gh-pages
+            git checkout gh-pages
             cp -R ../out/* .
             git add -A
             git commit -m "[ci skip] publish site update"
@@ -47,14 +49,8 @@ workflows:
   version: 2
   commit:
     jobs:
-      - build-and-deploy
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 0-23 * * *"
+      - build-and-deploy:
           filters:
             branches:
               only:
                 - master
-    jobs:
-      - build-and-deploy

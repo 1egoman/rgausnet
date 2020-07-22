@@ -8,37 +8,37 @@ import { black, blue, grayLight } from '../variables.json';
 import InstagramCard from '../components/cards/instagram-card';
 import GithubCard from '../components/cards/github-card';
 
-import instagramData from '../media/instagram.json';
-import githubData from '../media/github.json';
-import twitterData from '../media/twitter.json';
-if (!Array.isArray(instagramData)) { throw new Error('media/instagram.json does not contain an array!'); }
-if (!Array.isArray(githubData)) { throw new Error('media/github.json does not contain an array!'); }
-if (!Array.isArray(twitterData)) { throw new Error('media/twitter.json does not contain an array!'); }
-
-const SOCIAL_CARDS = [
-  ...instagramData.map(entry => ({
-    ...entry,
-    type: 'instagram',
-    id: entry.node.shortcode,
-    timestamp: new Date(entry.node.taken_at_timestamp * 1000).toISOString(),
-  })),
-  ...githubData.map(entry => ({
-    ...entry,
-    type: 'github',
-    id: entry.id,
-    timestamp: entry.created_at,
-  })),
-  ...twitterData.map(entry => ({
-    ...entry,
-    type: 'twitter',
-    timestamp: new Date(entry.created_at).toISOString(),
-    id: entry.id_str,
-  })),
-].sort((a, b) => {
-  return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
-});
-
-const MasonryContext = React.createContext();
+// import instagramData from '../media/instagram.json';
+// import githubData from '../media/github.json';
+// import twitterData from '../media/twitter.json';
+// if (!Array.isArray(instagramData)) { throw new Error('media/instagram.json does not contain an array!'); }
+// if (!Array.isArray(githubData)) { throw new Error('media/github.json does not contain an array!'); }
+// if (!Array.isArray(twitterData)) { throw new Error('media/twitter.json does not contain an array!'); }
+//
+// const SOCIAL_CARDS = [
+//   ...instagramData.map(entry => ({
+//     ...entry,
+//     type: 'instagram',
+//     id: entry.node.shortcode,
+//     timestamp: new Date(entry.node.taken_at_timestamp * 1000).toISOString(),
+//   })),
+//   ...githubData.map(entry => ({
+//     ...entry,
+//     type: 'github',
+//     id: entry.id,
+//     timestamp: entry.created_at,
+//   })),
+//   ...twitterData.map(entry => ({
+//     ...entry,
+//     type: 'twitter',
+//     timestamp: new Date(entry.created_at).toISOString(),
+//     id: entry.id_str,
+//   })),
+// ].sort((a, b) => {
+//   return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime();
+// });
+//
+// const MasonryContext = React.createContext();
 
 const Hero = ({showReadMore, onClickReadMore}) => (
   <Fragment>
@@ -307,15 +307,15 @@ const HeroReadMore = ({visible}) => (
           how to construct physical contraptions. When I was a little older and my parents
           started to let me use their tools, I also found that making things with my hands is
           something I found deeply satisfying. While software development could pay the bills,
-          it was clear that woodworking, metalworking, sewing, and all other manual arts would
+          it was clear that woodworking, metalworking, sewing, and other creative endeavors would
           be an important part of my life.
         </p>
         <img className="hero-read-more-image two" src="/static/spool.png" />
         <p className="hero-read-more-p">
-          Since that realization, I've slowly been building up a space for me to make. At first, it
+          Since that realization, I've slowly been building up a space for me to work. At first, it
           was a desk in my bedrooom. All throughout high school, it was a corner of my parents
-          basement. Now, I'm lucky enough to have a space devoted to my art, even if it's
-          windowless and only has one outlet.
+          basement. Now, I'm lucky enough to have a space devoted to my art, even if it's windowless
+          and only has one outlet.
         </p>
         <img className="hero-read-more-image three" src="/static/anvil.png" />
         <p className="hero-read-more-p">
@@ -376,36 +376,42 @@ class Home extends Component {
         <Head title="Ryan Gaus" />
 
         <Hero
-          onClickReadMore={() => this.setState({readMore: true})}
-          showReadMore={!this.state.readMore}
+          onClickReadMore={null}
+          showReadMore={false}
         />
 
-        <HeroReadMore visible={this.state.readMore} />
+        <HeroReadMore visible />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
-        <ProjectList>
-          {SOCIAL_CARDS.map(entry => {
-            switch (entry.type) {
-            case 'github':
-              if (!entry.fork && entry.description && entry.description.length > 0) {
-                return <GithubCard
-                  key={entry.id}
-                  data={entry}
-                />;
-              } else {
-                return null;
-              }
-            case 'instagram':
-              return <InstagramCard
-                key={entry.id}
-                data={entry}
-              />;
-            case 'twitter':
-              return <TwitterEmbed key={entry.id} id={entry.id} />;
-            default:
-              return null;
-            }
-          })}
-        </ProjectList>
+        {/* <ProjectList> */}
+        {/*   {SOCIAL_CARDS.map(entry => { */}
+        {/*     switch (entry.type) { */}
+        {/*     case 'github': */}
+        {/*       if (!entry.fork && entry.description && entry.description.length > 0) { */}
+        {/*         return <GithubCard */}
+        {/*           key={entry.id} */}
+        {/*           data={entry} */}
+        {/*         />; */}
+        {/*       } else { */}
+        {/*         return null; */}
+        {/*       } */}
+        {/*     case 'instagram': */}
+        {/*       return <InstagramCard */}
+        {/*         key={entry.id} */}
+        {/*         data={entry} */}
+        {/*       />; */}
+        {/*     case 'twitter': */}
+        {/*       return <TwitterEmbed key={entry.id} id={entry.id} />; */}
+        {/*     default: */}
+        {/*       return null; */}
+        {/*     } */}
+        {/*   })} */}
+        {/* </ProjectList> */}
       </div>
     );
   }
