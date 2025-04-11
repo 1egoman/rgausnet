@@ -1,0 +1,92 @@
+.page {
+  --primary: #64ADFF;
+  --primary-dark: #5A99E0;
+
+  --gray-light: #F8F8F8;
+  --gray-dark: #222;
+
+  font-family: var(--font-josefin-sans);
+  position: fixed;
+  inset: 0px;
+}
+
+/* @media (prefers-color-scheme: dark) { */
+/*   .page { */
+/*     --gray-rgb: 255, 255, 255; */
+/*     --gray-alpha-200: rgba(var(--gray-rgb), 0.145); */
+/*     --gray-alpha-100: rgba(var(--gray-rgb), 0.06); */
+
+/*     --button-primary-hover: #ccc; */
+/*     --button-secondary-hover: #1a1a1a; */
+/*   } */
+/* } */
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: var(--primary);
+}
+.link:hover, .link:focus {
+  text-decoration: underline;
+}
+
+.heroWrapper {
+  padding-top: 64px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  transition: all 250ms ease-in-out;
+}
+.hero {
+  max-width: 530px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+.heroImage {
+  margin-left: auto;
+  margin-right: auto;
+  width: 214px;
+  height: 214px;
+  border-radius: 50%;
+}
+.heroImage.overlay {
+  position: absolute;
+  left: 50%;
+  margin-left: -107px;
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+.heroImage.overlay:hover { opacity: 0.75; }
+.heroTitle {
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+.heroTitleInner {
+  font-weight: 600;
+}
+.heroDesc {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 28px;
+}
+.heroSocial {
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.heroSocialLink {
+  margin-right: 10px;
+}
