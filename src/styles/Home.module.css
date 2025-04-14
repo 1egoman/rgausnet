@@ -10,12 +10,13 @@
   inset: 0px;
 }
 
+/* TODO: add more comprehensive dark/light mode support */
 /* @media (prefers-color-scheme: dark) { */
 /*   .page { */
 /*     --gray-rgb: 255, 255, 255; */
 /*     --gray-alpha-200: rgba(var(--gray-rgb), 0.145); */
 /*     --gray-alpha-100: rgba(var(--gray-rgb), 0.06); */
-
+/*  */
 /*     --button-primary-hover: #ccc; */
 /*     --button-secondary-hover: #1a1a1a; */
 /*   } */
