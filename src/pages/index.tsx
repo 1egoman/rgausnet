@@ -52,10 +52,13 @@ export default function Home() {
             </p>
             <p className={styles.heroSocial}>
               <span className={styles.heroSocialLink}>
-                <a href="/Resume (Ryan Gaus).pdf" className={styles.link}>Resume</a>
+                <a href="/Resume (Ryan Gaus).pdf" target="_blank" className={styles.link}>Resume</a>
               </span>
               <span className={styles.heroSocialLink}>
                 <a href="mailto:rsg1egoman@gmail.com" className={styles.link}>Email</a>
+              </span>
+              <span className={styles.heroSocialLink}>
+                <a href="https://www.linkedin.com/in/ryan-gaus-08068617b" target="_blank" className={styles.link}>LinkedIn</a>
               </span>
               <span className={styles.heroSocialLink}>
                 <a href="https://github.com/1egoman" target="_blank" className={styles.link}>
